@@ -110,7 +110,7 @@ a {
     width: 103.5em;
     height: 100%;
     margin: 0 auto;
-    background: url(./assets/background-vowsXjH2.jpg) no-repeat center 0;
+    background: url(background-vowsXjH2.jpg) no-repeat center 0;
     background-size: contain
 }
 
@@ -167,7 +167,7 @@ a {
 .wrapper > section > .top .logo_img {
     width: 11.4em;
     height: 11.4em;
-    background: url(./assets/bug-JoQqHTZI.png) 0 0 no-repeat
+    background: url(bug-JoQqHTZI.png) 0 0 no-repeat
 }
 
 .wrapper > section > .top .menu {
@@ -255,7 +255,7 @@ a {
 }
 
 .wrapper > section .content .content_inner {
-    background: url(./assets/content-7wPQdRAi.png) no-repeat 0 0;
+    background: url(content-7wPQdRAi.png) no-repeat 0 0;
     height: 735px;
     margin-left: -84px;
     margin-top: 90px;
@@ -289,7 +289,7 @@ a {
 }
 
 .wrapper > section .content .contact_list {
-    background: url(./assets/contacts_bg-grXlWeFX.png) no-repeat 0 0;
+    background: url(./contacts_bg-grXlWeFX.png) no-repeat 0 0;
     background-size: contain;
     padding: 73px 0 0 88px;
     font-size: 16px;
@@ -314,7 +314,7 @@ a {
 }
 
 .wrapper > section .content .side_slide {
-    background: url(./assets/side_slide-iuDC9YK6.png) no-repeat 0 0;
+    background: url(side_slide-iuDC9YK6.png) no-repeat 0 0;
     height: 733px;
     position: absolute;
     right: -43px;
@@ -324,7 +324,7 @@ a {
 }
 
 .wrapper > section .content .side_slide #dont_click {
-    background: url(./assets/dontclick-Z40cEHTJ.png) repeat center top;
+    background: url(dontclick-Z40cEHTJ.png) repeat center top;
     cursor: pointer;
     height: 208px;
     position: absolute;
@@ -334,11 +334,11 @@ a {
 }
 
 .wrapper > section .content .side_slide #dont_click:hover {
-    background: url(./assets/dontclick-Z40cEHTJ.png) repeat 0 -206px
+    background: url(dontclick-Z40cEHTJ.png) repeat 0 -206px
 }
 
 .footer {
-    background: url(./assets/footer_bg-nQ5JDVYX.jpg) repeat-x 0 0;
+    background: url(footer_bg-nQ5JDVYX.jpg) repeat-x 0 0;
     width: 100%;
     min-width: 103.5em;
     height: 81px;
@@ -357,7 +357,7 @@ a {
 }
 
 .footer .line_inner .foot_line {
-    background: url(./assets/foot_line-ewkFQIh4.png) no-repeat 11px 0;
+    background: url(foot_line-ewkFQIh4.png) no-repeat 11px 0;
     height: 235px;
     width: 545px;
     position: relative
@@ -382,7 +382,7 @@ a {
 }
 
 .footer .line_inner .foot_line .copy .footer_logo {
-    background: url(./assets/badbug_copy-EauhsBcP.png) no-repeat 0 0;
+    background: url(badbug_copy-EauhsBcP.png) no-repeat 0 0;
     background-size: contain;
     width: 165px;
     height: 35px
