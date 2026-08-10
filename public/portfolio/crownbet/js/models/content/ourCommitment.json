@@ -1,0 +1,43 @@
+{
+  "banner": {
+    "url":"./assets/images/banners/37697649_L.jpg",
+    "bannerTitle": "Fostering responsible gambling",
+    "bannerDescriptionFirstLine": "CrownBet is committed to operating with the utmost care for customers and the community.",
+    "bannerDescriptionSecondLine": "",
+    "backgroundPosition":"center center;"
+  },
+  "policyPageContent": {
+    "title":"CrownBet’s Commitment to our Customers",
+    "listTitle1":"<span class='body-title'>At CrownBet,</span> we are committed to promoting responsible gambling. We will do this by:",
+    "list1":"<li>Preventing underage gambling;</li><li>Undertaking responsible and appropriate marketing and promotions;</li><li>Having in place a market-leading responsible gambling framework and leading the national agenda for continued improvement to Australia’s responsible gambling framework;</li><li>Operating ethically, over and above what is required by regulation;</li><li>Providing our customers with the most sophisticated responsible gambling tools like deposit limits and self-exclusion;</li><li>Ensuring universal best-in-class training for all our staff in responsible service of gambling and harm minimisation;</li><li>Participating in research to inform and develop new responsible gambling initiatives;</li><li>Being responsive to community concerns around gambling and its promotion.</li>",
+    "listTitle3":"Each year, CrownBet will report against the commitment outlined above and will make those reports available on this website.",
+    "listTitle2":"<span class='body-title'>For you,</span> we believe that being a responsible gambler means that you:",
+    "list2":"<li>Understand the odds;</li><li>See gambling as entertainment, not a job;</li><li>Only gamble with the money you have set aside for entertainment;</li><li>Set limits on the amount of time and money you will spend;</li><li>Stick to these limits and stop betting when they are reached;</li><li>Don’t chase your losses;</li><li>Take frequent breaks from betting;</li><li>Familiarise yourself with the tools and help that are freely available.</li>"
+  },
+  "codeOfPracticePageContent": {
+    "title":"Opting out of marketing channels",
+    "listTitle1":"If you would rather not receive information about promotions, offers or other marketing, let us know in the Preference Centre in your CrownBet account.",
+    "contentLine2":"Once you’re logged in, click on ‘My Account’ and then ‘Preference Centre’ where you can tell us the channels in which you’re happy to hear from us, or opt out altogether.",
+    "contentLine3":"If you would rather do any of this by phone, just call CrownBet’s customer service team on 13 CROWNBET (13 27 69)."
+  },
+  "voluntaryMeasuresPageContent": {
+    "title": "CrownBet’s Voluntary Responsible Gambling Measures",
+    "contentLine1":"In addition to those required by the NT Code, CrownBet has developed and continues to improve ‘Take A Break’ to allow you to customise your betting experience.",
+    "contentLine2":"We want to make it easier for you to access responsible gambling services like ‘Take A Break’ and deposit limits to make sure you always remain in control.",
+    "contentLine3":"Find out more in the ‘Staying in control’ section of this website."
+  },
+  "panelContent":[
+    {
+      "title":"",
+      "shortText":"",
+      "fullText":"",
+      "url":""
+    },
+    {
+      "title":"",
+      "shortText":"",
+      "fullText":"",
+      "url":""
+    }
+  ]
+}

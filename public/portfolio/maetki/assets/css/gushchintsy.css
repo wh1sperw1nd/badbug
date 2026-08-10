@@ -1,0 +1,45 @@
+.gushchintsy .content {
+    flex-direction: column;
+    margin-top: 14vw;
+    position: relative;
+}
+.gushchintsy .bg {
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: -45vw;
+    z-index: 0;
+}
+
+.content .title {
+    position: absolute;
+    top: 0;
+    font-size: 7vw;
+    text-transform: uppercase;
+    color: rgba(44,79,64, 0.4);
+    padding-left: 10vw;
+    width: 100%;
+    z-index: 1;
+    font-family: "BlackCAPS", sans-serif;
+    letter-spacing: 1vw;
+}
+
+.gushchintsy .content img.title_bg {
+    width: 91vw;
+    height: auto;
+    display: block;
+    position: relative;
+    top: -12vw;
+    right: -8.1vw;
+}
+
+.gushchintsy article {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.gushchintsy .wrap {
+    margin-top: -14vw;
+}

@@ -1,0 +1,113 @@
+[
+  {
+    "title": "Income",
+    "fields": [
+      {
+        "label": "Pay after tax",
+        "short": "payAfterTax",
+        "value": null
+      },
+      {
+        "label": "Pension Income",
+        "short": "pensionIncome",
+        "value": null
+
+      },
+      {
+        "label": "Interest / Investment Income",
+        "short": "investmentIncome",
+        "value": null
+      },
+      {
+        "label": "Other",
+        "short": "otherIncome",
+        "value": null
+      }
+    ]
+  },
+  {
+    "title": "Household",
+    "fields": [
+      {
+        "label": "Food",
+        "short": "food",
+        "value": null
+      },
+      {
+        "label": "Mortgage / Rent",
+        "short": "mortgageRent",
+        "value": null
+      },
+      {
+        "label": "Council Tax",
+        "short": "councilTax",
+        "value": null
+      },
+      {
+        "label": "Household bills",
+        "short": "householdBills",
+        "value": null
+      },
+      {
+        "label": "Other",
+        "short": "otherHousehold",
+        "value": null
+      }
+    ]
+  },
+  {
+    "title": "Gambling",
+    "fields": [
+      {
+        "label": "Gambling",
+        "short": "gambling",
+        "value": null
+      }
+    ]
+  },
+  {
+    "title": "Leisure",
+    "fields": [
+      {
+        "label": "Going out",
+        "short": "goingOut",
+        "value": null
+      },
+      {
+        "label": "Alcohol / Cigarettes",
+        "short": "alcoholCigarettes",
+        "value": null
+      },
+      {
+        "label": "Holidays",
+        "short": "holidays",
+        "value": null
+      },
+      {
+        "label": "Other",
+        "short": "otherLeisure",
+        "value": null
+      }
+    ]
+  },
+  {
+    "title": "Travel",
+    "fields": [
+      {
+        "label": "Getting to work:",
+        "short": "gettingToWork",
+        "value": null
+      },
+      {
+        "label": "Car:",
+        "short": "car",
+        "value": null
+      },
+      {
+        "label": "Other:",
+        "short": "otherTravel",
+        "value": null
+      }
+    ]
+  }
+]

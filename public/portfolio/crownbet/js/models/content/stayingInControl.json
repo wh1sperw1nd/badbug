@@ -1,0 +1,51 @@
+{
+  "banner": {
+    "url":"./assets/images/banners/staying_in_control.jpg",
+    "bannerTitle": "Staying In Control",
+    "bannerDescriptionFirstLine": "Set and stick to limits. Take frequent breaks and only bet with money you can afford to lose.",
+    "bannerDescriptionSecondLine": "",
+    "backgroundPosition":"center center;"
+  },
+  "accountDetailsPageContent": {
+    "panelImageUrl":"./assets/images/contentImages/panel2.png",
+    "contentLine1":"Keep an eye on how much you spend on gambling.  Through the My Account section of the CrownBet website, you can get your detailed betting history, as well as your deposit and withdrawal history, to give you a proper picture of your gambling expenditure.",
+    "contentLine2":"If you think you are gambling too much, you can set a deposit limit or take a break from your CrownBet account. Find out more about these options under ‘Staying in control’.",
+    "contentLine3":"To get more information about your CrownBet account, you can call CrownBet’s customer service team on 13 CROWNBET (13 27 69)."
+  },
+  "depositLimitsPageContent": {
+    "contentLine1":"One of the simplest ways to control your gambling, is to set a limit on the amount of money you can deposit into your CrownBet account in a given time period.",
+    "contentLine2":"You can choose to limit the amount that you can deposit into your CrownBet account over a 24-hour period, a week, or thirty days.",
+    "contentLine3":"Once set, these deposit limits cannot be overridden by you or by CrownBet.",
+    "contentLine4":"Deposit limits end at midnight on the last day of your chosen cycle. If you want to increase or remove deposit limits, this can only take place after seven days, or where more than seven days remain in a monthly cycle, at the end of the current cycle.",
+    "contentLine5":"Requests to introduce or reduce deposit limits take effect immediately.",
+    "contentLine6":"If you need help setting a deposit limit, please contact CrownBet’s customer service team on 13 CROWNBET (13 27 69)."
+  },
+  "takeABreakPageContent": {
+    "contentLine1":"Want to ensure you set aside time for family on Sunday afternoons? You can take time away from your CrownBet account by using Take A Break.",
+    "listTitle1":"In the Responsible Gambling section of the My Account page, you can choose to take a break for:",
+    "list1":"<li>the remainder of the day (until the following 3am);</li><li>a short break (from one to 30 days);</li><li>a long break (six months or one, three or five years);</li><li>a particular day of the week you wish to take a break (Example: Every Tuesday);</li><li>a particular day and time of the week you wish to take a break (Example: After 5pm on a Saturday);</li>",
+    "contentLine2":"If you need help setting up Take a Break, please contact CrownBet’s customer service team on 13 CROWNBET (13 27 69)."
+  },
+  "selfExclusionPageContent": {
+    "contentLine1":"You can immediately close your account by using the permanent self-exclusion function in the Responsible Gambling section of the My Account page.",
+    "contentLine2":"This will allow you to withdraw any money you have in your CrownBet account, permanently close it and stop you opening a new account.",
+    "contentLine3":"When you self-exclude we will permanently close your account, you’ll receive no further communications from CrownBet and your account won’t be reopened under any circumstances.",
+    "contentLine4":"Should you also wish to self-exclude from other wagering accounts you have, links to other self-exclusion forms from other wagering operators can be found below.",
+    "list1":"<li><a href='http://responsiblegambling.sportsbet.com.au/gambling-and-you/self-exclusion/' target='_blank'>Sportsbet</a></li><li><a href='https://www.williamhill.com.au/betting/help/self-exclusion/' target='_blank'>William Hill </a></li><li><a href='http://tab.custhelp.com/app/answers/detail/a_id/71/~/responsible-wagering' target='_blank'>TAB</a></li><li><a href='http://helpcentre.ladbrokes.com/app/answers/detail/a_id/279/~/self-exclusion' target='_blank'>Ladbrokes</a></li><li><a href='https://www.unibet.com.au/help/myaccount/responsible-gaming/self-exclusion' target='_blank'>Unibet</a></li><li><a href='https://help.bet365.com.au/en/responsible-gambling/main/take-a-break-aus' target='_blank'>Bet365</a></li>",
+    "contentLine5":"If you need help in self-excluding from wagering with CrownBet, please contact CrownBet’s customer service team on 13 CROWNBET (13 27 69)."
+  },
+  "panelContent":[
+    {
+      "title":"CODE OF PRACTICE",
+      "shortText":"",
+      "fullText":"",
+      "url":""
+    },
+    {
+      "title":"TAKE A BREAK",
+      "shortText":"",
+      "fullText":"",
+      "url":""
+    }
+  ]
+}

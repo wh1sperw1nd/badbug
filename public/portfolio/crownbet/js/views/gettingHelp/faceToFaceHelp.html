@@ -1,0 +1,36 @@
+<div>
+    <div class="slider smaller">
+        <div class="slider-inner">
+            <!-- Slides -->
+            <div class="fs-slides">
+                <div class="fs-slide" ng-attr-style="background-image: url({{content.banner.url}});background-position: {{content.banner.backgroundPosition}}">
+                    <div class="banner-text">
+                        <div class="banner-title">{{content.banner.bannerTitle}}</div>
+                        <div class="banner-desc">{{content.banner.bannerDescriptionFirstLine}}</div>
+                        <div class="banner-desc">{{content.banner.bannerDescriptionSecondLine}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <sub-menu></sub-menu>
+</div>
+<div class="container panel-crown panel-crown-white">
+    <div class="row">
+        <div class="col-lg-10">
+            <h2 class="">{{submenus[0].name}}</h2>
+            <p ng-bind-html="renderHtml(content.faceToFaceHelpPageContent.contentLine1)"></p>
+            <p ng-bind-html="renderHtml(content.faceToFaceHelpPageContent.contentLine2)"></p>
+            <p ng-bind-html="renderHtml(content.faceToFaceHelpPageContent.listTitle1)"></p>
+            <ul class="crown-ul" ng-bind-html="renderHtml(content.faceToFaceHelpPageContent.list1)"></ul>
+
+            <p ng-bind-html="renderHtml(content.faceToFaceHelpPageContent.listTitle2)"></p>
+            <div class="col-lg-12"><span class="mar-r20">Victoria:</span><a href="http://www.responsiblegambling.vic.gov.au" target="_blank">www.responsiblegambling.vic.gov.au</a></div>
+            <div class="col-lg-12"><span class="mar-r20">NSW:</span><a href="http://www.gamblinghelp.nsw.gov.au" target="_blank">www.gamblinghelp.nsw.gov.au</a></div>
+            <div class="col-lg-12"><span class="mar-r20">SA:</span><a href="http://www.problemgambling.sa.gov.au" target="_blank">www.problemgambling.sa.gov.au</a></div>
+            <div class="col-lg-12"><span class="mar-r20">National:</span><a href="http://www.problemgambling.com.au" target="_blank">www.problemgambling.com.au</a></br><a href="http://www.gamblinghelponline.org.au" target="_blank" class="mar-80">www.gamblinghelponline.org.au</a></div>
+        </div>
+        <div class="col-lg-5">
+        </div>
+    </div>
+</div>

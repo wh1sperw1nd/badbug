@@ -1,0 +1,29 @@
+{
+  "banner": {
+    "url":"./assets/images/banners/46395475_L.jpg",
+    "bannerTitle": "Family & friends",
+    "bannerDescriptionFirstLine": "",
+    "bannerDescriptionSecondLine": "",
+    "backgroundPosition":"center center;"
+  },
+  "familyAndFriendsPageContent": {
+    "contentLine1":"<p>Are you concerned that someone’s gambling is becoming harmful? You may have noticed changes in a family member or friend’s mood. Or it may seem they are always running out of money.</p><p>It can be difficult to identify gambling issues in a friend or family member, as they may hide or lie about their activity. They may also become angry or agitated when confronted about their gambling.</p><p>Knowing the warning signs, and some steps to help, can assist you in ensuring your friend or family member gets the support they need.</p><p>If you are concerned, <a href='http://www.gamblinghelponline.org.au/' target='_blank'>Gambling Help Online</a> provides a detailed list of signs that a person may require help and some strategies for family and friends to encourage them to seek support.</p>"
+  },
+  "protectingMinorsPageContent": {
+    "contentLine1":"<p>It is illegal for anyone under the age of 18 to open an account or to gamble with CrownBet.</p><p>We take this issue very seriously, run strict age and identity verification on every customer, and prominently displaying 18+ signage on every CrownBet page.</p><p class='body-title'>Anyone under the age of 18 found to be using CrownBet’s website will have any winnings forfeited and may also be reported to the police.</p><p>If children have access to the computer that you use to access CrownBet, we encourage you to download and install one of the popular child protection packages, such as Net Nanny or Cyber Patrol.</p><p>This software will prevent CrownBet being accessed by children, and stop them from viewing other internet content that you may consider unsuitable.</p>"
+  },
+  "panelContent":[
+    {
+      "title":"CODE OF PRACTICE",
+      "shortText":"",
+      "fullText":"",
+      "url":""
+    },
+    {
+      "title":"TAKE A BREAK",
+      "shortText":"",
+      "fullText":"",
+      "url":""
+    }
+  ]
+}

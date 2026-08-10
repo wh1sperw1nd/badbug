@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #e5e5e5;
+        stroke-width: 1px;
+      }
+
+      .cls-2 {
+        fill: #aaa;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" width="20" height="20" rx="3" ry="3"/>
+  <path id="Shape_2_copy_9" data-name="Shape 2 copy 9" class="cls-2" d="M9,6h2v8H9V6ZM6,11V9h8v2H6Z"/>
+</svg>

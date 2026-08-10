@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script src="http://vkontakte.ru/js/api/xd_receiver.js" type="text/javascript"></script>
+        <script src="http://vkontakte.ru/js/api/openapi.js" type="text/javascript"></script>
+        <style>
+            #vk_auth {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: -50px 0 0 -100px;
+            }
+        </style>
+    </head>
+  <body>
+    <div id="vk_api_transport"></div>
+    <script type="text/javascript">
+      VK.init({apiId: 3232984});
+    </script>
+    <div id="vk_auth"></div>
+    <script type="text/javascript">
+        VK.Widgets.Auth("vk_auth", {width: "200px", authUrl: 'player.html?o=-1&p=Auth'});
+
+        function callBack(result) {
+                $.each(result.response, function(i, value){
+                        catchArray[i] = {artist: value.artist, title: value.title, url: value.url, duration: value.duration};
+                        if(i>0) {
+                                $("body").append('<a class="sounds" href="#" rel="'+i+'">'+value.artist+' - '+value.title.substring(0, 25)+'</a><br>');
+                                console.log(result);
+                        }
+                });
+        };
+    </script>
+    <a href="http://oauth.vk.com/authorize?client_id=3232984&scope=audio,friends&redirect_uri=http://badbug.16mb.com/player/player.html&display=page&response_type=token">login</a>
+  </body>
+</html>
+
+<!-- http://api.vk.com/blank.html#access_token=9c6d48b9ccb38c0f9cd3989b4a9c217dae99c109c10297cccb27a8f1c7852ac21730001&expires_in=86400&user_id=8217039 -->

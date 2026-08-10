@@ -1,0 +1,33 @@
+{
+  "banner": {
+    "url":"./assets/images/banners/36363966_L.jpg",
+    "bannerTitle": "Tools",
+    "bannerDescriptionFirstLine": "Get a better picture of your gambling and make sure you keep it in balance.",
+    "bannerDescriptionSecondLine": "",
+    "backgroundPosition":"center center;"
+  },
+  "questionnairePageContent": {
+    "contentLine1":"<p>To find out whether you could have, or may develop, an issue with gambling, go through the questionnaire below:</p>",
+    "list1":"<li><span>Have others ever criticised your gambling?</span></li><li><span>Do you gamble to escape from a boring or unhappy life?</span></li><li><span>Do arguments, frustrations or disappointments make you want to gamble?</span></li><li><span>Do you gamble alone for long periods?</span></li><li><span>Do you stay away from work, college or school to gamble?</span></li><li><span>Have you ever lied to cover up the amount of money or time you spend gambling?</span></li><li><span>Have you lied, stolen or borrowed in order to maintain betting habits?</span></li><li><span>Are you reluctant to spend 'gambling money' on anything else?</span></li><li><span>Have you lost interest in your family, friends or pastimes due to gambling?</span></li><li><span>After losing, do you feel that you have to try and win back your losses as soon as possible?</span></li><li><span>If you run out of money when gambling, do you feel lost and in despair and feel the need to gamble again as soon as possible?</span></li><li><span>Do you gamble until your last penny is gone, even the bus fare home or the cost of a cup of tea?</span></li><li><span>Do you feel depressed or even suicidal because of your gambling?</span></li>",
+    "contentLine2":"The more questions to which you answer “yes”, the more likely it is that your gambling has gone beyond fun.",
+    "contentLine3":"Find out how to take greater control of your betting by clicking <a href='#staying-in-control/account-details'>'Staying in Control'</a> above. Learn how to set deposit limits, using Take A Break, or permanently closing your account.",
+    "contentLine4":"For free and immediate help, contact any of the support services at the bottom of this page, or in the <a href='#getting-help/face-to-face-help'>'Getting Help'</a> section."
+  },
+  "calculatorPageContent": {
+    "contentLine1":"To get an idea of the overall cost of your gambling, and to make sure your entertainment and other expenditure remain in balance, enter your monthly income and expenditure in our gambling calculator below."
+  },
+  "panelContent":[
+    {
+      "title":"CODE OF PRACTICE",
+      "shortText":"",
+      "fullText":"",
+      "url":""
+    },
+    {
+      "title":"TAKE A BREAK",
+      "shortText":"",
+      "fullText":"",
+      "url":""
+    }
+  ]
+}

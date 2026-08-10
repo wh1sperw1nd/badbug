@@ -7,6 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+dist
 node_modules
 .DS_Store
 dist-ssr
@@ -25,5 +26,7 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+Thumbs.db
+Desktop.ini
 
 *.tsbuildinfo

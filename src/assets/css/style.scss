@@ -1,6 +1,71 @@
-@import 'reset';
+@use 'reset';
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Roboto&display=swap');
+
+@mixin speech-bubble($direction: 'up') {
+    position: absolute;
+    padding: 10px 16px;
+    width: max-content;
+    background: #0f0e0c;
+    border: 1px solid #ad9c82;
+    border-radius: 8px;
+    color: #ad9c82;
+    font-size: 15px;
+    line-height: 1.4;
+    font-family: 'Comic Neue', cursive;
+    text-align: center;
+    z-index: 2;
+
+    @if $direction == 'right' {
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
+        margin-left: 14px;
+        max-width: 200px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 7px solid transparent;
+            border-right-color: #ad9c82;
+        }
+    } @else if $direction == 'up' {
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 12px;
+        max-width: 260px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 7px solid transparent;
+            border-top-color: #ad9c82;
+        }
+    } @else {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 12px;
+        max-width: 260px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 7px solid transparent;
+            border-bottom-color: #ad9c82;
+        }
+    }
+}
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -38,6 +103,7 @@ a {
 }
 
 .wrapper {
+    position: relative;
     width: 103.5em;
     height: 100%;
     margin: 0 auto;
@@ -45,6 +111,8 @@ a {
     background-size: contain;
 
     & > section {
+        position: relative;
+        z-index: 1;
         height: 100%;
         width: 70em;
         margin: 0 auto;
@@ -95,7 +163,59 @@ a {
             .logo_img {
                 width: 11.4em;
                 height: 11.4em;
-                background: url('../img/bug.png') 0 0 no-repeat;
+                position: relative;
+
+                .logo_img_face {
+                    position: absolute;
+                    inset: 0;
+                    background: url('../img/bug.png') 0 0 no-repeat;
+                }
+
+                .particle {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: var(--particle-size, 0.3em);
+                    height: var(--particle-size, 0.3em);
+                    margin-top: calc(var(--particle-size, 0.3em) * -0.5);
+                    margin-left: calc(var(--particle-size, 0.3em) * -0.5);
+                    opacity: 0;
+                    pointer-events: none;
+                }
+
+                &.is-shattering {
+                    .logo_img_face {
+                        animation: face-pop 1.1s ease-out forwards;
+                    }
+
+                    .particle {
+                        opacity: 1;
+                        animation-name: particle-burst;
+                        animation-duration: 0.9s;
+                        animation-timing-function: cubic-bezier(0.2, 0.6, 0.3, 1);
+                        animation-fill-mode: forwards;
+                    }
+                }
+
+                &.is-celebrating {
+                    .logo_img_face {
+                        animation: logo-celebrate 0.95s ease-in-out forwards;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        inset: -0.3em;
+                        border-radius: 50%;
+                        background: radial-gradient(circle, rgba(255, 215, 90, 0.55) 0%, rgba(255, 215, 90, 0) 70%);
+                        animation: celebrate-glow 0.95s ease-out forwards;
+                        pointer-events: none;
+                    }
+                }
+
+                .logo-bubble {
+                    @include speech-bubble('right');
+                }
             }
 
             .menu {
@@ -143,7 +263,7 @@ a {
                         background: url('../img/lavalamp.png') no-repeat 0 0
                             transparent;
                         height: 1.14em;
-                        left: 0;
+                        left: 2.4em;
                         position: absolute;
                         top: -0.28em;
                         width: 4.57em;
@@ -180,6 +300,34 @@ a {
                     & > li:nth-child(4):hover ~ .lavalamp,
                     & > li.selected:nth-child(4) ~ .lavalamp {
                         left: 49.6em;
+                    }
+                }
+            }
+
+            .social {
+                position: absolute;
+                left: 43em;
+                top: 29em;
+                display: flex;
+                gap: 0.7em;
+                z-index: 1;
+
+                .socialLink {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 1.8em;
+                    height: 1.8em;
+                    color: #ad9c82;
+                    text-decoration: none;
+
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    &:hover {
+                        color: #fff;
                     }
                 }
             }
@@ -271,9 +419,115 @@ a {
                     &:hover {
                         background: url('../img/dontclick.png') repeat 0 -206px;
                     }
+
+                    .dontclick-bubble {
+                        @include speech-bubble('up');
+                    }
                 }
             }
         }
+    }
+}
+
+.bubble-fade-enter-active,
+.bubble-fade-leave-active {
+    transition: opacity 0.25s ease;
+}
+
+.bubble-fade-enter-from,
+.bubble-fade-leave-to {
+    opacity: 0;
+}
+
+@keyframes face-pop {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    10% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+    26% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    82% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    92% {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes particle-burst {
+    0% {
+        transform: translate(0, 0) scale(0.6);
+        opacity: 1;
+    }
+
+    15% {
+        transform: translate(calc(var(--tx) * 0.3), calc(var(--ty) * 0.3)) scale(1.3);
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(var(--tx), calc(var(--ty) + 1.4em)) rotate(var(--rot)) scale(0.4);
+        opacity: 0;
+    }
+}
+
+@keyframes logo-celebrate {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    30% {
+        transform: scale(1.3) rotate(150deg);
+    }
+
+    60% {
+        transform: scale(0.9) rotate(330deg);
+    }
+
+    80% {
+        transform: scale(1.1) rotate(360deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+@keyframes celebrate-glow {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    30% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.6);
     }
 }
 

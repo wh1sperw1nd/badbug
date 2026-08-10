@@ -1,0 +1,260 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+    <head> 
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" /> 
+        <title>The Wilderness Downtown</title>
+        <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="css/tree.css" type="text/css" media="screen" />
+        
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.color.js"></script>
+        <script type="text/javascript" src="js/jquery.backgroundPosition.js"></script>
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>  
+
+        <script type="text/javascript" src="js/jquery.path.js"></script>  
+    </head>
+    <body>
+        <audio preload="auto" id="mainSound">
+            <source src="media/emma_hewitt.ogg" type='audio/ogg; codecs=vorbis' />
+            <source src="media/emma_hewitt.mp3" type="audio/mpeg" />
+        </audio>
+        <div class="leftcurtain"><img src="img/frontcurtain.jpg"/></div>
+        <div class="rightcurtain"><img src="img/frontcurtain.jpg"/></div>
+        <a id='rope' class="rope" href="javascript:void(0);">
+            <img src="img/rope.png"/>
+        </a>
+        <div class="title" id="title">Spring</div>
+        <div class="letter">
+				<p style="display:none" id="text" align="left">
+					Одного разу, холодного зимового дня, в самий неочікуваний момент,% 
+					я зустрів тебе - і все змінилось.% 
+					Життя засяяло, заіскрилося новими кольорами і фарбами, завдяки тобі.% 
+					Сьогодні, 8 Березня - нехай в цей день,% 
+					перший пролісок подарує тобі ніжність,% 
+					весняне сонце подарує тепло,% 
+					а березневий вітер - надію, щастя, радість, і тільки добро!,% 
+					Прийми всі найкращі побажання і слова,% 
+					як лише маленьку частинку своєї вдячності за те, що ти є!% 
+				</p>
+            <!--<p style="display:none" id="text" align="left">
+                Еще весна крадется по предместьям,%
+                Еще под снегом крепко спят цветы,%
+                Но обьявился нынче доброй вестью%
+                Восьмое марта - праздник красоты.%%
+
+                Он шествует по миру ослепляя%
+                Всех нас в великолепии своем;%
+                Я от души сегодня поздравляю%
+                Тебя с Международным женским днем!!!%
+            </p>-->
+			<!--<p style="display:none;" id="text" align="left">  
+                Привет, как ты уже знаешь, я очень люблю кататься на велосипеде,%
+				это часть моей жизни, и я хотел бы больше раскрыть для тебя этот вид спорта.%
+				31 мая международный день велосипедиста, и в этот день,%
+				вело-байкеры по всему миру собираются что-бы отпраздновать этот день,%
+				и винницкие не исключение.%
+				В этот день собирается 300-500 человек, и проводят вело марафон по городу,%
+				двигаясь колоной по центральным улицам города в сопровождении ГАИ.%
+				Далее разного рода конкурсы фотосессии и просто веселье,%
+				на зависть мото-байкерам, они всегда сразу после нас собирают свою колону))%
+				Со стороны это выглядит очень эффектно,%
+				и люди удивляются когда видят такую толпу райдеров))%
+				Я бы хотел показать тебе как это все происходит,% 
+				и что-бы ты тоже приняла в этом участвие% 
+				Надеюсь тебе понравиться, и это будет чем-то новым для тебя,% 
+				а не просто велопокатушка.%%%%
+				P.S: музыку не успел подобрать :)%  
+				но меня эта стимулирует для путешествий из рекламы камеры GoPro (оч. крутое видео) :) 
+            </p>-->
+            <div id="place" style="font-size: 22px;" ></div>
+        </div>
+        <div id="birdsCanvas">
+            <div class="sky" id="sky"></div>
+            <!--<div class="topleft" id="tree"></div>-->
+            <div class="sun_yellow" id="sun_yellow"></div>
+            <div id="bg"></div>
+            <div class="cloud1"></div>
+            <div class="cloud2"></div>
+            <div class="cloud3"></div>
+            <div class="cloud4"></div>
+            <div class="cloud5"></div>
+            <div id="footer">
+                <div id="city" class="abs"></div>
+		<div id="hills-bg" class="abs"></div>
+		<div id="hills-fg" class="abs"></div>
+		<div id="cobblestone" class="abs"></div>
+		<div id="dogwalker"></div>
+            </div>
+            <div class="cycle cycle-ride">
+                <div class="bycycle"></div>
+                <div class="cycle-front"></div>
+                <div class="cycle-back"></div>
+            </div>
+            <div id="marco">
+                <div class="rama1">
+                    <div class="rama2">
+                        <div class="rama21">
+                            <div class="rama211">
+                                <div class="flor r21f4"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                            </div>
+                            <div class="flor r21f1"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                            <div class="flor r21f2"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                            <div class="flor r21f3"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                        </div>
+                        <div class="rama22">
+                            <div class="flor r22f1"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                            <div class="flor r22f2"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                            <div class="flor r22f3"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                            <div class="flor r22f4"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                        </div>
+                        <div class="rama23">
+                            <div class="flor r23f1"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                            <div class="flor r23f2"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                            <div class="flor r23f3"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                            <div class="flor r23f4"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                        </div>
+                        <div class="flor r2f1"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                        <div class="flor r2f2"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                        <div class="flor r2f3"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                        <div class="flor r2f4"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                        <div class="flor r2f5"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                    </div>
+                    <div class="rama3">
+                        <div class="rama31">
+                            <div class="flor r3f1"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                            <div class="flor r3f2"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                            <div class="flor r3f3"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                        </div>
+                        <div class="flor r3f4"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                        <div class="flor r3f5"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                    </div>
+                    <div class="rama4">
+                        <div class="rama41">
+                            <div class="flor r4f1"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                            <div class="flor r4f2"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                        </div>
+                        <div class="flor r4f3"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                        <div class="flor r4f4"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                    </div>
+                    <div class="rama5">
+                        <div class="flor"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                    </div>
+                    <div class="flor r1f1"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                    <div class="flor r1f2"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                    <div class="flor r1f3"><div class="centro"></div><div class="hoja h1"></div><div class="hoja h2"></div><div class="hoja h3"></div><div class="hoja h4"></div></div>
+                </div>
+            </div>
+        </div>
+        <!--<script type="text/javascript" src="js/main-compressed.js"></script>-->
+        <script type="text/javascript">
+   
+            $curtainopen = false;
+            
+            var tl = new Array(
+                    "The End"
+                    );
+            var speed = 200;
+            var index = 0;
+            text_pos = 0;
+            var str_length = tl[0].length;
+            var contents, row;
+            function type_text()
+            {
+                $("#title").show();
+                contents = '';
+                row = Math.max(0, index - 7);
+                while (row < index)
+                    contents += tl[row++] + '<br />';
+
+                $('#title').text(contents + tl[index].substring(0, text_pos) + "_");
+                if (text_pos++ == str_length)
+                {
+                    text_pos = 0;
+                    index++;
+                    if (index != tl.length)
+                    {
+                        str_length = tl[index].length;
+                        setTimeout("type_text()", 3000);
+                    } else {
+						setTimeout(function(){
+							window.location.reload();
+						}, 4000)
+                   
+                    }
+                }
+                else
+                {
+                    setTimeout("type_text()", speed);
+                }
+            }
+            
+            function ropeng(){
+                $(".rope").bind('click',function(){
+					playSound();
+                   $(".title").fadeOut("fast"); 
+                   curtainAnimation();
+                   $(".rope").unbind('click');
+                   $("#birdsCanvas").addClass("animations");
+                   $("#dogwalker").animate({"backgroundPosition": "-=-1610px 0px"}, 100);
+                   show();
+                });
+            }
+            function curtainAnimation() {
+                $(".rope").blur();
+                if ($curtainopen == false) {
+                    $("#rope").stop().animate({top: '0px'}, {queue: false, duration: 350, easing: 'easeOutBounce'});
+                    $(".leftcurtain").stop().animate({width: '60px'}, 2000);
+                    $(".rightcurtain").stop().animate({width: '60px'}, 2000);
+                    $curtainopen = true;
+                } else {
+                    $("#back").fadeIn(200);
+                    $("#rope").stop().animate({top: '-40px'}, {queue: false, duration: 350, easing: 'easeOutBounce'});
+                    $(".leftcurtain").stop().animate({width: '50%'}, 2000);
+                    $(".rightcurtain").stop().animate({width: '51%'}, 2000, function() {
+                        type_text();
+                    });
+                    $curtainopen = false;
+                }
+                return false;
+            }
+            var source, dest, len, now = 0, delay = 100, letters = 1;
+            
+            function show() {
+                source = document.getElementById("text");
+                dest = document.getElementById("place");
+                len = source.innerHTML.length;
+                var d = source.innerHTML.substr(now, letters);
+                if (d == "%") {
+                    dest.innerHTML += "<br>"
+                }
+                else {
+                    dest.innerHTML += source.innerHTML.substr(now, letters);
+                }
+                now += letters;
+                if (now < len) {
+                    setTimeout("show()", delay); 
+                } else {
+					$(".cycle").animate({left: ($(window).width()) + 250}, 5000);
+					setTimeout(function(){
+						
+						$("#rope").stop().animate({top: '-40px'}, {queue: false, duration: 350, easing: 'easeOutBounce'});
+						$(".leftcurtain").stop().animate({width: '50%'}, 2000);
+						$(".rightcurtain").stop().animate({width: '51%'}, 2000, function() {
+							type_text();
+						});
+					}, 7000);
+                    
+                }
+            }
+            function playSound(){
+				var audio = document.getElementsByTagName('audio')[index];
+				audio.play();
+			}
+			
+            $(document).ready(function() {
+                ropeng();
+            });
+        </script>
+    </body>
+</html> 

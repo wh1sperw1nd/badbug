@@ -1,0 +1,216 @@
+/* -------------------- */
+*{
+	margin: 0;
+    padding: 0;
+}
+.clear {
+	margin: 0;
+    padding: 0;
+	height: 1px;
+	clear: both;
+}
+body.grey_bg {
+	background: #EBEBEB;
+    margin: 0;
+    padding: 0;
+	width: 100%;
+	height: 100%;
+}
+.frog {
+    background: url("../images/404/404-error.png") no-repeat scroll center center;
+    height: 600px;
+    margin: 50px auto;
+    padding: 0;
+    position: relative;
+    width: 1000px;
+}
+.frog a {
+    color: #222222;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    left: 110px;
+    position: absolute;
+    text-decoration: none;
+    text-transform: uppercase;
+    top: 30px;
+}
+.frog .text1 {
+    font-size: 156px;
+    letter-spacing: -15px;
+    line-height: 130px;
+}
+.frog a {
+    color: #222222;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.frog .text2 {
+    font-size: 66px;
+    letter-spacing: -5px;
+    line-height: 50px;
+}
+.frog .text3 {
+    font-size: 23px;
+    letter-spacing: -2px;
+    line-height: 26px;
+}
+.frog .text4 {
+    font-size: 35px;
+    letter-spacing: -3px;
+    line-height: 32px;
+}
+.frog a:hover .text4 {
+    color: #60BC2A;
+}
+
+/* -------------------- */
+body.homer {
+	background: #fff;
+    margin: 0;
+    padding: 0;
+	width: 100%;
+	height: 100%;
+}
+.error_wrap {
+	background: url("../images/404/homer-simpson.jpg") no-repeat scroll center right;
+	width: 970px;
+	margin: 10px auto;
+	height: 600px;
+	position: relative;
+}
+.f_size1 {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 90px;
+	color: #60BC2A;
+	line-height: 100%;
+	text-shadow: 0 5px 6px #000000;
+}
+.doh {
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 46px;
+    line-height: 100%;
+    margin: 15px 0;
+    text-transform: uppercase;
+}
+.wow {
+	color: #222222;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#err_text {
+	background: url("../images/404/terminal.png") no-repeat scroll 0 0;
+    color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    height: 340px;
+    line-height: 30px;
+    margin-top: 30px;
+    padding: 35px 0 0 60px;
+    width: 585px;
+}
+.to_main_page {
+	text-decoration: none;
+	font-size: 20px;
+	color: red;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 5px;
+	font-weight: bold;
+}
+.to_main_page:hover {
+	border: 1px dashed #60BC2A;
+	color: #60BC2A;
+}
+/* ------------------------ */
+.ops-message {
+	background: url("../images/404/404.jpg") no-repeat scroll left center;
+    height: 670px;
+    width: 800px;
+	float: left;
+}
+.homer_block {
+	background: url("../images/404/ishitlemons.jpg") no-repeat scroll right bottom;
+    height: 670px;
+    width: 400px;
+	float: right;
+}
+.entryops {
+	font: 12px/17px Arial,Helvetica,sans-serif;
+    left: 380px;
+    position: relative;
+    top: 100px;
+    width: 580px;
+}
+.h2ops {
+    color: #7ABF31;
+    font-size: 3em;
+	line-height: 100%;
+}
+.entryops p {
+    font-size: 1.3em;
+    padding: 20px 0 0;
+	line-height: 25px;
+}
+#redops {
+    color: red;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.entryops a {
+    color: #7ABF31;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+.entryops a:hover {
+	text-decoration: underline;
+}
+.error {
+	font-size: 70px !important;
+    font-family: Arial,Helvetica,sans-serif;
+    line-height: 100% !important;
+    text-transform: uppercase;
+	margin-bottom: 50px;
+	text-shadow: 0 -4px 5px #000000;
+}
+/* ----------------------- */
+body.robo {
+	background: #000;
+    margin: 0;
+    padding: 0;
+	width: 100%;
+	height: 100%;
+}
+.center {
+	background: url("../images/404/bg.jpg") repeat-x;
+	width: 100%;
+	height: 581px;
+	margin-top: 100px;
+}
+.robo_error {
+	background: url("../images/404/shilling.jpg") no-repeat;
+	height: 581px;
+	margin-left: 50px;
+	width: 950px;
+}
+.woops {
+	float: right;
+	margin-top: 100px;
+	font-size: 70px;
+	font-family: Arial,Helvetica,sans-serif;
+	color: red;
+	text-shadow: 0 -5px 5px #000000;
+}
+.page_not_found {
+    float: right;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 40px;
+    margin-top: 20px;
+    text-align: justify;
+    width: 350px;
+}

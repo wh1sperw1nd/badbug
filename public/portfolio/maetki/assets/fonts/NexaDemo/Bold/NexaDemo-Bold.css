@@ -1,0 +1,11 @@
+/* Webfont: NexaDemo-Bold */@font-face {
+    font-family: 'NexaDemo';
+    src: url('NexaDemo-Bold.eot'); /* IE9 Compat Modes */
+    src: url('NexaDemo-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('NexaDemo-Bold.woff') format('woff'), /* Modern Browsers */
+         url('NexaDemo-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+

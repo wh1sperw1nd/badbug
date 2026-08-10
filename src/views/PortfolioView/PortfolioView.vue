@@ -3,60 +3,47 @@
         <h1 class="title">Portfolio</h1>
         <ul>
             <li>
-                <a href="http://badbug-portfolio.atwebpages.com//maetki" target="_blank">1. Website of Vinnitsya castles.</a>
+                <a href="/portfolio/maetki/index.html" target="_blank">1. Website of Vinnytsia castles.</a>
             </li>
             <li>
-                <a href="http://badbug-portfolio.atwebpages.com//alettertosanta" target="_blank">2. A letter to Santa animation.</a>
+                <a href="/portfolio/alettertosanta/index.html" target="_blank">2. A letter to Santa animation.</a>
             </li>
             <li>
-                <a href="http://badbug-portfolio.atwebpages.com//crownbet" target="_blank">3. Crownbet Angular website.</a>
+                <a href="/portfolio/crownbet/index.html" target="_blank">3. Crownbet Angular website.</a>
             </li>
             <li>
-                <a href="http://badbug-portfolio.atwebpages.com//santa" target="_blank">4. Santa animation.</a>
+                <a href="/portfolio/bike/index.html" target="_blank">4. Bicycle animation.</a>
             </li>
             <li>
-                <a href="http://badbug-portfolio.atwebpages.com//bike" target="_blank">5. Bicycle animation.</a>
+                <a href="/portfolio/dream/index.html" target="_blank">5. Website Template.</a>
             </li>
             <li>
-                <a href="http://badbug-portfolio.atwebpages.com//birds" target="_blank">6. Birds animation (Google).</a>
+                <a href="/portfolio/fairytale/index.html" target="_blank">6. Fairy Tale animation.</a>
             </li>
             <li>
-                <a href="http://badbug-portfolio.atwebpages.com//dream" target="_blank">7. Website Template.</a>
+                <a href="/portfolio/kiss/index.html" target="_blank">7. Kiss animation.</a>
             </li>
             <li>
-                <a href="http://badbug-portfolio.atwebpages.com//fairytale" target="_blank">8. Fairy Tale animation.</a>
+                <a href="/portfolio/letsride/index.html" target="_blank">8. Lets ride a bike animation.</a>
             </li>
             <li>
-                <a href="http://badbug-portfolio.atwebpages.com//impress" target="_blank">9. Impress.js doors presentation.</a>
+                <a href="/portfolio/springDay/index.html" target="_blank">9. Girl with flower animation.</a>
             </li>
             <li>
-                <a href="http://badbug-portfolio.atwebpages.com//kiss" target="_blank">10. Kiss animation.</a>
+                <a href="/portfolio/vue/index.html" target="_blank">10. Vue test project.</a>
             </li>
             <li>
-                <a href="http://badbug-portfolio.atwebpages.com//letsride" target="_blank">11. Lets ride a bike animation.</a>
+                <a href="/portfolio/weather/index.html" target="_blank">11. Weather app.</a>
             </li>
             <li>
-                <a href="http://badbug-portfolio.atwebpages.com//springDay" target="_blank">12. Girl with flower animation.</a>
+                <a href="/portfolio/wedding/index.html" target="_blank">12. Wedding present for friends.</a>
             </li>
             <li>
-                <a href="http://badbug-portfolio.atwebpages.com//vue" target="_blank">13. Vue test project.</a>
+                <a href="/portfolio/slider/index.html" target="_blank">13. Video slider.</a>
             </li>
             <li>
-                <a href="http://badbug-portfolio.atwebpages.com//weather" target="_blank">14. Weather app.</a>
-            </li>
-            <li>
-                <a href="http://badbug-portfolio.atwebpages.com//wedding" target="_blank">15. Wedding present for friends.</a>
-            </li>
-            <li>
-                <a href="http://badbug-portfolio.atwebpages.com//slider" target="_blank">16. Video slider.</a>
-            </li>
-            <li>
-                <a href="http://badbug-portfolio.atwebpages.com//f7" target="_blank">17. Vinnitsya fountain test mobile app.</a>
+                <a href="/portfolio/f7/index.html" target="_blank">14. Vinnitsya fountain test mobile app.</a>
             </li>
         </ul>
     </div>
 </template>
-
-<script>
-
-</script>

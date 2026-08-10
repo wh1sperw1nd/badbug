@@ -1,0 +1,55 @@
+{
+  "banners": [
+    {
+      "title": "The bench",
+      "class": "fs-slide-the-bench",
+      "bannerUrl" : "./assets/images/banners/the-bench-homebanner.jpg",
+      "bannerTitle": "",
+      "bannerDescription": "",
+      "backgroundPosition":"center center;"
+    },
+    {
+      "title": "Know the signs",
+      "class": "fs-slide-know-the-signs",
+      "bannerUrl" : "./assets/images/banners/gambling-questionnaire.jpg",
+      "bannerTitle": "",
+      "bannerDescription": "",
+      "backgroundPosition":"center center;"
+    },
+    {
+      "title": "Set a limit",
+      "class": "fs-slide-set-a-limit",
+      "bannerUrl" : "./assets/images/banners/deposit-limits.jpg",
+      "bannerTitle": "",
+      "bannerDescription": "",
+      "backgroundPosition":"center center;"
+    }
+  ],
+  "bannerContent": {
+    "title": "Responsible Gambling with CrownBet"
+  },
+  "panelImageUrl":"./assets/images/contentImages/home page small image.jpg",
+  "plus18Description":"GAMBLING IS A RECREATIONAL ACTIVITY THAT SHOULD BE UNDERTAKEN IN MODERATION AND ONLY WITH MONEY THAT YOU CAN AFFORD TO LOSE.",
+  "fullText": "<p>CrownBet wants to ensure that you enjoy wagering in moderation, as a form of entertainment, in a safe and secure environment. We are here to help you keep your gambling expenditure in balance.</p>",
+  "listTitle1": "We want you to have fun, but always stay in control of your spending. This website has several tips and tools to help you do this:",
+  "list1": "<li>Deposit limits – for control over how much you spend with pre-committed limits;</li><li>Take a Break – to give you greater control by taking time out from betting;</li><li>Self-assessment tools – a calculator and questionnaire to make sure gambling remains in balance;</li>",
+  "contentLine1":"CrownBet does not want you to gamble with money you can’t afford to lose.",
+  "contentLine2":"If you feel you are not in control of your wagering, and would like immediate help, you can find support services <a href='#getting-help/face-to-face-help'>here</a>.",
+  "panelContent":[
+    {
+      "title":"SELF ASSESSMENT",
+      "imageUrl" :"./assets/images/banners/36363966_L.jpg",
+      "shortText":"Get a better picture of your gambling and make sure you keep it in balance. Go through the questionnaire or use the gambling calculator..."
+    },
+    {
+      "title":"TAKE A BREAK",
+      "imageUrl" :"./assets/images/banners/staying_in_control.jpg",
+      "shortText":"It’s important to take regular breaks from wagering. It’s easy to do so with Take A Break where you can take time out for a period of your choosing..."
+    },
+    {
+      "title":"GETTING HELP",
+      "imageUrl" :"./assets/images/banners/46809508_L.jpg",
+      "shortText":"There are many ways you can obtain support including by phone, on the web or in person. It’s free and easier than you may think..."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+* { margin:0; padding:0; }
+html, htm, table, td, tr, tbody, tfooter, div, span, p, label, form { margin: 0; padding: 0; }
+body        { background:#65812f; font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#2b353a; margin:0; padding:0; line-height:18px; }
+img         { border:0; vertical-align:top; }
+a           { text-decoration:underline; color:#5b8903;}
+a:hover     { text-decoration:none; color:#5b8903;}
+:focus      { outline: 0; }
+
+/* Headings */
+h1          { font-style:normal; font-family:Arial, Helvetica, sans-serif; color:#fffefe; color:#003866; font-size:24px; }
+h2          { font-size:25px; font-style:normal; font-weight:normal; font-family:Arial, Helvetica, sans-serif; color:#e0eb93; }
+h3          { font-size:13px; font-weight:bold; font-style:normal; font-family:Verdana, Geneva, sans-serif; color:#5b8903; }
+h4          { font-size:18px; font-style:normal; font-weight:normal; font-family:Arial, Helvetica, sans-serif; color:#5b8903; }
+h5          { font-size:24px; font-style:normal; font-weight:normal; font-family:Arial, Helvetica, sans-serif; color:#e8ff87; }
+h6, .page-id-26 h2 ,.page-id-2 h2 ,.page-id-3 h2 ,.page-id-5 h2,.page-id-8 h2,.page-id-29 h2 { font-size:24px; font-style:normal; font-weight:normal; font-family:Arial, Helvetica, sans-serif; color:#5b8903; }
+
+/* Forms */
+form        { display:inline; }
+fieldset    { border:0; }
+legend      { display:none; }
+
+/* Table */
+table       { border:0; border-collapse:collapse; border-spacing:0; empty-cells:show; font-size:100%; }
+th          { text-align:left; font-weight:normal; }
+td          {  }
+
+/* Content */
+address     { font-style:normal; }
+cite        { font-style:normal; }
+q,
+blockquote  { quotes:none; }
+q:before, 
+q:after     { content:''; }
+small,big   { font-size:1em; }
+sup         { font-size:1em; vertical-align:top; }
+
+/* Lists */
+ul,ol       { list-style:none; }
+
+/* Tools */
+br 		 { clear: none;}
+.nobr       { white-space:nowrap !important; }
+.wrap       { white-space:normal !important; }
+.a-left     { text-align:left !important; }
+.a-center   { text-align:center !important; }
+.a-right    { text-align:right !important; }
+.v-middle   { vertical-align:middle; }
+.f-left,
+.left       { float:left !important; }
+.f-right,
+.right      { float:right !important; }
+.f-none     { float:none !important; }
+.f-fix      { float:left; width:100%; }
+.no-display { display:none; }
+.no-margin  { margin:0 !important; }
+.no-padding { padding:0 !important; }
+.no-bg      { background:none !important; }
+.clear	 { clear: both;}
+.noimg	 { display: none;}

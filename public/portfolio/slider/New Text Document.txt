@@ -1,0 +1,2 @@
+http://glenbowden.com/
+http://jqueryui.com/demos/slider/#side-scroll

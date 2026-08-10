@@ -1,0 +1,66 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left"><a  class="custom-btn-back" ontouchend="javascript:window.stop();baseApplication.mainLayout.router.back()"><span>Назад</span></a></div>
+        <div class="center sliding"></div>
+        <!--<div class="right">-->
+            <!--<a href="#" class="link icon-only open-panel"><i class="icon menu fa fa-navicon"></i></a>-->
+        <!--</div>-->
+    </div>
+</div>
+<div class="pages">
+
+    <div data-page="sendPhotos" class="page">
+        <div class="page-content standard">
+            <div class="content-block">
+                <div class="content-block-title">Отправить фотографию в редакцию</div>
+                <div class="list-block send-photo-form inset block-fast-touch" id="send-form-wrapper">
+                    <form action="http://dumskaya.net/mobilesendphoto//send/?app=1" enctype="multipart/form-data" method="post" id="form">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="1000000000" />
+                        <ul>
+                            <li>
+                                <div class="item-inner">
+                                    <!--<div class="item-title label">Name</div>-->
+                                    <div class="item-input">
+                                        <input type="text" name="name"  id="picture_name" placeholder="Представьтесь" />
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-inner">
+                                    <!--<div class="item-title label">Description</div>-->
+                                    <div class="item-input">
+                                        <textarea name="text" id="picture_description" placeholder="Пару слов о фото"></textarea>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-inner">
+                                    <a href="#" class="button button-fill color-green file-button" id="file-button">
+                                        Выбрать фотографию
+                                        <input class="send-photo" type="file" name="pictures[]" accept="image/*" id="file" multiple <% if(window.cordova&&device.platform=='Android'){print("style='display:none'")}%>/>
+                                    </a>
+                                    <!--<input class="send-photo" type="file" name="picture" accept="image/jpeg,image/png,image/gif" id="file" capture="camera">-->
+                                    <!--<input class="send-photo" type="file" name="img" accept="image/jpeg,image/png,image/gif" />-->
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-inner no-border block" id="imgPreView">
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-inner">
+                                    <button class="button button-big button-fill send-button" id="send-button">
+                                        <span class="preloader preloader-white"></span>
+
+                                        Отправить
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

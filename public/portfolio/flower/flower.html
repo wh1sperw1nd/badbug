@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta content='text/html; charset=utf-8' http-equiv="Content-Type"/>
+  <meta name="Copyright" content="Frost-Design Studio"/>
+  <meta name="author" content="Arcanum"/>
+  <link rel="stylesheet" href="style.css" type="text/css"/>
+  <title>For you!!!</title>
+  <script type="text/javascript" src="jquery.js"></script>
+ </head>
+<body onload="show();" id="flower">
+    <div class="page">
+<script type="text/javascript">
+var source,dest,len,now=0,delay=100,letters=1;
+function show()
+{
+			source = document.getElementById("text");
+			dest = document.getElementById("place");
+			len = source.innerHTML.length;
+			var d = source.innerHTML.substr(now,letters);
+			if (d=="%") { dest.innerHTML +="<br>" }
+			else {dest.innerHTML += source.innerHTML.substr(now,letters);}
+			now+=letters;
+			if(now<len)
+			setTimeout("show()",delay);
+}
+  if (navigator.appName == "Microsoft Internet Explorer") {
+		document.write('<bgsound src="images/lullaby.mp3" LOOP="1">');
+    }
+    else {
+		document.write('<embed type="application/x-mplayer2" pluginspage="http://www.microsoft.com/Windows/MediaPlayer/" Name="MediaPlayer" src="images/lullaby.mp3" AutoStart="true" ShowStatusBar="0" ShowControls="0" ShowDisplay="0" volume="100" HEIGHT="0" WIDTH="0" LOOP="1"><br>');
+    }
+</script>
+    <div class="letter">
+        <!--<p style="display:none" id="text" align="left">
+            О как таинственно нежны,%
+			И как божественно прекрасны%
+			Эти волшебные цветы,%
+			Хотя, быть может и опасны.%%
+
+			Их красный цвет – как цвет мечты,%
+			Не сбывшейся, но так манящей%
+			К себе с небесной высоты,%
+			Безумно в облаках парящей.%%
+
+			И эти капельки росы,%
+			На лепестки цветов упавшей,%
+			Как слезы раненой души,%
+			От одиночества уставшей.%%
+
+			Их свежий, тонкий аромат,%
+			Я знаю, голову дурманит,%
+			Он словно облаком объят,%
+			И сладкой негой тебя манит.%%
+
+			Но все же, острые шипы%
+			У красных роз уж очень колки,%
+			Ведь если их коснешься ты,%
+			То сердце вновь пронзят иголки%%
+
+			Ох, эти странные цветы.%
+			Но даже если и опасны,%
+			И пусть они - всего мечты,%
+			Они чудесны и прекрасны!%%
+
+			И может быть, когда-нибудь%
+			Я прикоснусь к такому чуду.%
+			Хотя мне все твердят: «забудь»%
+			Но я отвечу: « Не забуду».%%
+         </p>-->
+		<p style="display:none" id="text" align="left">
+			В этот день 8 Марта%
+			Праздник первых дней вены%
+			Для любимых женщин мира%
+			Распускаются цветы.%%
+			
+			В этот день они как розы%
+			Так красивы и милы,%
+			И для каждой мамы, солнце%
+			Дарит лучик теплоты.%%
+			
+			Пусть мужчины в праздник этот%
+			Не скупятся на слова,%
+			А из уст у них слетают%
+			Сердцу милые слова:%%
+			
+			“Я люблю тебя родная,%
+			В мире ты одна такая,%
+			Как лучистая звезда,%
+			Что не меркнет никогда”.%%
+			
+			Всем женщинам мира,%
+			Желаю я счастья, улыбок%
+			И смеха, и радостных глаз.%
+			Забыть все невзгоды и все ненастья%
+			В весенний день 8 Марта.%
+		</p>
+    <div id="place"></div>
+</div>
+</div>
+</body>
+</html>

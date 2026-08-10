@@ -9,7 +9,7 @@
       friends, I'm just Frost. As you've probably figured
       out, I'm a web developer and JS coder, a former
       student of VNAU, and a bit of a slacker). I do this
-      just a little bit, about 12 years. I know, someone
+      just a little bit, about 15 years. I know, someone
       might say that's not much experience. Of course, I
       don't claim to be a universal genius, but as it
       seems to me, during this time, I've learned a lot,
@@ -399,5 +399,3 @@
     </ul>
   </div>
 </template>
-<script>
-</script>

@@ -1,0 +1,34 @@
+<div>
+    <div class="slider smaller">
+        <div class="slider-inner">
+            <!-- Slides -->
+            <div class="fs-slides">
+                <div class="fs-slide" ng-attr-style="background-image: url({{content.banner.url}});background-position: {{content.banner.backgroundPosition}}">
+                    <div class="banner-text">
+                        <div class="banner-title">{{content.banner.bannerTitle}}</div>
+                        <div class="banner-desc">{{content.banner.bannerDescriptionFirstLine}}</div>
+                        <div class="banner-desc">{{content.banner.bannerDescriptionSecondLine}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <sub-menu></sub-menu>
+</div>
+<div class="container panel-crown panel-crown-white">
+    <div class="row">
+        <div class="col-lg-7">
+            <h2 class="">{{submenus[1].name}}</h2>
+            <p ng-bind-html="renderHtml(content.depositLimitsPageContent.contentLine1)"></p>
+            <p ng-bind-html="renderHtml(content.depositLimitsPageContent.contentLine2)"></p>
+            <p ng-bind-html="renderHtml(content.depositLimitsPageContent.contentLine3)"></p>
+            <p ng-bind-html="renderHtml(content.depositLimitsPageContent.contentLine4)"></p>
+            <p ng-bind-html="renderHtml(content.depositLimitsPageContent.contentLine5)"></p>
+            <p class="body-title" ng-bind-html="renderHtml(content.depositLimitsPageContent.contentLine6)"></p>
+        </div>
+        <div class="col-lg-5">
+            <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe src="//fast.wistia.net/embed/iframe/k7bl7rp0pt?videoFoam=true" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe></div></div>
+            <script src="//fast.wistia.net/assets/external/E-v1.js" async></script>
+        </div>
+    </div>
+</div>

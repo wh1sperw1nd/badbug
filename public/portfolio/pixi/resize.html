@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <meta name = "apple-mobile-web-app-capable" content="yes"/>
+    <meta name = "apple-mobile-web-app-status-bar-style" content = "black"/>
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="./js/libs/pixi.dev.js"></script>
+</head>
+
+<style>
+
+    /*canvas*/
+    /*{*/
+        /*width: 100% !important;*/
+        /*height: 100%  !important;*/
+        /*top:0;*/
+        /*left:0;*/
+        /*position: absolute;*/
+    /*}*/
+
+
+
+</style>
+<body style="margin: 0; padding: 0; width: 100%; height: 100%">
+
+
+<script>
+
+
+var assets=[
+    "./img/table_shadow.png",
+    "./img/table_top.png",
+    "./img/chip_blue_big_1.png",
+    "./img/slider/sliderback_left.png",
+    "./img/slider/slider_minus.png",
+    "./img/slider/sliderback_right.png",
+    "./img/slider/slider_plus.png",
+    "./img/slider/slider_back.png",
+    "./img/slider/slider_glow0.png",
+    "./img/slider/slider_glow1.png",
+    "./img/slider/slider_glow2.png",
+    "./img/slider/slider.png",
+    "./img/plate_base.png",
+    "./img/plate_player.png",
+    "./img/potbet_50.png",
+    "./img/potbet_75.png",
+    "./img/potbet_100.png",
+    "./img/menu.png",
+    "./img/slider/slider_minus_down.png",
+    "./img/slider/slider_plus_down.png",
+    "./img/chips_white_small_2.png",
+    "./img/plate_timer.png"
+];
+
+var assetLoader=new PIXI.AssetLoader(assets);
+var assThis;
+//gamescreen
+function GameScreen(){
+
+    this.initialize();
+}
+
+var gsProto = GameScreen.prototype;
+
+gsProto.initialize = function(){
+
+    this.deviceWidth = window.innerWidth;
+    this.deviceHeight = window.innerHeight;
+
+    this.gameContainer = null;
+    this.tableElement = null;
+    this.chipElement = null;
+    this.sliderMinusSprite = null;
+    this.sliderPlusSprite = null;
+    this.sliderCenterSprite = null;
+    this.sliderButton = null;
+
+    this.potbet50Sprite = null;
+    this.potbet75Sprite = null;
+    this.potbet100Sprite = null;
+
+    this.elemetsArray = [];
+
+}
+
+gsProto.create = function(){
+
+    this.createGameContainer();
+    this.createTableElement();
+    this.createChipElement();
+    this.createPotButtons();
+    this.createUsers();
+
+
+
+
+    this.createStage();
+    this.createSliderContainer();
+    this.addElementsToStage();
+    this.setupBaseGameEventListeners();
+}
+
+gsProto.createStage = function(){
+    this.gameStage = new PIXI.Stage(0x0000FF,true);
+    this.gameStage.setBackgroundColor(0x0000FF);
+}
+
+gsProto.addElementsToStage = function(){
+    this.gameStage.addChildAt(this.gameContainer,0);
+    this.gameStage.addChildAt(this.sliderMinusSprite, 1);
+    this.gameStage.addChildAt(this.sliderPlusSprite, 1);
+    this.gameStage.addChildAt(this.sliderCenterSprite, 1);
+    this.gameStage.addChildAt(this.sliderButton,2);
+    ///this.gameStage.addChildAt(this.chipElement,1);
+}
+
+gsProto.run = function(){
+
+    this.renderer = new PIXI.autoDetectRenderer(this.deviceWidth, this.deviceHeight,{view:null, transparent:false, antialias:false, preserveDrawingBuffer:false, resolution:window.devicePixelRatio, clearBeforeRender:true});//
+    console.log(this.renderer)
+    this.resize();
+    document.body.appendChild(this.renderer.view);
+
+    var self = this;
+    requestAnimationFrame(animate);
+
+    function animate() {
+        self.renderer.render(self.gameStage);
+        requestAnimationFrame(animate);
+    }
+}
+
+gsProto.setupBaseGameEventListeners = function(){
+    window.addEventListener('resize', this.resize.bind(this), false);
+    window.addEventListener('orientationchange', this.resize.bind(this), false);
+}
+
+
+gsProto.getResizeParams = function(){
+
+    /*
+     this.deviceWidth = window.innerWidth;
+     this.deviceHeight = window.innerHeight;
+     */
+    var standartWidth = 640;
+    var standartHeight = 960;
+    this.deviceWidth = window.innerWidth;
+    this.deviceHeight = window.innerHeight;
+    var orientationType = 0; // 0:portrait; 1:landscape
+    if(window.innerWidth > window.innerHeight)
+    {
+        standartWidth = 960;
+        standartHeight = 640;
+        orientationType = 1;
+    }
+
+    var scaleWidthFactor = (this.deviceWidth / standartWidth);
+    var scaleHeightFactor = (this.deviceHeight / standartHeight);
+
+    var scaleDeltaMin = Math.min(scaleWidthFactor, scaleHeightFactor);
+    var scaleDeltaMax = Math.max(scaleWidthFactor, scaleHeightFactor);
+
+    var resizeParams = {orientationType: orientationType,deviceWidth: this.deviceWidth, deviceHeight:this.deviceHeight,scaleWidthFactor:scaleWidthFactor, scaleHeightFactor:scaleHeightFactor, scaleDeltaMin:scaleDeltaMin, scaleDeltaMax:scaleDeltaMax};
+
+    return resizeParams;
+
+}
+
+gsProto.resize = function(){
+
+    setTimeout(function() {
+        var resizeParams = this.getResizeParams();
+        this.renderer.resize(resizeParams.deviceWidth, resizeParams.deviceHeight)
+        for (var i = 0; i < this.elemetsArray.length; i++) {
+            this.elemetsArray[i].resizeFunc(resizeParams)
+        }
+    }.bind(this),100);
+}
+
+gsProto.createGameContainer = function(){
+    this.gameContainer = new PIXI.DisplayObjectContainer();
+    this.gameContainer.position.x = 1;
+    this.gameContainer.position.y = 1;
+    console.log(this.gameContainer)
+    this.gameContainer.resizeFunc = function (resizeParams) {
+        this.scale.x = resizeParams.scaleDeltaMin
+        this.scale.y = resizeParams.scaleDeltaMin
+        this.position.x = resizeParams.deviceWidth / 2;
+        this.position.y = resizeParams.deviceHeight / 2;
+        if(resizeParams.orientationType)
+        {
+            this.rotation = 1.57;
+        }
+        else
+            this.rotation = 0;
+    }
+    this.elemetsArray.push(this.gameContainer);
+//    this.addElementsToGameContainer();
+}
+
+gsProto.addElementsToGameContainer = function(element, index){
+    this.gameContainer.addChildAt(element, index);
+}
+
+gsProto.createTableElement = function(){
+    this.tableElement = new PIXI.Sprite.fromImage("./img/table_shadow.png");
+
+    this.tableElement.anchor.x = 0.5
+    this.tableElement.anchor.y = 0.5
+
+    var tableSprite = new PIXI.Sprite.fromImage("./img/table_top.png");
+
+    tableSprite.anchor.x = 0.5
+    tableSprite.anchor.y = 0.5
+
+    this.tableElement.addChild(tableSprite)
+    this.addElementsToGameContainer(this.tableElement,0)
+}
+
+gsProto.createChipElement = function(){
+
+    this.chipElement = new PIXI.Sprite.fromImage("./img/chip_blue_big_1.png");
+
+    this.chipElement.scale.x = 1.5;
+    this.chipElement.scale.y = 1.5;
+
+    this.chipElement.anchor.x = 0.5;
+    this.chipElement.anchor.y = 0.5;
+
+    this.chipElement.interactive = true;
+    this.chipElement.buttonMode = true;
+
+    var betAmount = new PIXI.Text("75", {fill:"white"})
+    betAmount.anchor.x = 0.5;
+    betAmount.anchor.y = 0.5;
+    //betAmount.position.y = 10;
+
+    this.chipElement.addChild(betAmount)
+
+    this.chipElement.resizeFunc = function(resizeParams){
+        this.resizeParams = resizeParams;
+        if(resizeParams.orientationType)
+        {
+            this.position.x = 230;
+            this.position.y = -300;
+            this.rotation = -1.57;
+        }
+        else {
+            this.position.x = 240;
+            this.position.y = 300;
+            this.rotation = 0;
+        }
+    }
+
+    this.elemetsArray.push(this.chipElement);
+
+    this.chipElement.addEventListeners = function(){
+        this.mousedown = this.touchstart = function (data) {
+            //		data.originalEvent.preventDefault()
+            // store a refference to the data
+            // The reason for this is because of multitouch
+            // we want to track the movement of this particular touch
+            this.data = data;
+            this.alpha = 0.9;
+            this.dragging = true;
+        };
+
+        // set the events for when the mouse is released or a touch is released
+        this.mouseup = this.mouseupoutside = this.touchend = this.touchendoutside = function (data) {
+            this.alpha = 1
+            this.dragging = false;
+            // set the interaction data to null
+            this.data = null;
+        };
+
+        // set the callbacks for when the mouse or a touch moves
+        this.mousemove = this.touchmove = function (data) {
+
+            if (this.dragging) {
+//                console.log(this);
+                // need to get parent coords..
+                var newPosition = this.data.getLocalPosition(this.parent);
+                if(this.resizeParams.orientationType)
+                {
+                    this.position.x = -newPosition.x//-50;
+                    this.position.y = -newPosition.y//-50;
+                }
+                else {
+                    this.position.x = newPosition.x//-50;
+                    this.position.y = newPosition.y//-50;
+                }
+            }
+        }
+    }
+
+    this.chipElement.addEventListeners();
+    this.addElementsToGameContainer(this.chipElement,1);
+
+}
+
+gsProto.createSliderContainer = function () {
+    this.createSliderMinusButton();
+    this.createSliderPlusButton();
+    this.createSliderCenter();
+    this.createSliderButton();
+
+    /*
+    impossible to use any 'native' Containers
+    */
+}
+
+gsProto.createSliderMinusButton = function(){
+    var self = this;
+    this.sliderMinusSprite = new PIXI.Sprite.fromImage("./img/slider/sliderback_left.png");
+
+    this.sliderMinusSprite.position.x = 0;
+    this.sliderMinusSprite.position.y = this.deviceHeight;
+
+    this.sliderMinusSprite.interactive = true;
+    this.sliderMinusSprite.buttonMode = true;
+
+    var minusButtonSprite = new PIXI.Sprite.fromImage("./img/slider/slider_minus.png");
+    minusButtonSprite.anchor.x = 0;
+    minusButtonSprite.anchor.y = 1;
+
+    var minusDownButtonSprite = new PIXI.Sprite.fromImage("./img/slider/slider_minus_down.png");
+    minusDownButtonSprite.anchor.x = 0;
+    minusDownButtonSprite.anchor.y = 1;
+    minusDownButtonSprite.visible = false;
+
+    minusButtonSprite.addChild(minusDownButtonSprite);
+
+    this.sliderMinusSprite.addChild(minusButtonSprite);
+
+    this.sliderMinusSprite.resizeFunc = function(resizeParams){
+        this.scale.x = resizeParams.scaleDeltaMin;
+        this.scale.y = resizeParams.scaleDeltaMin;
+
+        if(resizeParams.orientationType)
+        {
+            this.anchor.x = 0;
+            this.anchor.y = 1;
+            this.position.x = resizeParams.deviceWidth;
+            this.position.y = resizeParams.deviceHeight;
+            this.rotation = -1.57;
+        }
+        else
+        {
+            this.rotation = 0;
+            this.anchor.x = 0;
+            this.anchor.y = 1;
+            this.position.x = 0;
+            this.position.y = resizeParams.deviceHeight;
+        }
+
+    }
+
+    this.sliderMinusSprite.addEventListeners = function(){
+        var timer = null;
+        this.mousedown = this.touchstart = function (data) {
+            this.data = data;
+            this.children[0].children[0].visible = true;
+            self.sliderButton.decrease();
+//            timer = setInterval(self.sliderButton.decrease,100);
+        }
+
+        this.mouseup = this.mouseupoutside = this.touchend = this.touchendoutside = function (data) {
+//            clearInterval(timer);
+            this.children[0].children[0].visible = false
+            // set the interaction data to null
+            this.data = null;
+
+        };
+    }
+
+    this.sliderMinusSprite.addEventListeners();
+
+    this.elemetsArray.push(this.sliderMinusSprite)
+}
+
+gsProto.createSliderPlusButton = function(){
+
+    var self = this;
+    this.sliderPlusSprite = new PIXI.Sprite.fromImage("./img/slider/sliderback_right.png");
+
+    this.sliderPlusSprite.interactive = true;
+    this.sliderPlusSprite.buttonMode = true;
+
+    this.sliderPlusSprite.resizeFunc = function(resizeParams)
+    {
+        this.scale.x = resizeParams.scaleDeltaMin;
+        this.scale.y = resizeParams.scaleDeltaMin;
+        if(resizeParams.orientationType)
+        {
+            this.position.x = resizeParams.deviceWidth;
+            this.position.y = 0;
+            this.anchor.x = 1;
+            this.anchor.y = 1;
+            this.rotation = -1.57;
+        }
+        else{
+            this.position.x = resizeParams.deviceWidth;
+            this.position.y = resizeParams.deviceHeight;
+            this.anchor.x = 1;
+            this.anchor.y = 1;
+            this.rotation = 0;
+        }
+    }
+
+
+    var plusButtonSprite = new PIXI.Sprite.fromImage("./img/slider/slider_plus.png");
+    plusButtonSprite.anchor.x = 1;
+    plusButtonSprite.anchor.y = 1;
+
+    plusButtonSprite.scale.x = 1;
+    plusButtonSprite.scale.y = 1;
+
+
+    var plusDownButtonSprite = new PIXI.Sprite.fromImage("./img/slider/slider_plus_down.png");
+    plusDownButtonSprite.anchor.x = 1;
+    plusDownButtonSprite.anchor.y = 1;
+    plusDownButtonSprite.visible = false;
+
+    plusButtonSprite.addChild(plusDownButtonSprite);
+
+    this.sliderPlusSprite.addEventListeners = function(){
+        var timer= null;
+        this.mousedown = this.touchstart = function (data) {
+            this.data = data;
+            this.children[0].children[0].visible = true;
+            self.sliderButton.increase();
+//            timer =setInterval(self.sliderButton.increase,300);
+        }
+
+        this.mouseup = this.mouseupoutside = this.touchend = this.touchendoutside = function (data) {
+//            clearInterval(timer);
+            this.children[0].children[0].visible = false
+            // set the interaction data to null
+            this.data = null;
+
+        };
+    }
+
+
+
+
+    this.sliderPlusSprite.addChild(plusButtonSprite);
+    this.elemetsArray.push(this.sliderPlusSprite);
+    this.sliderPlusSprite.addEventListeners();
+}
+
+
+gsProto.createSliderCenter = function(){
+
+    var self = this;
+    this.sliderCenterSprite = new PIXI.Sprite.fromImage("./img/slider/slider_back.png");
+
+    this.sliderCenterSprite.resizeFunc = function(resizeParams){
+        this.scale.x = resizeParams.scaleDeltaMin;
+        this.scale.y = resizeParams.scaleDeltaMin;
+        if(resizeParams.orientationType)
+        {
+            this.rotation = -1.57;
+            this.anchor.x = 1;
+            this.anchor.y = 1;
+            this.position.x = resizeParams.deviceWidth
+            this.position.y = self.sliderPlusSprite.texture.width*resizeParams.scaleDeltaMin;
+            this.width = resizeParams.deviceWidth-self.sliderMinusSprite.texture.width*resizeParams.scaleDeltaMin;
+        }
+        else{
+            this.position.x = self.sliderMinusSprite.texture.width*resizeParams.scaleDeltaMin
+            this.position.y = resizeParams.deviceHeight;
+            this.anchor.x = 0;
+            this.anchor.y = 1;
+            this.width = resizeParams.deviceWidth-self.sliderPlusSprite.texture.width*resizeParams.scaleDeltaMin;
+            this.rotation = 0;
+        }
+    }
+
+
+
+
+    this.elemetsArray.push(this.sliderCenterSprite);
+}
+
+gsProto.createSliderButton = function(){
+    var self = this;
+    this.sliderButton = new PIXI.Sprite.fromImage("./img/slider/slider.png");
+    this.sliderButton.interactive = true;
+    this.sliderButton.buttonMode = true;
+
+
+    this.sliderButton.resizeFunc = function(resizeParams){
+        this.scale.x = resizeParams.scaleDeltaMin;
+        this.scale.y = resizeParams.scaleDeltaMin;
+        this.resizeParams = resizeParams;
+
+        this.position.begin = {p:(self.sliderMinusSprite.children[0].texture.width + this.texture.width/2)*resizeParams.scaleDeltaMin, l:(self.sliderPlusSprite.children[0].texture.width+this.texture.width/2)*resizeParams.scaleDeltaMin};
+        this.position.end = {p:(this.resizeParams.deviceWidth - (self.sliderPlusSprite.children[0].texture.width + this.texture.width/2) * this.resizeParams.scaleDeltaMin), l:resizeParams.deviceHeight-(self.sliderMinusSprite.children[0].texture.width+this.texture.width/2)*resizeParams.scaleDeltaMin}
+
+        if(resizeParams.orientationType)
+        {
+            this.rotation = -1.57;
+            this.position.y = this.position.end.l;
+            this.position.x = resizeParams.deviceWidth;
+            this.anchor.x = 0.5;
+            this.anchor.y = 1;
+        }
+        else
+        {
+            this.anchor.x = 0.5;
+            this.anchor.y = 1;
+            this.position.y = resizeParams.deviceHeight;
+            this.position.x = (self.sliderMinusSprite.children[0].texture.width + this.texture.width/2)*resizeParams.scaleDeltaMin;
+            this.rotation = 0;
+        }
+    }
+
+    this.sliderButton.addEventListeners = function(){
+        var thisObj = this;
+
+        this.increase = function(){
+            if(thisObj.resizeParams.orientationType)
+            {
+                if (thisObj.position.y-20 < thisObj.position.begin.l)
+                    thisObj.position.y = thisObj.position.begin.l;
+                else
+                    thisObj.position.y -= 20;
+            }
+            else{
+                if (thisObj.position.x+20 > thisObj.position.end.p)
+                    thisObj.position.x = thisObj.position.end.p;
+                else
+                    thisObj.position.x += 20;
+            }
+        }
+
+        this.decrease = function(){
+            if(thisObj.resizeParams.orientationType){
+                if(thisObj.position.y +20 > thisObj.position.end.l)
+                    thisObj.position.y = thisObj.position.end.l
+                else
+                    thisObj.position.y +=20;
+            }
+            else
+            {
+                if(thisObj.position.x-20 < thisObj.position.begin.p)
+                {
+                    thisObj.position.x = thisObj.position.begin.p;
+                }
+                else
+                    thisObj.position.x -= 20;
+            }
+        }
+
+        this.mousedown = this.touchstart = function(data)
+        {
+            //		data.originalEvent.preventDefault()
+            // store a refference to the data
+            // The reason for this is because of multitouch
+            // we want to track the movement of this particular touch
+            this.data = data;
+            this.dragging = true;
+        };
+
+
+        this.mouseup = this.mouseupoutside = this.touchend = this.touchendoutside = function(data)
+        {
+            this.dragging = false;
+            // set the interaction data to null
+            this.data = null;
+        };
+
+        // set the callbacks for when the mouse or a touch moves
+        this.mousemove = this.touchmove = function(data)
+        {
+
+            if(this.dragging)
+            {
+                // need to get parent coords..
+                var newPosition = this.data.getLocalPosition(this.parent);
+                if(thisObj.resizeParams.orientationType)
+                {
+
+                    if (newPosition.y < thisObj.position.begin.l)
+                        this.position.y = thisObj.position.begin.l;
+                    else if (newPosition.y > thisObj.position.end.l)
+                        this.position.y = thisObj.position.end.l
+                    else
+                        this.position.y = newPosition.y;
+                }
+                else {
+                    if (newPosition.x < thisObj.position.begin.p)
+                        this.position.x = thisObj.position.begin.p;
+                    else if (newPosition.x > thisObj.position.end.p)
+                        this.position.x = thisObj.position.end.p;
+                    else
+                        this.position.x = newPosition.x;
+                }
+
+            }
+        }
+    }
+
+    this.elemetsArray.push(this.sliderButton);
+    this.sliderButton.addEventListeners();
+
+}
+
+gsProto.createPotButtons = function(){
+    this.potbet50Sprite = new PIXI.Sprite.fromImage("./img/potbet_50.png");
+
+
+    this.potbet75Sprite = new PIXI.Sprite.fromImage("./img/potbet_75.png");
+
+    this.potbet100Sprite = new PIXI.Sprite.fromImage("./img/potbet_100.png");
+
+    this.potbet50Sprite.resizeFunc = function(resizeParams){
+        this.anchor.x = 0.5;
+        this.anchor.y = 0.5;
+        if(resizeParams.orientationType){
+            this.rotation = -1.57;
+            this.position.x = -100;
+            this.position.y = 120;
+        }
+        else{
+            this.rotation = 0;
+            this.position.x = -120;
+            this.position.y = -150;
+        }
+
+    }
+
+    this.potbet75Sprite.resizeFunc = function(resizeParams){
+        this.anchor.x = 0.5;
+        this.anchor.y = 0.5;
+        if(resizeParams.orientationType)
+        {
+            this.rotation = -1.57;
+            this.position.x = -100;
+            this.position.y = -10;
+        }
+        else{
+            this.rotation = 0;
+            this.position.x = 5;
+            this.position.y = -150;
+        }
+    }
+
+    this.potbet100Sprite.resizeFunc = function(resizeParams){
+        this.anchor.x = 0.5;
+        this.anchor.y = 0.5;
+        if(resizeParams.orientationType)
+        {
+            this.rotation = -1.57;
+            this.position.x = -100;
+            this.position.y = -140;
+        }
+        else{
+            this.rotation = 0;
+            this.position.x = 130;
+            this.position.y = -150;
+        }
+    }
+
+    this.elemetsArray.push(this.potbet50Sprite);
+    this.elemetsArray.push(this.potbet75Sprite);
+    this.elemetsArray.push(this.potbet100Sprite);
+
+    this.addElementsToGameContainer(this.potbet50Sprite,1)
+    this.addElementsToGameContainer(this.potbet75Sprite,1)
+    this.addElementsToGameContainer(this.potbet100Sprite,1)
+
+
+}
+
+gsProto.createUsers = function(){
+
+    var users =[
+        {p:{
+            rotation : 0,
+            anchor : {x : 0.5, y : 0.5},
+            position : {y : 300,x : 0}
+        },
+        l:{
+            rotation : -1.57,
+            anchor : {x : 0.5, y : 0.5},
+            position : {y : 0,x : 220}
+        }
+
+        }
+    ];
+
+    for(var i = 0; i<users.length;i++){
+        this.createUser(users[i]);
+    }
+
+
+}
+
+gsProto.createUser = function(userJson,i){
+//    for(var i = 0; i<usersJson.length;i++){
+    this["plateBaseSprite"+i] = new PIXI.Sprite.fromImage("./img/plate_base.png");
+
+
+
+    var timer = new PIXI.Sprite.fromImage("./img/plate_timer.png");
+    timer.anchor.x = 0.5
+    timer.anchor.y = 0.5
+
+    var chipBet = new PIXI.Sprite.fromImage("./img/chips_white_small_2.png");
+    chipBet.anchor.x = 0.5
+    chipBet.anchor.y = 1;
+
+    var chipAmount = new PIXI.Text("10", {fill:"black",font:" 20pt Arial"})
+    chipAmount.anchor.x = 0.5;
+    chipAmount.anchor.y = 0;
+    chipAmount.position.y = -40;
+    chipBet.addChild(chipAmount)
+
+    var userName = new PIXI.Text("userName", {fill:"red",font:"15pt  Arial"})
+    userName.anchor.x = 0.5;
+    userName.anchor.y = 0;
+    userName.position.y = 5;
+
+    var playerAmount = new PIXI.Text("150", {fill:"white",font:"15pt  Arial"})
+    playerAmount.anchor.x = 0.5;
+    playerAmount.anchor.y = 0;
+    playerAmount.position.y = 30;
+
+    this["plateBaseSprite"+i].addChild(timer);
+    this["plateBaseSprite"+i].addChild(chipBet);
+    this["plateBaseSprite"+i].addChild(userName);
+    this["plateBaseSprite"+i].addChild(playerAmount);
+
+    this["plateBaseSprite"+i].resizeFunc = function(resizeParams){
+        if(resizeParams.orientationType)
+        {
+            this.rotation = userJson.l.rotation;
+            this.anchor = userJson.l.anchor;
+            this.position = userJson.l.position;
+        }
+        else
+        {
+            this.rotation = userJson.p.rotation;
+            this.anchor = userJson.p.anchor;
+            this.position = userJson.p.position;
+        }
+    }
+
+    this.elemetsArray.push(this["plateBaseSprite"+i])
+    this.addElementsToGameContainer(this["plateBaseSprite"+i],1);
+//    }
+}
+
+
+
+assetLoader.addEventListener("onComplete",function(e){
+    console.log("done");
+    console.log(e);
+    var game = new GameScreen();
+    game.create();
+    game.run();
+    //runGame();
+
+//    assThis = e;
+//    console.log(this);
+//    console.log(assetLoader)
+});
+
+assetLoader.addEventListener("onProgress",function(e){
+
+
+});
+assetLoader.load();
+
+</script>
+
+</body>
+</html>

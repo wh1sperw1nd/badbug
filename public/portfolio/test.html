@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no"/>
+    <link type="text/css" rel="stylesheet" href="./common/css/style.css" />
+    <title>test iframe</title>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .wrapper {
+            width: 100%;
+            height: 100%;
+        }
+        header {
+            z-index: 2;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #ff0000;
+            color: #fff;
+            height: 44px;
+            font-family: Arial;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        footer {
+            z-index: 2;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgb(31, 41, 71);
+            color: #fff;
+            height: 19px;
+            font-family: Arial;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        iframe {
+            padding-top: 44px;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrapper">
+    <header>Some Header</header>
+    <iframe src="https://dev.virginbet.com/pages/promotions"></iframe>
+    <footer>Balance: $9999999999</footer>
+</div>
+<script>
+    window.onload = function (){
+        var iframe = document.querySelector('iframe');
+        iframe.style.height = window.innerHeight - 44 - 19 + 'px';
+
+        window.onresize = function (){
+            setTimeout(function (){
+                iframe.style.height = window.innerHeight - 44 - 19 + 'px';
+            }, 100);
+        }
+    }
+</script>
+</body>
+</html>

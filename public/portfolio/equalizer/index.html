@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script src="jquery.cycle.lite.js" type="text/javascript"></script>
+	<style>
+		body{
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			background: #000;
+		}
+		ul.colorBars {
+			list-style: none;
+			width: 540px;
+			padding: 0;
+			height: 100px;
+			margin: 0 auto;
+		}
+		ul.colorBars li {
+			width: 45px;
+			height: 100%;
+			float: left;
+			position: relative;
+		}
+		ul.colorBars li span {
+			display: block;
+			width: 40px;
+			position: absolute;
+			bottom: 0;
+		}
+		.bcbld {
+			background-color: #005067;
+		}
+		.bcblm {
+			background-color: #006B8A;
+		}
+		.bcbll {
+			background-color: #007EA2;
+		}
+		.bcgrd {
+			background-color: #4A6100;
+		}
+		.bcgrm {
+			background-color: #617D00;
+		}
+		.bcgrl {
+			background-color: #6F8F00;
+		}
+		.bcord {
+			background-color: #B35100;
+		}
+		.bcorm {
+			background-color: #D76100;
+		}
+		.bcorl {
+			background-color: #F16C00;
+		}
+		.bcpid {
+			background-color: #B0054A;
+		}
+		.bcpim {
+			background-color: #D50759;
+		}
+		.bcpil {
+			background-color: #F40A66;
+		}
+	</style>
+</head>
+	<body>
+		<ul class="colorBars">
+			<li class=""><span class="bar bcbld"></span></li>
+			<li class=""><span class="bar bcblm"></span></li>
+			<li class=""><span class="bar bcbll"></span></li>
+			<li class=""><span class="bar bcgrd"></span></li>
+			<li class=""><span class="bar bcgrm"></span></li>
+			<li class=""><span class="bar bcgrl"></span></li>
+			<li class=""><span class="bar bcord"></span></li>
+			<li class=""><span class="bar bcorm"></span></li>
+			<li class=""><span class="bar bcorl"></span></li>
+			<li class=""><span class="bar bcpid"></span></li>
+			<li class=""><span class="bar bcpim"></span></li>
+			<li class=""><span class="bar bcpil"></span></li>
+		</ul>
+		<script>
+			$(document).ready(function() {
+
+				function fluctuate(bar) {
+					var hgt = Math.random() * 90;
+					hgt += 1;
+					var t = hgt * 5;
+
+					bar.animate({
+						height: hgt
+					}, t, function() {
+					fluctuate($(this));
+					});
+				}
+
+				$(".bar").each(function(i) {
+					fluctuate($(this));
+				});
+
+				$('#visuals').cycle({ 
+					fx:     'fade', 
+					speed:  'slow', 
+					timeout: 10000
+				});
+
+			});
+		</script>
+	</body>
+</html>

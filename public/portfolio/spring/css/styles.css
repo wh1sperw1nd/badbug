@@ -1,0 +1,561 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: #9ad2ca;
+    margin: 0px;
+    overflow: hidden;
+    color: #333;
+    font-family: Courier;
+    font-size: 11px;
+}
+.animations .sky {
+    background: url("../img/sky.png") repeat-x;
+    position: absolute;
+    z-index: 1;
+}
+.animations #bg{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 4;
+}
+.animations .topleft{
+    background: url("../img/tree.png") no-repeat;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 385px;
+    height: 387px;
+    z-index: 19;
+}
+.animations .sun_yellow{
+    background: url("../img/sun.png") no-repeat;
+    position: absolute;
+    right: 30px;
+    top: -40px;
+    width: 374px;
+    height: 377px;
+    z-index: 3;
+}
+.animations #birdsCanvas{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    min-width: 960px;
+    width: 100%;
+    height: 100%;
+}
+.animations .cloud1 {
+    background: url("../img/cloud.png") no-repeat;
+    position: absolute;
+    width: 500px;
+    height: 219px;
+    left: -100px;
+    top: 200px;
+    z-index: 15;
+    -webkit-animation:moveclouds1 45s linear infinite;
+    -moz-animation:moveclouds1 45s linear infinite;
+    -o-animation:moveclouds1 45s linear infinite;
+}
+.animations .cloud2 {
+    background: url("../img/cloud2.png") no-repeat;
+    position: absolute;
+    width: 500px;
+    height: 407px;
+    left: -1500px;
+    top: 50px;
+    z-index: 15;
+    -webkit-animation:moveclouds2 65s linear infinite;
+    -moz-animation:moveclouds2 50s linear infinite;
+    -o-animation:moveclouds2 50s linear infinite;
+}
+.animations .cloud3 {
+    background: url("../img/cloud3.png") no-repeat;
+    position: absolute;
+    width: 500px;
+    height: 328px;
+    left: -300px;
+    z-index: 15;
+    -webkit-animation:moveclouds3 60s linear infinite;
+	-moz-animation:moveclouds3 50s linear infinite;
+	-o-animation:moveclouds3 50s linear infinite;
+}
+.animations .cloud4 {
+    background: url("../img/cloud4.png") no-repeat;
+    position: absolute;
+    width: 472px;
+    height: 258px;
+    left: -1200px;
+    top: 300px;
+    z-index: 15;
+    -webkit-animation:moveclouds4 55s linear infinite;
+	-moz-animation:moveclouds4 55s linear infinite;
+	-o-animation:moveclouds4 55s linear infinite;
+}
+.animations .cloud5 {
+    background: url("../img/cloud5.png") no-repeat;
+    position: absolute;
+    width: 419px;
+    height: 205px;
+    left: -500px;
+    top: 450px;
+    z-index: 15;
+    -webkit-animation:moveclouds5 70s linear infinite;
+	-moz-animation:moveclouds5 60s linear infinite;
+	-o-animation:moveclouds5 60s linear infinite;
+}
+
+.leftcurtain{
+    width: 50%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 20;
+}
+.rightcurtain{
+    width: 51%;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    position: absolute;
+    z-index: 20;
+}
+.rightcurtain img, .leftcurtain img{
+    width: 100%;
+    height: 100%;
+}
+.rope {
+    height: 225px;
+    position: absolute;
+    right: 2%;
+    top: -40px;
+    width: 85px;
+    z-index: 24;
+}
+.rope img {
+    width: 100%;
+    height: 100%;
+}
+.title {
+    color: #FFFFFF;
+    font-family: Monotype Corsiva;
+    font-size: 120px;
+    height: 145px;
+    left: 50%;
+    line-height: 120%;
+    position: absolute;
+    top: 50%;
+    width: 425px;
+    z-index: 24;
+    margin: -73px 0 0 -212px;
+    text-align: center;
+}
+
+.animations #footer {
+    z-index: 19 ;
+    height: 375px;
+    max-width: 100%;
+    width: 100%;
+    min-width: 1050px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.animations .abs {
+    position: absolute;
+    z-index: 15;
+}
+.animations #city {
+    background: url("../img/buildings_bg.png") no-repeat 100% 0;
+    height: 375px;
+    max-width: 100%;
+    width: 100%;
+    min-width: 1050px;
+    bottom: 0;
+    left: 0;
+    opacity: 0.4;
+}
+.animations #hills-bg, .animations #hills-fg, #cobblestone {
+    height: 375px;
+    width: 100%;
+}
+.animations #hills-fg, .animations #hills-bg {
+    background: url("../img/hills.png") repeat-x;
+}
+.animations #hills-bg {
+    background-position: 0 60px;
+    -webkit-animation:movehillsbg 45s linear infinite;
+    -moz-animation:movehillsbg 45s linear infinite;
+    -o-animation:movehillsbg 45s linear infinite;
+    animation:movehillsbg 45s linear infinite;
+}
+.animations #hills-fg {
+    background-position: 0 95px;
+    -webkit-animation:movehillsfg 43s linear infinite;
+    -moz-animation:movehillsfg 43s linear infinite;
+    -o-animation:movehillsfg 43s linear infinite;
+    animation:movehillsfg 43s linear infinite;
+}
+.animations #cobblestone {
+    background: url("../img/cobblestones.png") repeat-x 0 313px;
+    -webkit-animation:movestone 43s linear infinite;
+    -moz-animation:movestone 43s linear infinite;
+    -o-animation:movestone 43s linear infinite;
+    animation:movestone 43s linear infinite;
+}
+.animations #dogwalker {
+    position: absolute;
+    margin: 200px 0 0;
+    background: url("../img/dogwalker.png") no-repeat;
+    width: 230px;
+    height: 141px;
+    right: 20%;
+    z-index: 15;
+    -webkit-animation:dogwalker 80s linear infinite;
+    -moz-animation:dogwalker 80s linear infinite;
+    -o-animation:dogwalker 80s linear infinite;
+    animation:dogwalker 80s linear infinite;
+}
+.letter {
+    color: #000000;
+    font-family: Monotype Corsiva;
+    font-size: 28px;
+    left: 7%;
+    line-height: 30px;
+    position: absolute;
+    top: 3%;
+    z-index: 16;
+}
+@-webkit-keyframes movehillsbg {
+   0% {
+   background-position:0 65px;
+   }
+   100% {
+    background-position:-100% 65px;
+   }
+}
+@-moz-keyframes movehillsbg {
+   0% {
+   background-position:100% 65px;
+   }
+   100% {
+    background-position:-100% 65px;
+   }
+}
+@-o-keyframes movehillsbg {
+   0% {
+   background-position:100% 65px;
+   }
+   100% {
+    background-position:-100% 65px;
+   }
+}
+
+@-webkit-keyframes movehillsfg {
+   0% {
+   background-position:100% 95px;
+   }
+   100% {
+    background-position:-100% 95px;
+   }
+}
+@-moz-keyframes movehillsfg {
+   0% {
+   background-position:100% 95px;
+   }
+   100% {
+    background-position:-100% 95px;
+   }
+}
+@-o-keyframes movehillsfg {
+   0% {
+   background-position:100% 95px;
+   }
+   100% {
+    background-position:-100% 95px;
+   }
+}
+
+
+@-webkit-keyframes movestone {
+   0% {
+   background-position:100% 313px;
+   }
+   100% {
+    background-position:-100% 313px;
+   }
+}
+@-moz-keyframes movestone {
+   0% {
+   background-position:100% 313px;
+   }
+   100% {
+    background-position:-100% 313px;
+   }
+}
+@-o-keyframes movestone {
+   0% {
+   background-position:100% 313px;
+   }
+   100% {
+    background-position:-100% 313px;
+   }
+}
+
+@-webkit-keyframes dogwalker {
+    0% {
+    margin-right:-100%;
+   }
+   100% {
+    margin-right:100%;
+   }
+}
+@-moz-keyframes dogwalker {
+   0% {
+    margin-right:-100%;
+   }
+   100% {
+    margin-right:100%;
+   }
+}
+@-o-keyframes dogwalker {
+    0% {
+    margin-right:-100%;
+   }
+   100% {
+    margin-right:100%;
+   }
+}
+.animations .cycle {
+	width:279px;
+	height:260px;
+	position:absolute;
+	left: 200px;
+	bottom:0px;
+	z-index: 19;
+}
+.animations .bycycle {
+	background:url("../img/cycle-2.png") no-repeat;
+	width:279px;
+	height:253px;
+	position:absolute;
+	z-index:1;
+	-webkit-animation:bycycle-ride 500ms linear infinite;
+	-moz-animation:bycycle-ride 500ms linear infinite;
+	-o-animation:bycycle-ride 500ms linear infinite;
+	-ms-animation:bycycle-ride 500ms linear infinite;
+	animation:bycycle-ride 500ms linear infinite;
+}
+@-webkit-keyframes bycycle-ride{
+	0%,50.000%{background-position:0 0}
+	50.001%,100%{background-position:0 100%}
+}
+@-moz-keyframes bycycle-ride{
+	0%,50.000%{background-position:0 0}
+	50.001%,100%{background-position:0 100%}
+}
+.animations .cycle-ride {
+/*    -webkit-animation:movecycle 43s linear infinite;
+    -moz-animation:movecycle 43s linear infinite;
+    -o-animation:movecycle 43s linear infinite;
+    animation:movecycle 43s linear infinite;*/
+}
+
+@-webkit-keyframes movecycle {
+    0% {
+    margin-right:100%;
+   }
+    100% {
+    margin-right:-100%;
+   }
+}
+@-moz-keyframes movecycle {
+    0% {
+    margin-right:100%;
+   }
+    100% {
+    margin-right:-100%;
+   }
+}
+@-o-keyframes movecycle {
+    0% {
+    margin-right:100%;
+   }
+    100% {
+    margin-right:-100%;
+   }
+}
+.animations .cycle-front, .animations .cycle-back {
+	width: 108px;
+	height: 107px;
+	position:absolute;
+	bottom:8px;
+	right:8px;
+	background:url("../img/wheel-front.png") no-repeat;
+	-webkit-animation:spin 2s linear infinite;
+	-moz-animation:spin 2s linear infinite;
+	-o-animation:spin 2s linear infinite;
+}
+.animations .cycle-back {
+	background:url("../img/wheel-back.png") no-repeat;
+	bottom:8px;
+	left:8px;
+}
+
+ @-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+    }
+@-moz-keyframes spin {
+        from {
+        -moz-transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+@-o-keyframes spin {
+        from {
+        -o-transform: rotate(0deg);
+    }
+    to {
+        -o-transform: rotate(360deg);
+    }
+}
+
+
+
+/*---------------clouds ----------------*/
+
+@-webkit-keyframes moveclouds1 {
+    0% {
+    margin-left:-100px;
+   }
+    100% {
+    margin-left:110%;
+   }
+}
+@-moz-keyframes moveclouds1 {
+    0% {
+    margin-left:-100px;
+   }
+    100% {
+    margin-left:110%;
+   }
+}
+@-o-keyframes moveclouds1 {
+    0% {
+    margin-left:-100px;
+   }
+   100% {
+    margin-left:110%;
+   }
+}
+
+@-webkit-keyframes moveclouds2 {
+    0% {
+    margin-left:-1500px;
+   }
+    100% {
+    margin-left:110%;
+   }
+}
+@-moz-keyframes moveclouds2 {
+    0% {
+    margin-left:-1500px;
+   }
+    100% {
+    margin-left:110%;
+   }
+}
+@-o-keyframes moveclouds2 {
+    0% {
+    margin-left:-1500px;
+   }
+   100% {
+    margin-left:110%;
+   }
+}
+
+@-webkit-keyframes moveclouds3 {
+    0% {
+    margin-left:-300px;
+   }
+    100% {
+    margin-left:110%;
+   }
+}
+@-moz-keyframes moveclouds3 {
+    0% {
+    margin-left:-300px;
+   }
+    100% {
+    margin-left:110%;
+   }
+}
+@-o-keyframes moveclouds3 {
+    0% {
+    margin-left:-300px;
+   }
+   100% {
+    margin-left:110%;
+   }
+}
+
+@-webkit-keyframes moveclouds4 {
+    0% {
+    margin-left:-1200px;
+   }
+    100% {
+    margin-left:110%;
+   }
+}
+@-moz-keyframes moveclouds4 {
+    0% {
+    margin-left:-1200px;
+   }
+    100% {
+    margin-left:110%;
+   }
+}
+@-o-keyframes moveclouds4 {
+    0% {
+    margin-left:-1200px;
+   }
+   100% {
+    margin-left:110%;
+   }
+}
+
+@-webkit-keyframes moveclouds5 {
+    0% {
+    margin-left:-500px;
+   }
+    100% {
+    margin-left:110%;
+   }
+}
+@-moz-keyframes moveclouds5 {
+    0% {
+    margin-left:-500px;
+   }
+    100% {
+    margin-left:110%;
+   }
+}
+@-o-keyframes moveclouds5 {
+    0% {
+    margin-left:-500px;
+   }
+   100% {
+    margin-left:110%;
+   }
+}

@@ -1,0 +1,49 @@
+{
+  "banner": {
+    "url":"./assets/images/banners/46809508_L.jpg",
+    "bannerTitle": "GETTING HELP",
+    "bannerDescriptionFirstLine": "There are many ways to get help. It’s easier than you might think.",
+    "bannerDescriptionSecondLine": "",
+    "backgroundPosition":"center center;"
+  },
+  "gettingHelpPageContent": {
+    "listTitle1": "According to Gambling Help Online, indicators that gambling moved beyond being a social activity can include:",
+    "list1":"<li>Struggling to control gambling impulses despite negative consequences in other areas of life;</li><li>Spending more money on gambling than is planned;</li><li>Spending more time gambling than is planned.</li>",
+    "contentLine1":"At the <a href='http://www.gamblinghelponline.org.au/' target='_blank'>Gambling Help Online</a> website, you can see how your gambling compares to other Australians by using a gambling calculator and complete a self-assessment do determine the risk your gambling poses."
+  },
+  "faceToFaceHelpPageContent": {
+    "contentLine1":"If you think you need help, gambling counselling organisations offer support and strategies to help you take back control.",
+    "contentLine2":"Counselling allows you to talk about the impact gambling has had on your life in a safe, confidential and non-judgmental environment.",
+    "listTitle1": "Gambling counselling services include:",
+    "list1":"<li>Experienced and free face-to-face counselling;</li><li>Financial counselling and advice;</li><li>Phone and online support;</li><li>Online resources and tools;</li><li>Access to peer support groups.</li>",
+    "listTitle2":"A great place to start is the <a href='http://www.gamblinghelponline.org.au/' target='_blank'>Gambling Help Online</a> website or the responsible gambling foundation in your state.",
+    "list2":"<li>Experienced and free face-to-face counselling;</li><li>Financial counselling and advice;</li><li>Phone and online support;</li><li>Online resources and tools;</li><li>Access to peer support groups.</li>"
+  },
+  "helpByPhonePageContent": {
+    "contentLine1":"If you are experiencing difficulties in controlling your gambling, immediate help is available by calling Gambling Help Online on 1800 858 858.",
+    "contentLine2":"CrownBet customers can also access free and confidential counselling through the Crown Melbourne Responsible Gambling Support Centre by calling 1800 801 098."
+  },
+  "chaplaincyPageContent": {
+    "contentLine1":"CrownBet customers also have access to an inter-faith Chaplaincy service provided by Crown Melbourne.",
+    "contentLine2":"The Chaplaincy Support Service is available to customers and staff and remains faithful to the tradition of community service found in all religious teachings.",
+    "contentLine3":"The Chaplaincy Support Service enables people to seek guidance and peace in their own way and aims to be relevant to the particular issues and life situations of the individual.",
+    "contentLine4":"This service is free and confidential and can be arranged by phoning Fr James Grant on 1800 456 228."
+  },
+  "financialCounsellingPageContent": {
+    "contentLine1":"<p>An important step in overcoming difficulties with gambling is a focus on financial management.</p><p>Community organisations can provide information about how to better manage your financial position and avoid any further harm as well as provide assistance in accessing further services to help.</p><p>To find out more about financial counselling, phone Gambler’s Help on 1800 858 858."
+  },
+  "panelContent":[
+    {
+      "title":"CODE OF PRACTICE",
+      "shortText":"",
+      "fullText":"",
+      "url":""
+    },
+    {
+      "title":"TAKE A BREAK",
+      "shortText":"",
+      "fullText":"",
+      "url":""
+    }
+  ]
+}

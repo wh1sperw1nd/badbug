@@ -1,0 +1,27 @@
+<div>
+    <div class="slider smaller">
+        <div class="slider-inner">
+            <!-- Slides -->
+            <div class="fs-slides">
+                <div class="fs-slide" ng-attr-style="background-image: url({{content.banner.url}});background-position: {{content.banner.backgroundPosition}}">
+                    <div class="banner-text">
+                        <div class="banner-title">{{content.banner.bannerTitle}}</div>
+                        <div class="banner-desc">{{content.banner.bannerDescriptionFirstLine}}</div>
+                        <div class="banner-desc">{{content.banner.bannerDescriptionSecondLine}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <sub-menu></sub-menu>
+</div>
+<div class="container panel-crown panel-crown-white">
+    <div class="row">
+        <div class="col-lg-10">
+            <h2 class="">{{submenus[1].name}}</h2>
+            <div ng-bind-html="renderHtml(content.protectingMinorsPageContent.contentLine1)"></div>
+        </div>
+        <div class="col-lg-5">
+        </div>
+    </div>
+</div>
