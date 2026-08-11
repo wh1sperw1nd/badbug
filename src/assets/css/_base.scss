@@ -1,0 +1,71 @@
+::-webkit-scrollbar {
+    width: 0.7143em;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 0;
+    border-radius: 0.5714em;
+    background-clip: content-box;
+    background-color: rgba(#757575, 0.3);
+}
+
+* {
+    scrollbar-color: rgba(#757575, 0.3) transparent;
+    scrollbar-width: thin;
+}
+
+// 14px is the anchor every em in this project measures against. It has to stay
+// px: the rule targets html *and* body, so an em here would compound.
+body,
+html {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    overflow: auto;
+    background: #0f0e0c;
+}
+
+// reset.scss pins html/body to height:100%, which turns <body> into its own
+// scroll box and traps anything taller than the viewport. The content panel
+// now grows with its content, so the page has to be able to grow with it.
+body,
+html {
+    height: auto;
+    min-height: 100%;
+}
+
+a {
+    color: #ad9c82;
+    text-decoration: underline;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 0.0714em;
+    height: 0.0714em;
+    margin: -0.0714em;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+// reset.scss kills every outline; put a visible one back for keyboard users
+// only, so mouse clicks stay clean. These are em, so the ring tracks whatever
+// font size the focused control runs at.
+:focus-visible {
+    outline: 0.1429em solid #ffcf6b;
+    outline-offset: 0.1429em;
+    border-radius: 0.1429em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

@@ -26,11 +26,17 @@
     </router-link>
 
     <nav class="menu">
-      <ul class="publicTabs navigate" id="menu">
-        <li class="navTab" v-for="{ url, name } in routes" :key="url">
+      <ul class="publicTabs navigate" id="menu" @mouseleave="hoverIndex = null">
+        <li
+          class="navTab"
+          v-for="({ url, name }, index) in routes"
+          :key="url"
+          :ref="el => setTabEl(el, index)"
+          @mouseenter="hoverIndex = index"
+        >
           <router-link class="navLink" :to="url">{{ name }}</router-link>
         </li>
-        <div class="lavalamp"></div>
+        <li class="lavalamp" :style="lavalampStyle" aria-hidden="true"></li>
       </ul>
     </nav>
     <div class="social">
@@ -71,7 +77,8 @@
   </header>
 </template>
 <script setup>
-import { ref, watch, onUnmounted, nextTick } from 'vue';
+import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue';
+import { useRoute } from 'vue-router';
 import { useLogoShatter } from '../composables/useLogoShatter';
 
 const routes = [
@@ -80,6 +87,47 @@ const routes = [
     { url:'/portfolio', name:'Portfolio' },
     { url:'/contacts', name:'Contacts' }
 ];
+
+/*-------------------lavalamp------------------------*/
+
+const route = useRoute();
+const tabEls = [];
+const hoverIndex = ref(null);
+const lavalampStyle = ref({ opacity:0 });
+
+function setTabEl(el, index) {
+    tabEls[index] = el;
+}
+
+const activeIndex = computed(() => routes.findIndex(({ url }) => url === route.path));
+const litIndex = computed(() => (hoverIndex.value === null ? activeIndex.value : hoverIndex.value));
+
+function updateLavalamp() {
+    const el = tabEls[litIndex.value];
+
+    // No match means we're on a route that isn't a tab (404) — park the lamp.
+    if (!el) {
+        lavalampStyle.value = { opacity:0 };
+        return;
+    }
+
+    lavalampStyle.value = {
+        left:`${el.offsetLeft + el.offsetWidth / 2}px`,
+        opacity:1
+    };
+}
+
+watch(litIndex, updateLavalamp);
+
+onMounted(async () => {
+    await nextTick();
+    updateLavalamp();
+    // Tab widths move once the webfont swaps in.
+    document.fonts?.ready.then(updateLavalamp);
+    window.addEventListener('resize', updateLavalamp);
+});
+
+/*-------------------logo shatter--------------------*/
 
 const particleColors = ['#f90514', '#c40010', '#1a1a1a', '#ad9c82', '#ffffff'];
 const particleCount = 20;
@@ -98,7 +146,7 @@ const particles = Array.from({ length:particleCount }, (_, index) => {
             '--rot':`${Math.round(Math.random() * 720 - 360)}deg`,
             'animation-delay':`${Math.round(Math.random() * 70)}ms`,
             background:particleColors[index % particleColors.length],
-            borderRadius:Math.random() > 0.3 ? '50%' : '2px'
+            borderRadius:Math.random() > 0.3 ? '50%' : '0.1429em'
         }
     };
 });
@@ -132,5 +180,6 @@ watch(celebrateTrigger, async () => {
 onUnmounted(() => {
     clearTimeout(resetTimeoutId);
     clearTimeout(celebrateTimeoutId);
+    window.removeEventListener('resize', updateLavalamp);
 });
 </script>

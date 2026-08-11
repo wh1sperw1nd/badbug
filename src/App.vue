@@ -9,7 +9,10 @@
           <router-view />
         </div>
         <aside class="side_slide">
-          <div id="dont_click" @click="handleDontClick">
+          <div id="dont_click">
+            <button type="button" class="dontclick_btn" @click="handleDontClick">
+              <span class="visually-hidden">Don't click</span>
+            </button>
             <Transition name="bubble-fade">
               <div v-if="bubbleText" class="dontclick-bubble">{{ bubbleText }}</div>
             </Transition>
@@ -80,13 +83,29 @@ function handleDontClick() {
 }
 
 let stopAnimations = null;
+let motionQuery = null;
+
+// The background FX are decoration, so they stay off for anyone who asked the
+// OS for reduced motion — and follow the setting if it changes mid-visit.
+function syncAnimations() {
+    if (motionQuery.matches) {
+        stopAnimations?.();
+        stopAnimations = null;
+    }
+    else if (!stopAnimations) {
+        stopAnimations = startAnimations();
+    }
+}
 
 onMounted(() => {
-    stopAnimations = startAnimations();
+    motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    motionQuery.addEventListener('change', syncAnimations);
+    syncAnimations();
 });
 
 onUnmounted(() => {
     clearTimeout(replyTimeoutId);
+    motionQuery?.removeEventListener('change', syncAnimations);
     stopAnimations?.();
 });
 </script>

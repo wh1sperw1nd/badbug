@@ -47,10 +47,10 @@ const lines = [
     'Maybe some pictures?',
     'Too bad. Really too bad.',
     'Oh wait, I know a great joke!',
-    'A New Russian (NR1) is showing another New Russian (NR2) his house.',
-    'They walk into the bathroom. NR2: Why\'s your tile so small?',
-    'NR1: Small, but brand-name!',
-    'NR2: What brand? NR1: Intel...',
+    'There are only two hard problems in computer science:',
+    'cache invalidation,',
+    'naming things,',
+    'and off-by-one errors.',
     'Did you like it?',
     'Oh, someone else just showed up.',
     'Sorry, I\'ll leave you for just a second...',
@@ -81,7 +81,7 @@ function typeNextChar() {
     charIndex = 0;
 
     if (lineIndex < lines.length) {
-        timeoutId = setTimeout(typeNextChar, 1500);
+        timeoutId = setTimeout(typeNextChar, 1000);
     }
 }
 
@@ -106,13 +106,4 @@ onUnmounted(() => {
   </div>
 </template>
 
-<style scoped>
-.typewriter {
-    font-family: 'Courier New', monospace;
-    margin-top: 15px;
-}
-
-.typewriter p {
-    margin: 2px 0;
-}
-</style>
+<style scoped lang="scss" src="./404View.scss"></style>

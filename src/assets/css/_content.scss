@@ -1,0 +1,31 @@
+// Shared page content — every view renders a .tab, so these are the defaults
+// each page gets for free. Anything only one page needs lives in that view's
+// own .scss next to the component.
+//
+// The selector chain is written out rather than flattened to .tab, so these
+// keep the exact specificity they had when they lived inside _layout.
+
+.wrapper > section .content {
+    .tab {
+        height: 100%;
+        overflow-y: auto;
+        padding: 1.0714em;
+        line-height: 1.5em;
+
+        ul li {
+            margin: 0.3571em 0;
+        }
+    }
+
+    h1.title {
+        font-size: 1.4286em;
+        width: 100%;
+        text-align: center;
+        // Against this element's own 1.4286em (20px).
+        margin: 0.5em 0 1em;
+    }
+
+    p {
+        margin: 0.3571em 0;
+    }
+}

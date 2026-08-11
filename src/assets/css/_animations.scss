@@ -1,0 +1,101 @@
+.bubble-fade-enter-active,
+.bubble-fade-leave-active {
+    transition: opacity 0.25s ease;
+}
+
+.bubble-fade-enter-from,
+.bubble-fade-leave-to {
+    opacity: 0;
+}
+
+@keyframes face-pop {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    10% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+    26% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    82% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    92% {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes particle-burst {
+    0% {
+        transform: translate(0, 0) scale(0.6);
+        opacity: 1;
+    }
+
+    15% {
+        transform: translate(calc(var(--tx) * 0.3), calc(var(--ty) * 0.3)) scale(1.3);
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(var(--tx), calc(var(--ty) + 1.4em)) rotate(var(--rot)) scale(0.4);
+        opacity: 0;
+    }
+}
+
+@keyframes logo-celebrate {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    30% {
+        transform: scale(1.3) rotate(150deg);
+    }
+
+    60% {
+        transform: scale(0.9) rotate(330deg);
+    }
+
+    80% {
+        transform: scale(1.1) rotate(360deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+@keyframes celebrate-glow {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    30% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.6);
+    }
+}

@@ -1,0 +1,42 @@
+.contact_list {
+    background: url('../../assets/img/contacts_bg.png') no-repeat 0 0;
+    background-size: contain;
+    // Against this element's own 1.1429em (16px).
+    padding: 4.5625em 0 0 5.5em;
+    font-size: 1.1429em;
+    height: 28.75em;
+    margin: 0 auto;
+    width: 25em;
+    position: relative;
+
+    & table {
+        border-collapse: collapse;
+
+        // Both hairlines land on 1px, but tr runs at 16px and td at
+        // 12px, so the em that gets there differs per element.
+        tr {
+            border: 0.0625em dashed;
+        }
+
+        td {
+            border: 0.0833em dashed;
+            padding: 0.4167em 0.8333em;
+            vertical-align: middle;
+            font-size: 0.75em;
+        }
+    }
+}
+
+.reveal_phone {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #ad9c82;
+    font: inherit;
+    text-decoration: underline dashed;
+    cursor: pointer;
+
+    &:hover {
+        color: #fff;
+    }
+}

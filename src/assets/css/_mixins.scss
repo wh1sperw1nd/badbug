@@ -1,0 +1,67 @@
+// Both bubbles hang off a 14px parent, so `font-size` is 15/14. Every other
+// length here (and in ::after, which inherits it) is against the bubble's own
+// 15px, not the 14px base.
+@mixin speech-bubble($direction: 'up') {
+    position: absolute;
+    padding: 0.6667em 1.0667em;
+    width: max-content;
+    background: #0f0e0c;
+    border: 0.0667em solid #ad9c82;
+    border-radius: 0.5333em;
+    color: #ad9c82;
+    font-size: 1.0714em;
+    line-height: 1.4;
+    font-family: 'Comic Neue', cursive;
+    text-align: center;
+    z-index: 2;
+
+    @if $direction == 'right' {
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
+        margin-left: 0.9333em;
+        max-width: 13.3333em;
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 0.4667em solid transparent;
+            border-right-color: #ad9c82;
+        }
+    } @else if $direction == 'up' {
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 0.8em;
+        max-width: 17.3333em;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 0.4667em solid transparent;
+            border-top-color: #ad9c82;
+        }
+    } @else {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 0.8em;
+        max-width: 17.3333em;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 0.4667em solid transparent;
+            border-bottom-color: #ad9c82;
+        }
+    }
+}

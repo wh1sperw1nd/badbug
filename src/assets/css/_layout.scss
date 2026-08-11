@@ -1,0 +1,331 @@
+@use 'mixins' as *;
+
+// The page shell: the scene wrapper, the header, the panel frame, the right-hand
+// slide and the footer. This is the fixed-composition part — the bitmaps join at
+// fixed offsets, so the numbers here are load-bearing, not taste.
+
+#app {
+    width: 100%;
+    overflow: hidden;
+}
+
+.wrapper {
+    position: relative;
+    width: 103.5em;
+    height: 100%;
+    margin: 0 auto;
+    background: url('../img/background.jpg') no-repeat center 0;
+    background-size: contain;
+
+    & > section {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        width: 70em;
+        margin: 0 auto;
+
+        & > .top {
+            width: 100%;
+            height: 34.6em;
+            position: relative;
+
+            .logo {
+                position: absolute;
+                top: 1em;
+                right: 0;
+                display: flex;
+                text-decoration: none;
+            }
+
+            .logo_name {
+                display: flex;
+                flex-direction: column;
+                font-family: Arial, sans-serif;
+            }
+
+            .logo_txt {
+                color: white;
+                float: right;
+                font-size: 5.5em;
+                font-weight: bold;
+                position: relative;
+                // Against this element's own 5.5em (77px), not the 14px base.
+                text-shadow: 0.065em 0.065em 0.065em #000;
+
+                & > span.red {
+                    color: #f90514;
+                    font-weight: bold;
+                }
+            }
+
+            .studio {
+                color: #fff;
+                letter-spacing: 0.4em;
+                font-size: 1.2em;
+                font-weight: bold;
+                margin: -1em 0 0 0.25em;
+                position: relative;
+                z-index: 1;
+            }
+
+            .logo_img {
+                width: 11.4em;
+                height: 11.4em;
+                position: relative;
+
+                .logo_img_face {
+                    position: absolute;
+                    inset: 0;
+                    background: url('../img/bug.png') 0 0 no-repeat;
+                }
+
+                .particle {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: var(--particle-size, 0.3em);
+                    height: var(--particle-size, 0.3em);
+                    margin-top: calc(var(--particle-size, 0.3em) * -0.5);
+                    margin-left: calc(var(--particle-size, 0.3em) * -0.5);
+                    opacity: 0;
+                    pointer-events: none;
+                }
+
+                &.is-shattering {
+                    .logo_img_face {
+                        animation: face-pop 1.1s ease-out forwards;
+                    }
+
+                    .particle {
+                        opacity: 1;
+                        animation-name: particle-burst;
+                        animation-duration: 0.9s;
+                        animation-timing-function: cubic-bezier(0.2, 0.6, 0.3, 1);
+                        animation-fill-mode: forwards;
+                    }
+                }
+
+                &.is-celebrating {
+                    .logo_img_face {
+                        animation: logo-celebrate 0.95s ease-in-out forwards;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        inset: -0.3em;
+                        border-radius: 50%;
+                        background: radial-gradient(circle, rgba(255, 215, 90, 0.55) 0%, rgba(255, 215, 90, 0) 70%);
+                        animation: celebrate-glow 0.95s ease-out forwards;
+                        pointer-events: none;
+                    }
+                }
+
+                .logo-bubble {
+                    @include speech-bubble('right');
+                }
+            }
+
+            .menu {
+                position: absolute;
+                left: 1em;
+                bottom: 0;
+                width: 85%;
+
+                .publicTabs {
+                    display: flex;
+                    justify-content: space-around;
+                    height: 3.1em;
+                    position: relative;
+
+                    li {
+                        flex: 1 1 auto;
+                        display: flex;
+                        justify-content: center;
+                        height: 100%;
+                        align-items: center;
+                        align-content: center;
+
+                        .navLink {
+                            color: #8a7d6c;
+                            display: flex;
+                            width: 100%;
+                            height: 100%;
+                            cursor: pointer;
+                            justify-content: center;
+                            align-items: center;
+                            font-weight: bold;
+                            text-decoration: none;
+
+                            &.router-link-active,
+                            &:hover {
+                                background: url('../img/nav_hover.png') repeat-x 0 -0.1429em;
+                                color: #ad9c82;
+                            }
+                        }
+                    }
+
+                    /*-------------------lavalamp------------------------*/
+
+                    .lavalamp {
+                        background: url('../img/lavalamp.png') no-repeat 0 0
+                            transparent;
+                        height: 1.14em;
+                        width: 4.57em;
+                        position: absolute;
+                        top: -0.28em;
+                        left: 4.7em;
+                        transform: translateX(-50%);
+                        pointer-events: none;
+                        transition: left 300ms ease, opacity 300ms ease;
+                    }
+                }
+            }
+
+            .social {
+                position: absolute;
+                left: 43em;
+                top: 29em;
+                display: flex;
+                gap: 0.7em;
+                z-index: 1;
+
+                .socialLink {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 1.8em;
+                    height: 1.8em;
+                    color: #ad9c82;
+                    text-decoration: none;
+
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .content {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            .content_inner {
+                border-style: solid;
+                border-width: 3.2143em 3.2143em 3.9286em 13.2143em;
+                border-color: transparent;
+                border-image-source: url('../img/content.png');
+                // Unitless on purpose — this counts pixels in content.png, not
+                // CSS length, so em is not valid here.
+                border-image-slice: 45 45 120 185 fill;
+                border-image-width: 3.2143em 3.2143em 8.5714em 13.2143em;
+                border-image-repeat: stretch;
+                height: 52.5em;
+                margin-left: -6em;
+                margin-top: 6.4286em;
+                position: relative;
+                width: 55.1429em;
+                color: #978b78;
+                z-index: 2;
+                padding-right: 1.0714em;
+            }
+
+            .side_slide {
+                background: url('../img/side_slide.png') no-repeat 0 0;
+                height: 52.3571em;
+                position: absolute;
+                right: -3.0714em;
+                top: -6.4286em;
+                width: 36.1429em;
+                z-index: 1;
+
+                #dont_click {
+                    background: url('../img/dontclick.png') repeat center top;
+                    height: 14.8571em;
+                    position: absolute;
+                    right: 5em;
+                    top: 1.4286em;
+                    width: 15.2143em;
+
+                    &:hover,
+                    &:focus-within {
+                        background: url('../img/dontclick.png') repeat 0 -14.7143em;
+                    }
+
+                    .dontclick_btn {
+                        position: absolute;
+                        inset: 0;
+                        width: 100%;
+                        height: 100%;
+                        padding: 0;
+                        border: 0;
+                        background: transparent;
+                        appearance: none;
+                        cursor: pointer;
+                    }
+
+                    .dontclick-bubble {
+                        @include speech-bubble('up');
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    background: url('../img/footer_bg.jpg') repeat-x 0 0;
+    width: 100%;
+    min-width: 103.5em;
+    height: 5.7857em;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+
+    .line_inner {
+        width: 70em;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        & .foot_line {
+            background: url(/src/assets/img/foot_line.png) no-repeat 0.7857em 0;
+            height: 16.7857em;
+            width: 38.9286em;
+            position: relative;
+
+            .copy {
+                position: absolute;
+                display: flex;
+                bottom: 0;
+                height: 6.6429em;
+                width: 100%;
+                justify-content: space-around;
+                align-items: center;
+
+                .foot_txt {
+                    display: flex;
+                    align-items: center;
+                    height: 2.5em;
+                    color: #ffffff;
+                    font-family: 'Comic Neue', cursive;
+                }
+
+                .footer_logo {
+                    background: url('../img/badbug_copy.png') no-repeat 0 0;
+                    background-size: contain;
+                    width: 11.7857em;
+                    height: 2.5em;
+                }
+            }
+        }
+    }
+}
