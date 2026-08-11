@@ -1,0 +1,118 @@
+[
+    {
+        "id": "home",
+        "name": "HOME",
+        "route": "#/",
+        "submenu": []
+    },
+    {
+        "id": "fostering-responsible-gambling",
+        "name": "Fostering responsible gambling",
+        "route": "#fostering-responsible-gambling/commitment",
+        "submenu": [
+            {
+                "id": "commitment",
+                "name": "Commitment",
+                "route": "#fostering-responsible-gambling/commitment"
+            },
+            {
+                "id": "greater-control",
+                "name": "Greater Control",
+                "route": "#fostering-responsible-gambling/greater-control"
+            },
+            {
+                "id": "voluntary-measures",
+                "name": "Doing More",
+                "route": "#fostering-responsible-gambling/voluntary-measures"
+            }
+        ]
+    },
+    {
+        "id": "staying-in-control",
+        "name": "STAYING IN CONTROL",
+        "route": "#staying-in-control/track-your-spending",
+        "submenu": [
+            {
+                "id": "track-your-spending",
+                "name": "Track Your Spending",
+                "route": "#staying-in-control/track-your-spending"
+            },
+            {
+                "id": "deposit-limits",
+                "name": "Deposit Limits",
+                "route": "#staying-in-control/deposit-limits"
+            },
+            {
+                "id": "take-a-break",
+                "name": "Take a Break",
+                "route": "#staying-in-control/take-a-break"
+            },
+            {
+                "id": "self-exclusion",
+                "name": "Self Exclusion",
+                "route": "#staying-in-control/self-exclusion"
+            }
+        ]
+    },
+    {
+        "id": "tools",
+        "name": "TOOLS",
+        "route": "#tools/questionnaire",
+        "submenu": [
+            {
+                "id": "questionnaire",
+                "name": "Questionnaire",
+                "route": "#tools/questionnaire"
+            },
+            {
+                "id": "calculator",
+                "name": "Calculator",
+                "route": "#tools/calculator"
+            }
+        ]
+    },
+    {
+        "id": "getting-help",
+        "name": "GETTING HELP",
+        "route": "#getting-help/face-to-face-help",
+        "submenu": [
+            {
+                "id": "face-to-face-help",
+                "name": "Face-to-face Help",
+                "route": "#getting-help/face-to-face-help"
+            },
+            {
+                "id": "help-by-phone",
+                "name": "Help by Phone",
+                "route": "#getting-help/help-by-phone"
+            },
+            {
+                "id": "chaplaincy",
+                "name": "Chaplaincy",
+                "route": "#getting-help/chaplaincy"
+            },
+            {
+                "id": "financial-counselling",
+                "name": "Financial Counselling",
+                "route": "#getting-help/financial-counselling"
+            }
+        ]
+    },
+    {
+        "id": "family-and-friends",
+        "name": "FAMILY & FRIENDS",
+        "route": "#family-and-friends/helping-others",
+        "submenu": [
+            {
+                "id": "helping-others",
+                "name": "Helping Others",
+                "route": "#family-and-friends/helping-others"
+            },
+            {
+                "id": "protecting-minors",
+                "name": "Protecting Minors",
+                "route": "#family-and-friends/protecting-minors"
+            }
+        ]
+    }
+]

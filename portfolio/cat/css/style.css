@@ -1,0 +1,100 @@
+body
+{
+background-image: url(../images/poltercat_bg.jpg);
+background-color: #0b0e08;
+background-repeat: no-repeat;
+background-position: center top;
+margin: 0px;
+}
+
+a:link
+{
+color:#1c1c1c;
+text-decoration:none;
+}
+
+a:visited
+{
+color:#1c1c1c;
+text-decoration:none;
+}
+
+a:focus
+{
+color:#6b6b6b;
+text-decoration:underline;
+}
+
+a:hover
+{
+color:#6b6b6b;
+text-decoration:none;
+}
+
+a:active
+{
+color:#6b6b6b;
+text-decoration:underline;
+}
+
+
+.cont
+{
+position: absolute;
+left: 50%;
+top: 415px;
+margin-left: -470px;
+height: 570px;
+width: 540px;
+}
+
+.nav1
+{
+position: absolute;
+left: 50%;
+top: 305px;
+margin-left: -470px;
+height: 100px;
+width: 160px;
+font-family: georgia;
+font-size: 18px;
+}
+
+.nav2
+{
+position: absolute;
+left: 50%;
+top: 300px;
+margin-left: -93px;
+height: 100px;
+width: 160px;
+font-family: georgia;
+font-size: 18px;
+text-align: right;
+}
+
+.home
+{
+position: absolute;
+left: 50%;
+top: 286px;
+margin-left: -323px;
+width: 214px;
+height: 100px;
+}
+
+.facebook
+{
+position: absolute;
+left: 50%;
+top: 820px;
+margin-left: 310px;
+width: 103px;
+height: 52px;
+}
+
+.texts
+{
+font-family: georgia;
+font-size: 12px;
+}

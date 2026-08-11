@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta content='text/html; charset=utf-8' http-equiv="Content-Type"/>
+  <meta name="Copyright" content="Frost-Design Studio"/>
+  <meta name="author" content="Arcanum"/>
+  <link rel="stylesheet" href="style.css" type="text/css"/>
+  <title>For you!!!</title>
+  <script type="text/javascript" src="js/jquery.js"></script>
+ </head>
+<body>
+	<div class="options">
+	    <div id="warning">
+		   <div id="s1">&nbsp;</div>
+		   <div id="s2">Для корректного отображения страниц, 
+		   аудио и видео файлов рекомендую использовать браузеры <span id="s1_span">Firefox</span> версии 3.0 и выше, <span id="s1_span">Opera</span> 9.0 и выше, или <span id="s1_span">Chrome</span>. 
+		   При этом в настройках обозревателя должна быть включена опция поддержки <span id="s1_span">Javascript</span> для отображения всех эффектов и элементов страницы. На странице проигрываются звуки, поэтому рекомендую 
+		   дождаться полной загрузки страницы. Если музыка так и не начала звучать установите 
+		   <span id="s1_span"><a target="_blank" href="http://www.interoperabilitybridges.com/wmpff/wmpfirefoxplugin.exe">Windows Media Player Plug-in for Firefox</a></span><br>
+		   </div>
+		</div>
+		<div class="clear"></div>
+		<div class="btn">Options</div>
+	</div>
+	
+    <div class="wrapper">
+		<div class="for_you"></div>
+        <div class="button">
+            <a href="flower.html">Войти</a>
+        </div>
+    </div>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".btn").click(function(){
+		$("#warning").slideToggle("slow");
+		$(this).toggleClass("active"); return false;
+	});
+	
+	 
+});
+</script>
+<div class="footer">
+	<div class="foot_txt">Made by Frost. All rights reserved ©. Design by</div><img src="images/badbug_logo.png" width="165px" height="35px" />
+</div>
+</body>
+</html>

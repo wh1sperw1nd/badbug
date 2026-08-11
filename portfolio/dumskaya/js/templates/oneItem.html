@@ -1,0 +1,32 @@
+<!-- Left view -->
+<div class="navbar">
+         <div class="navbar-inner">
+                 <!-- Right link contains only icon - additional "icon-only" class-->
+                 <div class="left"><a  class="custom-btn-back" ontouchend="javascript:window.stop();baseApplication.mainLayout.router.back()"><span>Главная</span></a></div>
+             <div class="right">
+                 <a href="#" id="comments_count" class="link item-link icon-only comments-link no-comments"><span><% if(typeof commentscountLive!="undefined"&&commentscountLive&&!isNaN(commentscountLive)){print(commentscountLive)} else {print(commentscount)} %></span></a>
+                <a href="#" id="share" class="share link item-link icon-only"></a>
+            </div>
+         </div>
+     </div>
+
+<div class="view view-main left-view">
+  <div class="page" data-page="oneItem">
+      <div class="page-content item-page">
+          <div class="item-page-wrap">
+              <div class="item-wrap">
+              <div class="item-inner">
+                   <div class="item-title-row">
+                       <div class="item-title"><%=title%></div>
+                   </div>
+                      <div class="item-media"><img src="" width="100%" id="image" class="none"/></div>
+                   <div class="item-text external" id="contentOneItem">
+                       <div class="preloader"></div>
+                   </div>
+               </div>
+               </div>
+          </div>
+      </div>
+  </div>          
+</div>
+

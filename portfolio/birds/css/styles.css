@@ -1,0 +1,123 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    margin: 0px;
+    overflow: hidden;
+    color: #333;
+    font-family: Courier;
+    font-size: 11px;
+}
+.sky {
+    background: url("../img/sky.png") repeat-x; 
+    position: absolute; 
+    z-index: 1;
+}
+.night {
+    background: url("../img/dark_sky.png") repeat-x #305380; 
+    position: absolute;
+    opacity:0;
+    z-index: 2;
+}
+.stars {
+    background: url("../img/bg.gif") repeat-x; 
+    position: absolute;
+    opacity:0;
+    z-index: 2;
+}
+.topleft{
+    background: url("../img/tree.png") no-repeat;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 385px;
+    height: 387px;
+    z-index: 4;
+}
+#bg{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 4;
+}
+
+.sun_yellow{
+    background: url("../img/sun.png") no-repeat;
+    position: absolute;
+    right: 0;
+    top: -40px;
+    width: 374px;
+    height: 377px;
+    z-index: 3;
+}
+.sun_red {
+    background: url("../img/sun2.png") no-repeat;
+    position: absolute;
+    right: 0;
+    top: -40px;
+    width: 374px;
+    height: 377px;
+    opacity:0;
+    z-index: 3;
+}
+.moon {
+    background: url("../img/moon.png") no-repeat;
+    position: absolute;
+    right: 0px;
+    z-index: 3;
+    width: 300px;
+    height: 300px;
+}
+#birdsCanvas{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    min-width: 960px;
+    width: 100%;
+}
+.cloud1 {
+    background: url("../img/cloud.png") no-repeat;
+    position: absolute;
+    width: 500px;
+    height: 219px;
+    left: -100px;
+    top: 250px;
+    z-index: 3;
+}
+.cloud2 {
+    background: url("../img/cloud2.png") no-repeat;
+    position: absolute;
+    width: 500px;
+    height: 407px;
+    left: -500px;
+    top: 50px;
+    z-index: 3;
+}
+.cloud3 {
+    background: url("../img/cloud3.png") no-repeat;
+    position: absolute;
+    width: 500px;
+    height: 328px;
+    left: 200px;
+    z-index: 3;
+}
+.cloud4 {
+    background: url("../img/cloud4.png") no-repeat;
+    position: absolute;
+    width: 472px;
+    height: 258px;
+    left: 600px;
+    top: 350px;
+    z-index: 3;
+}
+.cloud5 {
+    background: url("../img/cloud5.png") no-repeat;
+    position: absolute;
+    width: 419px;
+    height: 205px;
+    left: -300px;
+    top: 550px;
+    z-index: 3;
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui, shrink-to-fit=no">
+    <meta name = "apple-mobile-web-app-capable" content="yes"/>
+    <meta name = "apple-mobile-web-app-status-bar-style" content = "black"/>
+    <meta name="format-detection" content="telephone=no">
+
+    <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <title>A Letter To Santa</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Domine:400,700|Cedarville+Cursive|Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
+    <!--
+    <link href='http://fonts.googleapis.com/css?family=Domine:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    -->
+    <link href="./css/application.css" media="all" rel="stylesheet"/>
+
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src='./js/bootstrap.min.js'></script>
+    <script src='./js/handlebars.runtime.min.js'></script>
+    <script src="./js/jquery.simplemodal.min.js"></script>
+    <script src="./js/application.js"></script>
+</head>
+<body class="alettertosanta">
+<audio preload id="audio" autoplay>
+    <source src="./merry-christmas-mr-lawrence.ogg" type="audio/ogg">
+    <source src="./merry-christmas-mr-lawrence.mp3" type="audio/mp3">
+</audio>
+<header class="welcome_index">
+    <a href="/">
+        <img class="logo" src="./images/alettertosanta.png"/>
+    </a>
+    <ul class="header-links">
+        <li>
+            <div class="dropdown">
+                <a id="nav-dropdown" role="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">
+                    <img alt="Scroll" src="./images/scroll.png"/>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="nav-dropdown">
+                    <li><a href="http://badbug.pro/" target="_blank">badbug entertainment</a></a></li>
+                    <li><a href="http://northpole.com/" target="_blank">North Pole</a></a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</header>
+
+<div class="wrapper welcome_index">
+    <div class="welcome-menu dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown"><img alt="Scroll" src="./images/scroll.png"/></a>
+        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            <li role="presentaion"><a href="http://badbug.pro/" target="_blank">badbug entertainment</a></li>
+            <li role="presentaion"><a href="http://northpole.com/" target="_blank">North Pole</a></li>
+        </ul>
+    </div>
+
+    <div class='welcome welcome-intro'>
+        <img alt="Lts002 intro fnl" class="" src="./images/lts002_intro_fnl.jpg"/>
+        <div id="intro-first-time">
+            <p><b>Ласкаво прошу на Північний полюс!</b></p>
+            <p><i class="fa fa-chevron-circle-down"></i></p>
+            <p><b>Хлопчики та дівчатка, окуніться в чарівну магію дитинства!</b></p>
+        </div>
+    </div>
+    <div id="santas-house" class="welcome">
+        <img alt="Lts002 homepage fnl" class="house" src="./images/lts002_homepage_fnl.jpg"/>
+        <div id="santas-house-title" class="welcome-title">
+            <h1>У своєму будиночку на Північному полюсі, в оточенні снігу та льоду...</h1>
+        </div>
+        <img alt="Lts002 homepage lights on" class="welcome-layer blinking-lights-on" src="./images/lts002_homepage_lights_on.png"/>
+        <img alt="Lts002 homepage lights off" class="welcome-layer" src="./images/lts002_homepage_lights_off.png"/>
+        <div id='santas-house-smoke'>
+            <img alt="Lts002 homepage smoke" src="./images/lts002_homepage_smoke.png"/>
+        </div>
+        <div class="welcome-layer santas-house-window">
+            <img alt="Lts002 homepage santa 1" id="waving-santa-1" src="./images/lts002_homepage_santa_1.png"/>
+            <img alt="Lts002 homepage santa 2" id="waving-santa-2" src="./images/lts002_homepage_santa_2.png"/>
+            <img alt="Lts002 homepage santa 3" id="waving-santa-3" src="./images/lts002_homepage_santa_3.png"/>
+            <img alt="Lts002 homepage santa 2" id="waving-santa-4" src="./images/lts002_homepage_santa_2.png"/>
+        </div>
+        <div id="santas-house-elves-on-sleigh-box">
+            <img alt="Lts002 homepage elves on sleigh" id="santas-elves-on-sleigh"
+                 src="./images/lts002_homepage_elves_on_sleigh.png"/>
+        </div>
+        <img alt="Lts002 homepage mailbox closed 1024" class="welcome-layer santas-mailbox" src="./images/lts002_homepage_mailbox_closed_1024.png"/>
+        <img alt="Lts002 homepage mailbox open 1024" class="welcome-layer santas-mailbox hidden" src="./images/lts002_homepage_mailbox_open_1024.png"/>
+        <div id="santas-mailbox-clickable"></div>
+        <div class="snow"></div>
+    </div>
+    <div class='welcome desk'>
+        <img alt="Lts002 desk fnl" class="" src="./images/lts002_desk_fnl.jpg"/>
+        <div id="welcome-desk-title" class="welcome-title">
+            <h1>Живе веселий старий дідусь, який цілий рік слідкує за тими хто був неслухняним або ж хорошим. І планує свій маршрут щоб порадувати дітей подарунками...</h1>
+        </div>
+        <img alt="Lts002 desk outside" class="desk-window welcome-layer" src="./images/lts002_desk_outside.png"/>
+        <div class='desk-window-snow'>
+            <div class="desk-window-snow-falling"></div>
+        </div>
+        <img alt="Lts002 desk window" class="desk-window welcome-layer" src="./images/lts002_desk_window.png"/>
+        <!--
+        <img alt="Lts002 desk window lights off" class="desk-window welcome-layer" src="/images/lts002_desk_window-lights-off.png" />
+        <img alt="Lts002 desk window lights on" class="blinking-lights-on welcome-layer" src="/images/lts002_desk_window-lights-on.png" />
+        -->
+    </div>
+    <div class='welcome mantel'>
+        <img alt="Lts002 mantel fnl 1024" class="main-image" src="./images/lts002_mantel_fnl_1024.jpg"/>
+        <div id="welcome-mantle-title" class="welcome-title">
+            <h1>Які у казкову новорічну ніч ти знайдеш під ялинкою.</h1>
+        </div>
+        <img alt="Lts002 mantel garland lights off" class="welcome-layer" src="./images/lts002_mantel_garland_lights_off.png"/>
+        <img alt="Lts002 mantel garland lights on" class="welcome-layer blinking-lights-on" src="./images/lts002_mantel_garland_lights_on.png"/>
+        <img alt="Lts002 mantel noel" class="welcome-layer" src="./images/lts002_mantel_noel.png"/>
+        <img alt="Lts002 mantel tree lights on" class="welcome-layer blinking-lights-on" src="./images/lts002_mantel_tree_lights_on.png"/>
+        <div id="mantel-mouse-box">
+            <img alt="Lts002 mantel mouse" id="mantel-mouse" src="./images/lts002_mantel_mouse.png"/>
+        </div>
+        <div id="mantel-santas-legs-box">
+            <img alt="Lts002 mantel santas legs" id="santas-legs" src="./images/lts002_mantel_santas_legs.png"/>
+        </div>
+        <img alt="Lts002 mantel stockings 1024" class="welcome-layer" src="./images/lts002_mantel_stockings_1024.png"/>
+    </div>
+    <div class='welcome login'>
+        <img alt="Lts002 login fnl" class="main-image" src="./images/lts002_login_fnl.jpg"/>
+        <div id="child-snowman-clickable" class="clickable-snowman" data-gender="girl"></div>
+        <div id="parent-snowman-clickable" class="clickable-snowman" data-gender="boy"></div>
+        <img alt="Lts002 login fnl clicked child" class="main-image snowman-clicked welcome-layer" id="child-snowman-clicked" src="./images/lts002_login_fnl_clicked_child.png"/>
+        <img alt="Lts002 login fnl clicked parent" class="main-image snowman-clicked welcome-layer" id="parent-snowman-clicked" src="./images/lts002_login_fnl_clicked_parent.png"/>
+        <div id="welcome-login-title" class="welcome-title">
+            <h1>Але спочатку, ти маєш написати йому чарівного листа зі своїми бажаннями.</h1>
+            <h6 id="welcome-login-subtitle">Тож обери свого сніговичка!</h6>
+        </div>
+        <div class="snow"></div>
+    </div>
+    <div class="welcome letters_new">
+        <img alt="Letter to santa" class="img-responsive" src="./images/letter-to-santa.jpg"/>
+        <form accept-charset="UTF-8" action="./letter.php" class="new_letter" id="new_letter" method="post">
+            <div id="letter-to-santa">
+                <p class="child-info">
+                    <span>Мене звуть</span> <span><input id="letter_child_name" name="child_name" placeholder="Ім'я" type="text" required/>,</span> <span>і мені</span>
+                    <span><select id="letter_age" name="age">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20" selected="selected">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                    </select></span> <span>років.</span>
+                    <p><span>Я</span> <span><select id="letter_gender" name="gender">
+                        <option value="girl">Дівчинка</option>
+                        <option value="boy">Хлопчик</option>
+                    </select></span> <span>з міста</span> <span><input id="letter_from_city_and_state" name="from_city_and_state" placeholder="Місто" type="text" required />.</span>
+                    </p>
+                    <p><span>І я <span id="was"></span></span>
+                        <span><select id="letter_nice_level" name="nice_level">
+                            <option selected="selected" value="very nice"></option>
+                            <option value="nice"></option>
+                            <option value="naughty"></option>
+                            <option value="very naughty"></option>
+                        </select></span>
+                        <span>цього року.</span>
+                        </p>
+                    <p><span>Напиши список своїх новорічних бажань</span></p>
+                <ul class="christmas-list">
+                    <li>
+                        <img alt="Snowflake" src="./images/snowflake.png"/>
+                        <input id="letter_toy_1" name="wish_1" type="text"/>
+                    </li>
+                    <li>
+                        <img alt="Snowflake" src="./images/snowflake.png"/>
+                        <input id="letter_toy_2" name="wish_2" type="text"/>
+                    </li>
+                </ul>
+                <textarea id="letter_note_to_santa" name="note_to_santa" placeholder="Напиши листа Діду Морозу." required></textarea>
+                <input class="email" id="sendletter_parent_email" name="sender_email" placeholder="Введи свій email" type="email" value="" required />
+                <input class="signature" id="signature" name="signature" placeholder="Підпишись тут" type="text" value="" required />
+                <div class="clear"></div>
+                <p><input class="letter-button" data-modal="#modal-lettersent" data-mode="send" id="sendletter" name="button" type="submit" value="Надіслати"/></p>
+            </div>
+
+        </form>
+        <div id="modal-lettersent" class="simplemodal">
+            <div class="panel panel-default">
+                <div class="panel-heading">Лист надіслано
+                    <a class="simplemodal-close" id="gobacktoletter"><i class="fa fa-times"></i></a>
+                </div>
+                <div class="panel-body" id="msg">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="welcome_index">
+        <div class="chrome">повна сумісність</div>
+        <a href="http://badbug.com.ua/" class="copy" target="_blank">with l<span class="lovely"></span>ve from <span class="bad-logo"></span></a>
+    </footer>
+</div>
+
+</body>
+</html>

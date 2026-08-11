@@ -1,0 +1,183 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background: #000 url(../images/mainback.jpg) repeat-x;
+	margin:0;
+}
+
+@font-face {
+	font-family: "Blood Crow";
+	font-weight: bold;
+	src: url('../fonts/bloodcrow.ttf');
+}
+
+#stars {
+	background:url(../images/stars.png) repeat-x;
+	height: 349px;
+}
+
+#clouds {
+	background:url(../images/clouds.png) repeat-x;
+	margin-top: 100px;
+	height: 344px;
+}
+
+#container {
+	background:url(../images/moon.png) no-repeat;
+	position: relative;
+	width: 980px;
+	margin: -20px auto; /* centers the page */
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+h1 {
+	color:#eac58b;
+	font-size: 3em;
+	padding-left: 250px;
+	padding-top: 25px;
+}
+
+h2 {
+	font-family: "Blood Crow";
+	color:#000;
+	font-size: 2em;
+	text-align:center;
+	line-height:0.2em;
+}
+
+#header {
+	font-family: "Blood Crow";
+	background: url(../images/header.png) no-repeat;
+	height: 119px;
+}
+
+#menu {
+	background: url(../images/menuback.png) no-repeat;
+	left: 0;
+	width: 466px;
+	height: 683px;
+}
+
+#step1 {
+	position:absolute;
+	margin: 150px 0 0 170px;
+}
+
+#step2 {
+	position:absolute;
+	margin: 100px 0 0 410px;
+}
+
+#step3 {
+	position:absolute;
+	margin: 280px 0 0 110px;
+}
+
+#step4 {
+	position:absolute;
+	margin: 280px 0 0 210px;
+}
+
+#step5 {
+	position:absolute;
+	margin: 210px 0 0 360px;
+}
+
+#step6 {
+	position:absolute;
+	margin: 310px 0 0 330px;
+}
+
+#step7 {
+	position:absolute;
+	margin: 450px 0 0 250px;
+}
+
+#step8 {
+	position:absolute;
+	margin: 410px 0 0 360px;
+}
+
+#step9 {
+	position:absolute;
+	margin: 520px 0 0 290px;
+}
+
+#step10 {
+	position:absolute;
+	margin: 550px 0 0 400px;
+}
+
+#contentimage {
+	background: url(../images/contentback.png) no-repeat;
+	border: 0px gray solid;
+	position:absolute;
+	right: 0;
+	top: 117px;
+	width: 514px;
+	height: 683px;
+}
+
+#content {
+	position:absolute;
+	right: 0;
+	top: 117px;
+	width: 400px;
+	padding: 250px 20px 0 20px;
+	margin-right: 60px;
+	font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+	font-size:1.1em;
+	line-height:1.1em;
+	color: #6F0003;
+}
+
+#firstletter
+{
+	color: #900;
+ 	float: left;
+ 	font-family: Old English, Georgia,serif;
+ 	font-size: 2.8em;
+	line-height: 0.85em;
+ 	margin-right: 0.03em;
+	margin-bottom:-0.25em;
+	padding:0 5px 1px 5px;
+}
+
+
+#footer {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 0.8em;
+	color: #CCC;
+	padding: 0 60px ;
+	margin-left:230px;
+	text-align:right;
+}
+
+a {
+	text-decoration: none;
+}
+ 
+a:link {
+	color: #eac58b; 
+}
+ 
+a:visited { 
+	color: #999;
+}
+ 
+a:hover { 
+	color: #C00;
+}
+ 
+a:active {
+	color: #eac58b; 
+}
+.foot_txt {
+	display: block;
+    float: left;
+    font-family: Comic Sans MS;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-top: 8px;
+}

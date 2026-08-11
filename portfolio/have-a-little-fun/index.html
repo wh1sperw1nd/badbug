@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta charset="UTF-8"/>
+        <title>Have a little fun</title>
+        <link rel="icon" href="./img/favicon.ico" type="image/x-icon"/>
+        <!--
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
+            <meta name="apple-mobile-web-app-capable" content="yes"/>
+            <meta name="format-detection" content="telephone=no">
+        -->
+        <!--    <link rel="stylesheet" href="./css/normalize.css" />-->
+        <link rel="stylesheet" href="./css/style.css"/>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="./js/jquery.lettering.js"></script>
+        <script src="./js/code.js"></script>
+        <script src="./js/script.js"></script>
+        <script src="./js/three.min.js"></script>
+        <script src="./js/TweenMax.min.js"></script>
+        <script src="./js/OrbitControls.js"></script>
+
+
+    </head>
+<body>
+
+<audio preload id="audio">
+    <source src="./media/Soundroll_-_Troublemaker.mp3" type="audio/ogg">
+    <source src="./media/Soundroll_-_Troublemaker.ogg" type="audio/mp3">
+</audio>
+<div class="wrapper">
+    <i class="volume fa fa-volume-up mute"></i>
+
+    <div class="page page-0 Start page-current">
+        <div class="title">
+            <span>Have</br> a little<br>fun</span>
+        </div>
+        <svg version="1.1" id="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="100px" width="100px"
+                 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+              <path class="stroke-solid" fill="none" stroke="white"  d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+                C97.3,23.7,75.7,2.3,49.9,2.5"/>
+              <path class="stroke-dotted" fill="none" stroke="white"  d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+                C97.3,23.7,75.7,2.3,49.9,2.5"/>
+              <path class="icon" fill="white" d="M38,69c-1,0.5-1.8,0-1.8-1.1V32.1c0-1.1,0.8-1.6,1.8-1.1l34,18c1,0.5,1,1.4,0,1.9L38,69z"/>
+            </svg>
+        <a href="http://badbug.com.ua/" class="copy" target="_blank">with l<span class="lovely"></span>ve from <span
+                class="bad-logo"></span></a>
+        <div class="chrome">повна сумісність</div>
+    </div>
+    <div class="page page-1 Cat" id="action">
+        <section class="navigation">
+            <div class="button">
+                <i class="arrows" data-page="Fish">2</i>
+                <i class="arrows" data-page="Chicken">3</i>
+                <i class="arrows" data-page="Dragon">4</i>
+                <i class="arrows" data-page="Lion">5</i>
+                <i class="arrows" data-page="End">6</i>
+            </div>
+            <div class="cover">
+                <div class="innie"></div>
+                <div class="spine"></div>
+                <div class="outie"></div>
+            </div>
+            <div class="shadow"></div>
+        </section>
+        <div class="container catWorld">
+            <div class="instructions">^<br>Двигай мишкою <br>щоб погратись з Котейком</div>
+            <div id="catWorld"></div>
+        </div>
+    </div>
+<div class="page page-2 Fish">
+    <section class="navigation">
+        <div class="button">
+            <i class="arrows" data-page="Cat">1</i>
+            <i class="arrows" data-page="Chicken">3</i>
+            <i class="arrows" data-page="Dragon">4</i>
+            <i class="arrows" data-page="Lion">5</i>
+            <i class="arrows" data-page="End">6</i>
+        </div>
+        <div class="cover">
+            <div class="innie"></div>
+            <div class="spine"></div>
+            <div class="outie"></div>
+        </div>
+        <div class="shadow"></div>
+    </section>
+    <div class="container fishWorld">
+        <div class="instructions">Переміщай курсор <br> щоб змінити швидкість і напрямок Злюки</div>
+        <div id="fishWorld"></div>
+    </div>
+</div>
+<div class="page page-3 Chicken">
+    <section class="navigation">
+        <div class="button">
+            <i class="arrows" data-page="Cat">1</i>
+            <i class="arrows" data-page="Fish">2</i>
+            <i class="arrows" data-page="Dragon">4</i>
+            <i class="arrows" data-page="Lion">5</i>
+            <i class="arrows" data-page="End">6</i>
+        </div>
+        <div class="cover">
+            <div class="innie"></div>
+            <div class="spine"></div>
+            <div class="outie"></div>
+        </div>
+        <div class="shadow"></div>
+    </section>
+    <div class="container chickenWorld">
+        <div class="instructions">^<br>Переміщай курсор<br><span class="lightInstructions">і дивись, як Ципи взаємодіють з ним</span></div>
+        <div id="chickenWorld"></div>
+    </div>
+</div>
+<div class="page page-4 Dragon">
+    <section class="navigation">
+        <div class="button">
+            <i class="arrows" data-page="Cat">1</i>
+            <i class="arrows" data-page="Fish">2</i>
+            <i class="arrows" data-page="Chicken">3</i>
+            <i class="arrows" data-page="Lion">5</i>
+            <i class="arrows" data-page="End">6</i>
+        </div>
+        <div class="cover">
+            <div class="innie"></div>
+            <div class="spine"></div>
+            <div class="outie"></div>
+        </div>
+        <div class="shadow"></div>
+    </section>
+    <div id="power">00</div>
+    <div class="container dragonWorld">
+        <div class="instructions">^<br>Чим довше ти клікаєш мишкою, тим сильніше Горинич чхає<br><span class="lightInstructions">- Натискай і тягни мишкою щоб повернути дракона -</span></div>
+        <div id="dragonWorld"></div>
+    </div>
+</div>
+<div class="page page-5 Lion">
+    <section class="navigation">
+        <div class="button">
+            <i class="arrows" data-page="Cat">1</i>
+            <i class="arrows" data-page="Fish">2</i>
+            <i class="arrows" data-page="Chicken">3</i>
+            <i class="arrows" data-page="Dragon">4</i>
+            <i class="arrows" data-page="End">6</i>
+        </div>
+        <div class="cover">
+            <div class="innie"></div>
+            <div class="spine"></div>
+            <div class="outie"></div>
+        </div>
+        <div class="shadow"></div>
+    </section>
+    <div class="container lionWorld">
+        <div class="instructions">^<br>Натискай та рухай мишкою, щоб зробити вітер<br><span class="lightInstructions">Алекс, безсумнівно, оцінить</span></div>
+        <div id="lionWorld"></div>
+    </div>
+</div>
+<div class="page page-6 End">
+    <p class="end">The End</p>
+
+    <div class="left-light"></div>
+    <div class="right-light"></div>
+
+    <section class="navigation">
+        <div class="button">
+            <i class="arrows" data-page="Cat">1</i>
+            <i class="arrows" data-page="Fish">2</i>
+            <i class="arrows" data-page="Chicken">3</i>
+            <i class="arrows" data-page="Dragon">4</i>
+            <i class="arrows" data-page="Lion">5</i>
+        </div>
+        <div class="cover">
+            <div class="innie"></div>
+            <div class="spine"></div>
+            <div class="outie"></div>
+        </div>
+        <div class="shadow"></div>
+    </section>
+</div>
+</div>
+<script src="./js/Cat.js"></script>
+<script src="./js/playCat.js"></script>
+<script src="./js/playChicken.js"></script>
+<script src="./js/playFish.js"></script>
+<script src="./js/playDragon.js"></script>
+<script src="./js/playLion.js"></script>
+    </body>
+</html>

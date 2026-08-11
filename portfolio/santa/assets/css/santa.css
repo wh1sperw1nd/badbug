@@ -1,0 +1,1067 @@
+.wall {
+    width: 100%;
+    height: 100%;
+    background-color: #966249;
+    background-image: linear-gradient(90deg, transparent 94%, #925d45 50%);
+    background-size: 45px 50px;
+}
+
+.window {
+    position: absolute;
+    left: -150px;
+    top: 150px;
+    z-index: 1;
+    width: 200px;
+    height: 250px;
+    background-color: #283861;
+    border-right: 14px solid rgba(255, 255, 255, 0.06);
+    outline: 22px solid #6f4d2f;
+    cursor: pointer;
+}
+.window:before, .window:after {
+    position: absolute;
+    content: "";
+    background-color: #6f4d2f;
+    height: 22px;
+}
+.window:before {
+    width: 222px;
+    right: -14px;
+    top: 22%;
+    margin-top: 11px;
+    border: 14px solid #344569;
+    border-right: 0;
+}
+.window:after {
+    width: 272px;
+    bottom: -22px;
+    right: -72px;
+    box-shadow: -10px 25px 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+.window .snow {
+    position: absolute;
+    bottom: 0;
+    right: -14px;
+    width: 222px;
+    height: 35px;
+    background-color: white;
+}
+
+.shelvs {
+    position: absolute;
+    left: 210px;
+    top: 120px;
+    z-index: 1;
+    height: 20px;
+    width: 450px;
+    background-color: #6f4d2f;
+    border-radius: 2px;
+    box-shadow: 0 20px 0 0 rgba(0, 0, 0, 0.1);
+}
+.shelvs .book-vert {
+    position: absolute;
+    bottom: 20px;
+    width: 25px;
+    border-radius: 1px;
+}
+.shelvs .book-vert.book-vert-1 {
+    left: 150px;
+    height: 90px;
+    background-color: #0cb26d;
+}
+.shelvs .book-vert.book-vert-2 {
+    left: 175px;
+    height: 100px;
+    background-color: #553b22;
+}
+.shelvs .book-vert.book-vert-3 {
+    left: 200px;
+    height: 80px;
+    background-color: #e6332a;
+}
+.shelvs .book-vert.book-vert-4 {
+    left: 225px;
+    height: 95px;
+    background-color: #3c3c3b;
+}
+.shelvs .book-vert.book-vert-5 {
+    left: 273px;
+    height: 100px;
+    background-color: #f9b233;
+    transform: rotate(-30deg);
+}
+
+.book-vert-1:hover,
+.book-vert-2:hover,
+.book-vert-3:hover,
+.book-vert-4:hover,
+.book-vert-5:hover {
+    -webkit-animation: shelf-book-raise 0.8s ease-in forwards;
+    animation: shelf-book-raise 0.8s ease-in forwards;
+    cursor: pointer;
+}
+
+.shelvs .candle {
+    position: absolute;
+    bottom: 25px;
+    width: 20px;
+    border-radius: 2px;
+}
+.shelvs .candle .wick {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -1.5px;
+    width: 3px;
+    height: 10px;
+    background-color: #785234;
+}
+.shelvs .candle .fire {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    margin-left: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(45deg);
+    background-color: #f9b233;
+}
+.shelvs .candle .fire:after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -35px;
+    margin-left: -35px;
+    width: 70px;
+    height: 70px;
+    content: "";
+    border-radius: 50%;
+    background-color: rgba(255, 255, 155, 0.05);
+    animation: fireGlow 300ms linear infinite alternate;
+}
+.shelvs .candle-1 {
+    background-color: #0cb26d;
+    right: 60px;
+    height: 50px;
+}
+.shelvs .candle-2 {
+    background-color: #e6332a;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 6px, white 5px, white 10px);
+    right: 30px;
+    height: 70px;
+}
+.shelvs .plate {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 5px;
+    background-color: #553b22;
+    border-radius: 2px;
+}
+.shelvs .chain {
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+.shelvs .chain span {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #fede00;
+    border-radius: 50%;
+}
+.shelvs .chain span {
+    left: 10px;
+    top: 5px;
+}
+.shelvs .chain span + span {
+    left: 22px;
+    top: 48px;
+}
+.shelvs .chain span + span + span {
+    left: 34px;
+    top: 72px;
+}
+.shelvs .chain span + span + span + span {
+    left: 46px;
+    top: 96px;
+}
+.shelvs .chain span + span + span + span + span {
+    left: 58px;
+    top: 120px;
+}
+.shelvs .chain span + span + span + span + span + span {
+    left: 70px;
+    top: 144px;
+}
+.shelvs .chain span + span + span + span + span + span + span {
+    left: 82px;
+    top: 168px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span {
+    left: 94px;
+    top: 192px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span {
+    left: 106px;
+    top: 216px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span {
+    left: 118px;
+    top: 240px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span {
+    left: 130px;
+    top: 264px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 142px;
+    top: 288px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 154px;
+    top: 312px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 166px;
+    top: 336px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 178px;
+    top: 360px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 190px;
+    top: 384px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 202px;
+    top: 378px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 214px;
+    top: 372px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 226px;
+    top: 366px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 238px;
+    top: 360px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 250px;
+    top: 354px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 262px;
+    top: 348px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 274px;
+    top: 342px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 286px;
+    top: 336px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 298px;
+    top: 330px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 310px;
+    top: 324px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 322px;
+    top: 318px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 334px;
+    top: 312px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 346px;
+    top: 306px;
+}
+.shelvs .chain span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span + span {
+    left: 358px;
+    top: 300px;
+}
+
+.book-hor {
+    position: absolute;
+    width: 80px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50% 0 0 50%/50px;
+    border: 4px solid transparent;
+    border-right: 0;
+}
+.book-hor-1:hover {
+    -webkit-animation: book-shift-1 0.5s ease forwards;
+    animation: book-shift-1 0.5s ease forwards;
+    cursor: pointer;
+}
+
+@-webkit-keyframes book-shift-1 {
+    40% {
+        -webkit-transform: skewX(3deg) translate(-3px);
+        transform: skewX(3deg) translate(-3px);
+    }
+    60% {
+        -webkit-transform: skewX(-3deg) translate(3px);
+        transform: skewX(-3deg) translate(3px);
+    }
+    100% {
+        -webkit-transform: skewX(0deg);
+        transform: skewX(0deg);
+    }
+}
+
+@keyframes book-shift-1 {
+    40% {
+        -webkit-transform: skewX(3deg) translate(-3px);
+        transform: skewX(3deg) translate(-3px);
+    }
+    60% {
+        -webkit-transform: skewX(-3deg) translate(3px);
+        transform: skewX(-3deg) translate(3px);
+    }
+    100% {
+        -webkit-transform: skewX(0deg);
+        transform: skewX(0deg);
+    }
+}
+
+.book-hor-2:hover {
+    -webkit-animation: book-shift-2 0.5s ease forwards;
+    animation: book-shift-2 0.5s ease forwards;
+    cursor: pointer;
+}
+
+@-webkit-keyframes book-shift-2 {
+    40% {
+        -webkit-transform: skewX(3deg) translate(-3px) scale(-1, 1);
+        transform: skewX(3deg) translate(-3px) scale(-1, 1);
+    }
+    60% {
+        -webkit-transform: skewX(-3deg) translate(3px) scale(-1, 1);
+        transform: skewX(-3deg) translate(3px) scale(-1, 1);
+    }
+    100% {
+        -webkit-transform: skewX(0deg) scale(-1, 1);
+        transform: skewX(0deg) scale(-1, 1);
+    }
+}
+
+@keyframes book-shift-2 {
+    40% {
+        -webkit-transform: skewX(3deg) translate(-3px) scale(-1, 1);
+        transform: skewX(3deg) translate(-3px) scale(-1, 1);
+    }
+    60% {
+        -webkit-transform: skewX(-3deg) translate(3px) scale(-1, 1);
+        transform: skewX(-3deg) translate(3px) scale(-1, 1);
+    }
+    100% {
+        -webkit-transform: skewX(0deg) scale(-1, 1);
+        transform: skewX(0deg) scale(-1, 1);
+    }
+}
+
+.book-hor.book-hor-1 {
+    left: 10px;
+    bottom: 43px;
+    border-color: #f9b233;
+}
+.book-hor.book-hor-2 {
+    left: 20px;
+    bottom: 20px;
+    border-color: #0cb26d;
+    transform: scale(-1, 1);
+}
+.book-hor.book-hor-3 {
+    right: 230px;
+    bottom: 100%;
+    border-color: #c11f2a;
+}
+
+.frame {
+    position: absolute;
+    top: 80px;
+    right: -80px;
+    z-index: 2;
+    width: 200px;
+    height: 80px;
+    background-color: white;
+    border: 10px solid #6f4d2f;
+    padding: 20px;
+    box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.frame:hover {
+    -webkit-animation: frame 0.5s ease forwards;
+    animation: frame 0.5s ease forwards;
+    cursor: pointer;
+}
+
+@-webkit-keyframes frame {
+    40% {
+        -webkit-transform: skewX(3deg) translate(-3px);
+        transform: skewX(3deg) translate(-3px);
+    }
+    60% {
+        -webkit-transform: skewX(-3deg) translate(3px);
+        transform: skewX(-3deg) translate(3px);
+    }
+    100% {
+        -webkit-transform: skewX(0deg);
+        transform: skewX(0deg);
+    }
+}
+
+@keyframes frame {
+    40% {
+        -webkit-transform: skewX(3deg) translate(-3px);
+        transform: skewX(3deg) translate(-3px);
+    }
+    60% {
+        -webkit-transform: skewX(-3deg) translate(3px);
+        transform: skewX(-3deg) translate(3px);
+    }
+    100% {
+        -webkit-transform: skewX(0deg);
+        transform: skewX(0deg);
+    }
+}
+
+@media (max-width: 879px) {
+    .frame {
+        display: none;
+    }
+}
+.frame .picture {
+    width: 160px;
+    height: 80px;
+    background-color: #0cb26d;
+    overflow: hidden;
+}
+.frame .picture .light {
+    left: 50%;
+    width: 300px;
+    height: 80px;
+    background-color: #3cc38a;
+    transform: rotate(-35deg);
+}
+.frame .ball {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 15px 0 2px rgba(0, 0, 0, 0.1);
+}
+.frame .ball:before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 6px;
+    height: 4px;
+    margin-left: -3px;
+    border-radius: 2px;
+    background-color: #f69d3c;
+}
+.frame .ball.ball-1 {
+    left: 50px;
+    top: 160px;
+    background-color: #e6332a;
+}
+.frame .ball.ball-2 {
+    left: 100px;
+    top: 190px;
+    background-color: white;
+    background-image: linear-gradient(transparent 6px, #1d71b9 5px);
+    background-size: 14px;
+}
+.frame .ball.ball-2 .line {
+    height: 57px;
+}
+.frame .ball .line {
+    position: absolute;
+    left: 50%;
+    bottom: 49px;
+    width: 2px;
+    margin-left: -1px;
+    height: 27px;
+    background-color: #58473b;
+}
+.frame .ball .line:after, .frame .ball .line:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    border: 1px solid #58473b;
+    width: 5px;
+    height: 5px;
+    border-radius: 50% 0 50% 0;
+}
+.frame .ball .line:after {
+    right: 50%;
+    transform: scale(-1, 1);
+}
+.frame .ball .line:before {
+    left: 50%;
+}
+
+.socket {
+    position: absolute;
+    right: 46px;
+    bottom: 235px;
+    z-index: 1;
+    width: 36px;
+    height: 60px;
+    background-color: white;
+    border-radius: 4px;
+}
+.socket .plug-1 {
+    margin: 9px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #d9dada;
+    position: relative;
+}
+.socket .plug-1:before, .socket .plug-1:after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 8px;
+    top: 5px;
+    border-radius: 4px;
+    background-color: #60605f;
+}
+.socket .plug-1:before {
+    left: 5px;
+}
+.socket .plug-1:after {
+    right: 5px;
+}
+.socket .plug-2 {
+    position: absolute;
+    top: 35px;
+    left: 16px;
+    width: 100px;
+    height: 125px;
+    border: 4px solid #3c3c3b;
+    border-right: 0;
+    border-top: 0;
+    border-radius: 10px;
+}
+.socket .plug-2:after, .socket .plug-2:before {
+    content: "";
+    position: absolute;
+    background-color: #3c3c3b;
+}
+.socket .plug-2:before {
+    width: 20px;
+    height: 20px;
+    left: -12px;
+    top: -5px;
+    border-radius: 50%;
+}
+.socket .plug-2:after {
+    width: 10px;
+    height: 8px;
+    left: -7px;
+    top: 13px;
+}
+.boots-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.boots {
+    position: absolute;
+    z-index: 2;
+    width: 70px;
+    height: 100px;
+    background-color: #3c3c3b;
+    border-top: 35px solid #b2b2b2;
+}
+.boots:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 110px;
+    height: 40px;
+    background-color: #3c3c3b;
+    border-bottom: 10px solid #565655;
+    border-radius: 50% 0 0 0/40px;
+}
+.boots.boots-1 {
+    bottom: 98px;
+    left: 90px;
+    transform: rotate(90deg);
+}
+.boots.boots-2 {
+    bottom: 150px;
+    left: -50px;
+    transform: scale(-1, 1);
+}
+
+.couch {
+    position: absolute;
+    left: 445px;
+    bottom: 135px;
+    width: 740px;
+    height: 330px;
+    z-index: 3;
+}
+.couch .back {
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    width: 330px;
+    height: 300px;
+    background-color: #553b22;
+    border-radius: 60px 20px;
+}
+.couch .back-1 {
+    left: 0;
+    margin-left: 40px;
+}
+.couch .back-2 {
+    right: 0;
+    margin-right: 40px;
+    transform: scale(-1, 1);
+}
+.couch .base {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    z-index: 6;
+    background-color: #553b22;
+    border-top: 50px solid #4f3720;
+    width: 100%;
+    height: 50px;
+    border-radius: 2px;
+}
+.couch .base .feet {
+    width: 40px;
+    height: 25px;
+    position: absolute;
+    bottom: -25px;
+    background-color: #b2b2b2;
+    border-radius: 0 0 2px 2px;
+}
+.couch .base .feet:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.couch .base .feet.feet-1 {
+    left: 30px;
+}
+.couch .base .feet.feet-2 {
+    right: 30px;
+}
+.couch .arm {
+    position: absolute;
+    z-index: 6;
+    top: 130px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #6f4d2f;
+    color: #553b22;
+    text-align: center;
+    line-height: 100px;
+    font-size: 50px;
+}
+.couch .arm.arm-1 {
+    left: -20px;
+    z-index: 8;
+}
+.couch .arm.arm-2 {
+    right: -20px;
+}
+.couch .cushion {
+    position: absolute;
+    bottom: 90px;
+    z-index: 6;
+    width: 345px;
+    height: 45px;
+    background-color: #6f4d2f;
+    border-radius: 15px;
+}
+.couch .cushion.cushion-1 {
+    left: 55px;
+}
+.couch .cushion.cushion-2 {
+    right: 55px;
+}
+.couch .sock {
+    position: absolute;
+    top: 0;
+    right: 180px;
+    z-index: 5;
+    width: 35px;
+    height: 70px;
+    background-color: #0cb26d;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 8px;
+    padding-top: 5px;
+    /*      .heel {
+            position: absolute;
+            right: -10px;
+            bottom: 10px;
+            z-index: 6;
+            width: 30px;
+            height: 30px;
+            border-radius: 50% ;
+            background-color: white;
+         } */
+}
+.couch .sock:after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 41px;
+    border-radius: 0 0 20px 20px;
+    background-color: #0cb26d;
+    height: 65px;
+    width: 35px;
+    transform: rotate(65deg);
+}
+.noel .head {
+    position: absolute;
+    left: 30px;
+    top: 52px;
+    z-index: 5;
+    transform: rotate(-35deg);
+    background-color: #ebc3aa;
+    width: 80px;
+    height: 42px;
+    border-left: 10px solid white;
+    border-right: 10px solid white;
+    background-color: #ebc3aa;
+}
+.noel .head .nose {
+    position: absolute;
+    top: 26px;
+    left: 50%;
+    z-index: 7;
+    margin-left: -7.5px;
+    width: 15px;
+    height: 15px;
+    background-color: #d7ae96;
+    border-top: 3px solid #3c3c3b;
+    border-radius: 50%;
+}
+.noel .head .glasses {
+    position: absolute;
+    top: 26px;
+    left: 50%;
+    z-index: 7;
+    margin-left: -28px;
+}
+.noel .head .glasses .glass {
+    float: left;
+    width: 17px;
+    height: 17px;
+    border: 2px solid #3c3c3b;
+    border-radius: 50%;
+    position: relative;
+}
+.noel .head .glasses .glass + .glass {
+    margin-left: 13px;
+}
+.noel .head .glasses .glass:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 8px;
+    height: 3px;
+    margin-left: -4px;
+    margin-top: -2px;
+    background-color: #afadac;
+}
+.noel .head .mouth {
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    top: 54px;
+    width: 10px;
+    height: 10px;
+    background-color: #3c3c3b;
+    border-radius: 50%;
+    z-index: 6;
+    animation: noelMouth 2s cubic-bezier(0.71, 0.09, 0.27, 0.92) alternate infinite;
+}
+.noel .head .hat {
+    position: absolute;
+    left: 50%;
+    margin-left: -60px;
+}
+.noel .head .hat .hat-base {
+    position: relative;
+    z-index: 6;
+    width: 120px;
+    height: 30px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+.noel .head .hat .hat-pompon {
+    position: absolute;
+    left: -85px;
+    top: 10px;
+    z-index: 6;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.noel .head .hat .hat-body {
+    position: absolute;
+    z-index: 5;
+    left: 10px;
+    top: -40px;
+    width: 100px;
+    height: 40px;
+    background-color: #e6332a;
+    border-radius: 50% 50% 0 0/40px;
+}
+.noel .head .hat .hat-body:before, .noel .head .hat .hat-body:after {
+    content: "";
+    position: absolute;
+    background-color: #e6332a;
+}
+.noel .head .hat .hat-body:before {
+    width: 100px;
+    height: 39px;
+    right: 55px;
+    top: 30px;
+    transform: rotate(-33deg);
+    border-radius: 24px;
+}
+.noel .head .hat .hat-body:after {
+    left: -75px;
+    top: 50px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.noel .head .beard {
+    width: 120px;
+    height: 80px;
+    background-color: white;
+    border-radius: 20px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin-left: -60px;
+}
+.noel .head .beard:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    right: -24px;
+    bottom: 0;
+    animation: noelBeard 2s cubic-bezier(0.71, 0.09, 0.27, 0.92) alternate infinite;
+}
+.noel .beard-front {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 130px;
+    left: 125px;
+    margin-left: -60px;
+    z-index: 7;
+}
+.noel .arms {
+    position: absolute;
+    left: 75px;
+    top: 170px;
+    width: 55px;
+    height: 120px;
+    z-index: 6;
+    background-color: #e6332a;
+}
+.noel .arms:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    width: 65px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.noel .arms .hand {
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    z-index: 7;
+    width: 45px;
+    height: 47px;
+    background-color: #3c3c3b;
+    border-radius: 0 0 10px 10px;
+}
+.noel .arms .hand:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 25px;
+    width: 40px;
+    height: 25px;
+    border-radius: 50px 0 0 50px;
+    background-color: #3c3c3b;
+}
+.noel .body {
+    position: absolute;
+    left: 130px;
+    top: 70px;
+    z-index: 5;
+    width: 240px;
+    height: 240px;
+    background-color: #e6332a;
+    border-radius: 50%;
+    animation: noelBody 2s cubic-bezier(0.71, 0.09, 0.27, 0.92) alternate infinite;
+}
+.noel .body .belt {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -15px;
+    width: 30px;
+    height: 100%;
+    background-color: #3c3c3b;
+}
+.noel .body .belt:after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 40px;
+    height: 5px;
+    background-color: #fede00;
+    border-radius: 5px;
+}
+.noel .leg {
+    position: absolute;
+    width: 160px;
+    height: 70px;
+    transform: rotate(6deg);
+}
+.noel .leg:after {
+    content: "";
+    position: absolute;
+    z-index: 6;
+    right: 0;
+    top: -10px;
+    width: 25px;
+    height: 90px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.noel .leg.left-leg {
+    z-index: 4;
+    top: 140px;
+    left: 310px;
+    background-color: #be1420;
+}
+.noel .leg.left-leg:after {
+    background-color: #eeeeed;
+}
+.noel .leg.left-leg .ankle,
+.noel .leg.left-leg .foot {
+    background-color: #d7ae96;
+}
+.noel .leg.right-leg {
+    z-index: 5;
+    top: 150px;
+    left: 320px;
+    background-color: #e6332a;
+}
+.noel .leg .ankle {
+    position: absolute;
+    left: 100%;
+    top: 10px;
+    z-index: 5;
+    width: 80px;
+    height: 30px;
+    margin-left: -5px;
+    background-color: #ebc3aa;
+    transform: rotate(-6deg);
+    border-radius: 0 50% 50% 0/70px;
+}
+.noel .leg .foot {
+    position: absolute;
+    left: 180px;
+    top: 0;
+    width: 80px;
+    height: 30px;
+    transform: rotate(-60deg) translate3d(10px, 5px, 0px);
+    background-color: #ebc3aa;
+    border-radius: 0 50px;
+}
+
+.floor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    border-top: 30px solid #f9b233;
+    background-color: #4f3720;
+}
+
+@keyframes fireGlow {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+@keyframes noelBody {
+    from {
+        transform: translate(-10px, -5px) rotate(-10deg);
+    }
+    to {
+        transform: translate(0, 0) rotate(0);
+    }
+}
+@keyframes noelBeard {
+    from {
+        transform: translate(-5px, -10px);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+@keyframes noelMouth {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.6);
+    }
+}

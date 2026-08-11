@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.6.4.js" type="text/javascript"></script>
+<script src="js/jquery.easing.1.3.js" type="text/javascript"></script> 
+<script>
+	$(document).ready(function(){
+		$curtainopen = false;
+			$(".rope").click(function(){
+				$(this).blur();
+				if ($curtainopen == false){ 
+					$(this).stop().animate({top: '0px' }, {queue:false, duration:350, easing:'easeOutBounce'}); 
+					$(".cook_book").slideDown(1000);
+					$curtainopen = true;
+				}else{
+					$(this).stop().animate({top: '-40px' }, {queue:false, duration:350, easing:'easeOutBounce'}); 
+						$(".cook_book").slideUp(1000);
+					$curtainopen = false;
+				}
+				return false;
+			});
+			
+		$(".refregerator").mouseenter(function(){
+			$(".refregerator").fadeOut(10);
+			$(".refregerator_open").fadeIn(10);
+		});
+		$(".refregerator_open").mouseleave(function(){
+			$(".refregerator_open").fadeOut(10);
+			$(".refregerator").fadeIn(10);
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="kitchen-content">
+		<div class="kitchen">
+			<a class="rope" href="#">
+				<img src="images/rope.png"/>
+			</a>
+			<div class="cook_book"></div>
+			<div class="refregerator"></div>
+			<div class="refregerator_open"></div>
+		</div>		
+	<div>
+</body>
+</html>

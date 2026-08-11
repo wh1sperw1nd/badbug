@@ -1,0 +1,47 @@
+.tymanivka .content {
+    flex-direction: column;
+    margin-top: 14vw;
+    position: relative;
+}
+.tymanivka .bg {
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: -40vw;
+    z-index: 0;
+}
+
+.content .title {
+    position: absolute;
+    top: 0;
+    font-size: 7vw;
+    text-transform: uppercase;
+    color: rgba(44,79,64, 0.4);
+    padding-left: 10vw;
+    width: 100%;
+    z-index: 1;
+    font-family: "BlackCAPS", sans-serif;
+    letter-spacing: 1vw;
+    transform: rotate3d(0,0,1, -90deg) translate3d(0vw,-34vw,0);
+}
+
+.tymanivka .content img.title_bg {
+    width: 88vw;
+    height: auto;
+    display: block;
+    position: relative;
+    top: -11vw;
+    right: -11.2vw;
+}
+
+.tymanivka article {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20vw;
+}
+
+.tymanivka .wrap {
+    margin-top: -17vw;
+}

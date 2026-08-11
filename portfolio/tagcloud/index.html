@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="js/jquery.tagcanvas.js" type="text/javascript"></script>
+    <script src="js/tagcanvas-accel.js" type="text/javascript"></script>
+
+	<title>HTML5</title>
+
+      <script type="text/javascript">
+         $(document).ready(function() {
+          $('#myCanvas').tagcanvas({
+             textColour : '#ff0000',
+             textHeight : 18,
+             outlineThickness : 1,
+             outlineColour : '#0000ff',
+             maxSpeed : 0.03,
+             depth : 0.75
+           }) 
+         });
+      </script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+          $('#imgCanvas').tagcanvas({
+             textColour : '#ff0000',
+             textHeight : 18,
+             outlineThickness : 1,
+             outlineColour : '#0000ff',
+             maxSpeed : 0.03,
+             depth : 0.75
+           }) 
+         });
+      </script>
+      <style>
+        canvas {border: 1px solid; float: left; margin-right: 50px;}
+      </style>
+</head>
+
+<body>
+    <canvas width="300" height="300" id="myCanvas">
+        <p>Anything in here will be replaced on browsers that support the canvas element</p>
+        <ul>
+            <li><a href="#">Google</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">Ajax</a></li>
+            <li><a href="#">JQuery</a></li>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">C#</a></li>
+            <li><a href="#">ASP.NET</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">Ajax</a></li>
+            <li><a href="#">JQuery</a></li>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">C#</a></li>
+            <li><a href="#">ASP.NET</a></li>
+        </ul>
+     </canvas>
+     <canvas width="300" height="300" id="imgCanvas">
+        <p>Anything in here will be replaced on browsers that support the canvas element</p>
+        <div style="display: none">
+        	<div id="taglist">
+        		<a href="#01" onclick="return nop()"><img src="images/1.png" alt="Icon 01" /></a>
+        		<a href="#02" onclick="return nop()"><img src="images/2.png" alt="Icon 02" /></a>
+        		<a href="#03" onclick="return nop()"><img src="images/3.png" alt="Icon 03" /></a>
+        		<a href="#04" onclick="return nop()"><img src="images/4.png" alt="Icon 04" /></a>
+        		<a href="#05" onclick="return nop()"><img src="images/5.png" alt="Icon 05" /></a>
+        		<a href="#06" onclick="return nop()"><img src="images/6.png" alt="Icon 06" /></a>
+        		<a href="#07" onclick="return nop()"><img src="images/7.png" alt="Icon 07" /></a>
+        		<a href="#08" onclick="return nop()"><img src="images/8.png" alt="Icon 08" /></a>
+        		<a href="#09" onclick="return nop()"><img src="images/9.png" alt="Icon 09" /></a>
+        	</div>
+        </div>
+     </canvas>
+<!--http://www.goat1000.com/tagcanvas.php-->
+
+</body>
+</html>

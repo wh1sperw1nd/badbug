@@ -1,0 +1,11 @@
+/* Webfont: IntroDemo-BlackCAPS */@font-face {
+    font-family: 'IntroDemoBlackCAPS';
+    src: url('IntroDemo-BlackCAPS.eot'); /* IE9 Compat Modes */
+    src: url('IntroDemo-BlackCAPS.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('IntroDemo-BlackCAPS.woff') format('woff'), /* Modern Browsers */
+         url('IntroDemo-BlackCAPS.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

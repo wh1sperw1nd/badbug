@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    	<meta charset="UTF-8" />
+        <title>For You!!!</title>
+        <link rel="stylesheet" type="text/css" href="./css/reset.css"/>     
+        <link rel="stylesheet" type="text/css" href="./css/style.css"/>     
+        <script type="text/javascript" src="./js/jquery-3.1.0.min.js"></script>
+        <script type="text/javascript" src="./js/howler.min.js"></script>
+        <script type="text/javascript" src="./js/TweenMax.min.js"></script>
+        <script type="text/javascript" src="./js/jquery.easing.1.3.js"></script>  
+        <script type="text/javascript" src="./js/raphael-min.js"></script>  
+        <script type="text/javascript" src="./js/rain.js"></script>
+        <script type="text/javascript" src="./js/animation.js"></script>
+    </head>
+    <body>
+
+        <section class="preloader">
+            <div id="gears">
+               <img class="green" src="./images/greengear.svg" alt="Green gear">
+                <img class="yellow" src="./images/yellowgear.svg" alt="Yellow gear">
+            </div>
+            <div class="loading">Loading...</div>
+        </section> 
+        <div class="wrap" style="display: none;">
+            <div class="leftcurtain"><img src="images/frontcurtain.jpg"/></div>
+            <div class="rightcurtain"><img src="images/frontcurtain.jpg"/></div>
+            <a id='rope' class="rope" href="javascript:void(0);">
+                <img src="images/rope.png"/>
+            </a>
+            <div id="sky"></div>
+            <div id="sun_yellow"></div>
+            <div id="sun_red"></div>
+            <div id="clouds" style="background-position: 0 0;"></div>
+            <div id="cl1" style="background-position: 0 0;"></div>
+            <div id="cl2" style="background-position: 0 0;"></div>
+            <div id="cl3" style="background-position: 0 0;"></div>
+            <div id="butterfly_yellow"></div>
+            <div id="butterfly_blue"></div>
+            <div id="butterfly_pink"></div>
+            <div id="bee"></div>
+            <div id="flappy"></div>
+            <div class="ground"></div>
+            <div class="night"></div>
+            <div id="stars">
+                <div class="night small"></div>
+                <div class="stars"></div>
+                <div class="twinkling"></div>
+                <div class="clouds"></div>
+                <div id="moon"></div>
+                <div class="ground"></div>
+            </div>
+            <div id="lovers"></div>
+            <div id="loversyes"></div>
+            <div id="shealone"></div>
+            <div id="healone"></div>
+            <div id="rose_fall"></div>
+            <div id="canvas"></div>
+            <div id="dream">
+                <span class="choise">Сделай свой выбор:</span>
+                <div id="button_green"></div>
+                <div id="button_red"></div>
+            </div>
+            <div id="sstar"></div>
+            
+            <div id="back"><a href="http://badbug.pro/" target="_blank"></a></div>
+            <div id="title"></div>
+            <div class="page_title">Love Story</div>
+            <div class="letter">
+                <p style="display:none" id="text">
+                    Дай мне шанс, и знай – что прошлые ошибки%
+                    Сотрутся и исчезнут навсегда!%
+                    Дай мне шанс - чтобы всё изменить,%
+                    И сделай шаг навстречу мне.%%
+
+                    Ты дай мне шанс и загадай своё желание,%
+                    Не бойся ты чего-то захотеть!%
+                    Я подарю тебе заботу и внимание,%
+                    Тепло,которым лёд смогу согреть.%
+                </p>
+                <div id="place"></div>
+            </div>
+            <div class="letter">
+                <p style="display:none" id="theEndText">
+                    Она ушла не обернувшись,%
+                    Она ушла без лишних слов,%
+                    Ему остались только строки%
+                    Из недописанных стихов.%
+                </p>
+                <div id="placeOutput" style="line-height: 18px;"></div>
+            </div>
+        </div>
+    </body>
+</html>

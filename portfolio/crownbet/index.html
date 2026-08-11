@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CrownBet.Responsible.Gambling">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title ng-bind="title">Responsible Gambling</title>
+    <link rel="shortcut icon" href="./assets/images/favicons/favicon.ico?2" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/images/favicons/apple-touch-icon-76x76.png">
+    <link rel="icon" type="image/png" href="./assets/images/favicons/apple-touch-icon-76x76.png" sizes="76x76">
+    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <!-- Google Tag Manager -->
+    <script>
+        dataLayer = [];
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-P2X3P3');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta name="format-detection" content="telephone=no">
+    <script src="./js/libs/angular.min.js"></script>
+    <script src="./js/libs/angular-route.min.js"></script>
+    <script src="./js/libs/angular-animate.min.js"></script>
+    <script src="./js/libs/jquery-3.1.0.min.js"></script>
+    <script src="./js/libs/ui-bootstrap-tpls-2.0.0.min.js"></script>
+
+    <script src="./js/common/app.js"></script>
+
+    <script src="./js/common/route.js"></script>
+
+    <script src="./js/common/mainController.js"></script>
+    <script src="./js/common/directives.js"></script>
+    <script src="./js/controllers/homeController.js"></script>
+    <script src="./js/controllers/ourCommitmentController.js"></script>
+    <script src="./js/controllers/stayingInControlController.js"></script>
+    <script src="./js/controllers/toolsController.js"></script>
+    <script src="./js/controllers/gettingHelpController.js"></script>
+    <script src="./js/controllers/familyAndFriendsController.js"></script>
+    <script src="./js/controllers/calculatorController.js"></script>
+
+    <link href="./assets/css/styles.css" rel="stylesheet"/>
+</head>
+<body ng-controller="mainController">
+<div class="mobile-menu-shadow" id="mobileMenuShadow" ng-click="closeMenuMobileTab()"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <div class="menu-inner">
+        <ul class="menu-list">
+            <li class="menu-list-item"><i class="close-menu" ng-click="closeMenuMobileTab()"></i></li>
+            <li ng-repeat="(key, menu) in menus" class="mainmenu-mobile" ng-class="{'active':(menu.id==currentPageId)&&true}">
+                <a id="{{menu.id}}-mobile" class="" href="{{menu.route}}" ng-click="menu.id == 'home' ? closeMenuMobileTab() : false">
+                    <span><span>{{menu.name}}</span></span>
+                    <i ng-if="menu.submenu.length" class="fa toggle-icon"></i>
+                </a>
+                <ul class="sub-menu">
+                    <li ng-repeat="submenu in menu.submenu">
+                        <a id="{{submenu.id}}-mobile" href="./{{submenu.route}}"   class="submenu {{submenu.id==currentSubPageId?'active':''}}" ng-click="closeMenuMobileTab()"><span>{{submenu.name}}</span></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="wrapper">
+    <header class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <div class="navbar-header">
+                    <i class="menu-link fa fa-navicon" ng-click="openMenuMobileTab()"></i>
+                    <!--<label class="quick-links" for="quickLinks" style="display: none">-->
+                        <!--<input id="quickLinks" type="checkbox" class="checkbox-link"/>-->
+                        <!--<ul class="links">-->
+                            <!--<li ng-repeat="link in links"><a href="{{link.url}}" ng-click="hideQuickLinksMenu($event)">-->
+                                <!--<i class="help-icon"></i><span>{{link.name}}</span></a></li>-->
+                        <!--</ul>-->
+                    <!--</label>-->
+                    <a href="{{menus[0].route}}" class="img-responsive logo"></a>
+                </div>
+                <ul class="top-bar-menu nav navbar-nav navbar-right">
+                    <li ng-repeat="menu in menus" ng-click="hideQuickLinksMenu($event)"><a id="{{menu.id}}" href="./{{menu.route}}" class="mainmenu {{menu.id==currentPageId?'active':''}}"><span>{{menu.name}}</span></a>
+                        <ul class="links">
+                            <li ng-repeat="submenu in menu.submenu">
+                                <a id="{{submenu.id}}" href="./{{submenu.route}}"   class="submenu {{submenu.id==currentSubPageId?'active':''}}"><span>{{submenu.name}}</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="content" role="main" ng-click="hideQuickLinksMenu($event)">
+        <div ng-view class="view-animate"></div>
+    </div>
+</div>
+<footer class="footer">
+    <!--<footer-floating></footer-floating>-->
+    <div class="container panel-crown">
+        <div class="row footer-columns">
+            <div class="col-lg-5">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="footer-title">Quick links</p>
+                    </div>
+                </div>
+                <a href="http://www.gamblinghelponline.org.au/" target="_blank">
+                    <span class="clear-bottom">Gambling Help Online</span>
+                </a>
+                <p class="font-small">1800 858 858</p>
+                <p class="margin-fix"></p>
+                <a href="https://www.crownmelbourne.com.au/casino/responsible-gaming/support-centre" target="_blank">
+                    <span class="clear">Crown Melbourne Responsible</span>
+                    <span class="clear-bottom"> Gambling Support Centre</span>
+                </a>
+                <p class="clear-bottom font-small">1800 801 098</p>
+                <a class="font-small" href="mailto:rgsc@crownmelbourne.com.au">rgsc@crownmelbourne.com.au</a>
+                <p class="margin-fix"></p>
+                <a href="https://www.crownmelbourne.com.au/casino/responsible-gaming/support-centre/chaplainancy-support-service">
+                    <span class="clear-bottom">Crown Melbourne Chaplaincy Support Service</span>
+                </a>
+                <p class="font-small">1800 456 228</p>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="footer-title">Contact us</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="clear">For more information about CrownBet’s responsible</p>
+                        <p class="clear">gambling tools or to request further information</p>
+                        <p class="clear">about your account, you can contact CrownBet</p>
+                        <p class="clear-top">Customer Service through the below channels.</p>
+                        <p class="margin-fix"></p>
+                        <p class="clear-bottom font-middle">Telephone</p>
+                        <p class="clear">13 CROWNBET (13 2769) within Australia</p>
+                        <p class="clear">0800 238 399 from New Zealand</p>
+                        <p class="clear-top">+61 3 9257 3685 from overseas</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <p class="clear-bottom font-middle">Email</p>
+                <p class="font-small">
+                    <a href="mailto:support@crownbet.com.au" class="font-small">support@crownbet.com.au</a>
+                </p>
+                <p class="margin-fix"></p>
+                <p class="clear-bottom font-middle">Facsimile</p>
+                <p class="font-small">1800 32 64 32</p>
+                <p class="margin-fix"></p>
+                <p class="clear-bottom font-middle">Mail</p>
+                <p class="clear font-small">GPO Box 4279</p>
+                <p class="clear font-small">MELBOURNE VIC 3001</p>
+            </div>
+        </div>
+        <div class="plus18-footer">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="plus18 scale"></div>
+                </div>
+                <div class="col-lg-7">
+                    <p class="clear">18+. Stay in control. Leave before you lose it. Gamble responsibly. Call Gambler's Help 1800 858 858.</p>
+                    <p class="clear">CrownBet's gambling operations for South Australian residents are governed by the South Australian</p>
+                    <p class="clear">Responsible Gambling Code of Practice Pre-Commitment Limits</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2X3P3" height="0" width="0" style="display:none;visibility:hidden">
+    </iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+</html>

@@ -1,0 +1,224 @@
+<div ng-controller="CalculatorController">
+    <div ng-show="showCircle">
+        <hr/>
+        <div class="container circle-container">
+            <div class="row form-states">
+                <div ng-repeat="(pageKey, page) in calculatorFormFields" id="circle-page-{{pageKey+1}}"
+                     class="circle">
+                    <div class="">{{pageKey+1}}</div>
+                    <span class="title">{{page.title}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr/>
+
+        <div ng-repeat="(pageKey, page) in calculatorFormFields" id="calc-page-{{pageKey+1}}" class="calc-pages"
+             ng-show="showPage[pageKey+1]">
+            <form name="calculatorForm-{{pageKey+1}}" class="container" ng-submit="submitForm(pageKey)" novalidate>
+            <div class="row">
+                    <div class="col-lg-7 mar-auto">
+                    <div class="row" ng-repeat="(fieldKey, field) in page.fields">
+                        <div class="col-lg-6 relative">
+                            <div class="input-error error-message">
+                                <span ng-show="showErrorEmpty[field.short]">Field must contain a number</span>
+                                <span ng-show="showErrorDecimal[field.short]">Integer or number with 2 decimals</span>
+                            </div>
+                            <input class="form-control" type="text"
+                                   placeholder="{{field.label}}"
+                                   ng-model="calculatorFields[field.short]"
+                                   id="{{field.short}}"
+                                   name="{{field.short}}"
+                                   ng-class="errorRed[field.short]"
+                                   maxlength="15"
+                                   ng-blur="setComma($event)"
+                                   ng-focus="removeComma($event)"
+                            />
+                            <i ng-class="errorRedCircle[field.short]"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 relative">
+                            <div ng-show="showOnceButton">
+                                <div class="row" style="padding: 0 15px">
+                                    <button class="btn-crown-primary btn-account w100" type="submit">
+                                        <span>Next</span>
+                                        <i class="fa fa-angle-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div ng-show="!showOnceButton">
+                                <div class="row" style="padding: 0 15px">
+                                    <div class="">
+                                        <button class="btn-crown-primary-clear btn-account-clear w100"
+                                                style="float: left; width: 49%; "
+                                                ng-click="goToPage(pageKey)"
+                                                type="button">
+                                            <span>Back</span>
+                                            <i class="fa fa-angle-left"></i>
+                                        </button>
+                                    </div>
+                                    <div class="">
+                                        <button class="btn-crown-primary btn-account w100"
+                                                style="float: right; width: 49%;"
+                                                type="submit">
+                                            <span>{{(pageKey!=4)?"Next":"Calculate"}}</span>
+                                            <i class="fa fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 relative">
+                            <p class="calc-desc" style="display: none">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </form>
+        </div>
+
+    <div id="form-result" ng-show="showPage[6]">
+        <div class="row">
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-6">
+                <h3>Results</h3>
+                <hr/>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <label>Your Budget Summary:</label>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td>Total Income:</td>
+                                    <td>${{prepareNumber(getTotalIncome().toFixed(2))}} per month</td>
+                                </tr>
+                                <tr>
+                                    <td>Total Spending:</td>
+                                    <td>${{prepareNumber(getTotalSpending().toFixed(2))}} per month</td>
+                                </tr>
+                                <tr>
+                                    <td>Total Left:</td>
+                                    <td>${{prepareNumber((getTotalIncome() - getTotalSpending()).toFixed(2))}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <label>Your Spending Breakdown</label>
+                        <p>Here's a summary of your spending, along with the proportion of your income which you spend
+                            on each item.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Spending per Month</th>
+                                    <th>% of Monthly Income</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Household</td>
+                                    <td>${{prepareNumber(getTotalHousehold().toFixed(2))}}</td>
+                                    <td>{{(getTotalHousehold()*100/getTotalSpending())?(getTotalHousehold()*100/getTotalSpending()).toFixed(2):"0.00"}}%</td>
+                                </tr>
+                                <tr>
+                                    <td>Gambling</td>
+                                    <td>${{prepareNumber(getTotalGambling().toFixed(2))}}</td>
+                                    <td>{{(getTotalGambling()*100/getTotalSpending())?(getTotalGambling()*100/getTotalSpending()).toFixed(2):"0.00"}}%</td>
+                                </tr>
+                                <tr>
+                                    <td>Leisure</td>
+                                    <td>${{prepareNumber(getTotalLeisure().toFixed(2))}}</td>
+                                    <td>{{(getTotalLeisure()*100/getTotalSpending())?(getTotalLeisure()*100/getTotalSpending()).toFixed(2):"0.00"}}%</td>
+                                </tr>
+                                <tr>
+                                    <td>Travel</td>
+                                    <td>${{prepareNumber(getTotalTravel().toFixed(2))}}</td>
+                                    <td>{{(getTotalTravel()*100/getTotalSpending())?(getTotalTravel()*100/getTotalSpending()).toFixed(2):"00.0"}}%</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                </div>
+            </div>
+        </div>
+        <div class="row buttons-container">
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row" style="padding: 0 15px">
+                            <div class="">
+                                <button class="btn-crown-primary-clear btn-account-clear w100"
+                                        style="float: left; width: 49%; "
+                                        ng-click="goToPage(1)">
+                                    <span>Change Figures</span>
+                                    <i class="fa fa-angle-left"></i>
+                                </button>
+                            </div>
+                            <div class="">
+                                <button class="btn-crown-primary btn-account w100" style="float: right; width: 49%;"
+                                        ng-click="printResults()">
+                                    <span>Print Results</span>
+                                    <i class="fa fa-print"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

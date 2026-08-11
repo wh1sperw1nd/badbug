@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Turn.js: Make a flipbook with HTML5</title>
+        <meta charset="UTF-8" />
+        <link type="text/css" rel="stylesheet" href="css/jquery.ui.css">
+        <link type="text/css" rel="stylesheet" href="css/default.css">
+        <link type="text/css" rel="stylesheet" href="samples/steve-jobs/css/steve-jobs.css">
+        <link type="text/css" rel="stylesheet" href="samples/html5/css/html5.css">
+        <link type="text/css" rel="stylesheet" href="samples/love-story/css/love-story.css">
+        <!--<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>-->
+        <script type="text/javascript" src="js/all.js"></script>
+        <script type="text/javascript" src="js/hash.js"></script>
+        <script type="text/javascript" src="js/turn.min.js"></script>
+        <script type="text/javascript" src="js/zoom.min.js"></script>
+        <script type="text/javascript" src="js/bookshelf.js"></script>
+        <script type="text/javascript" src="js/jquery.loader3.js"></script>
+
+        <script src="samples/steve-jobs/js/steve-jobs.js" async="" type="text/javascript"></script>
+        <script src="samples/html5/js/html5.js" async="" type="text/javascript"></script>
+        <script src="samples/html5/js/docs.js" async="" type="text/javascript"></script>
+        <script src="samples/love-story/js/love-story.js" async="" type="text/javascript"></script>
+        <script type="text/javascript">
+//            $(function () {
+//		//$("html").css("background","#000");
+//                    $.preLoadGUI({ load: [
+//                            ['css/jquery.ui.css', 'css'],
+//                            ['css/default.css', 'css'],
+//                            ['samples/steve-jobs/css/steve-jobs.css', 'css'],
+//                            ['samples/html5/css/html5.css', 'css']
+//                            ['js/all.js', 'js'],
+//                            ['js/hash.js', 'js'],
+//                            ['js/turn.min.js', 'js'],
+//                            ['js/zoom.min.js', 'js'],
+//                            ['js/bookshelf.js', 'js']
+//                            ['message', 'Loading Resources:  %c of %t'],
+//                            ['ending_message', 'Resources Loaded'],
+//                            ['fadeOutSpeed', 'slow']
+//                        ]
+//                    });
+//               // $("html").css("background","none");
+//                //$(".splash").show();
+//        });
+        </script>
+    </head>
+    <body>
+
+        <div class="splash">
+            <div class="center">
+                <div class="bookshelf">
+                    <div class="shelf">
+                        <div class="row-1">
+                            <div class="loc">
+                                <div> <div class="sample thumb1" sample="steve-jobs"></div> </div>
+                                <div> <div class="sample thumb2" sample="html5"></div> </div>
+                                <div> <div class="sample thumb3" sample="docs"></div> </div>
+                            </div>
+                        </div>
+                        <div class="row-2">
+                            <div class="loc">
+                                <div> <div class="sample thumb7" sample="love-story"></div> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Samples-->
+                <div class="samples">
+                    <div class="bar">
+                        <div class="share">
+                            <i class="icon table-contents" title="Table of contents"></i>
+                            <i class="icon zoom-in" title="Zoom in"></i>
+                            <i class="icon share-facebook" title="Share on facebook"></i>
+                            <i class="icon share-twitter" title="Share on Twitter"></i>
+                            <i class="icon share-plus" title="Share on G+"></i>
+                            <i class="icon share-pinterest" title="Share on Pinterest"></i>
+                        </div>
+                        <a class="icon quit"></a>
+                    </div>
+                    <div id="book-wrapper">
+                        <div id="book-zoom"></div>
+                    </div>
+                    <div id="slider-bar" class="turnjs-slider">
+                        <div id="slider"></div>
+                    </div>
+
+                </div>
+
+                <!-- End samples -->
+
+            </div>
+            <div class="gradient"></div>
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            yepnope({
+                test: Modernizr.csstransforms,
+                nope: ['lib/turn.html4.min.js', 'css/jquery.ui.html4.css']
+            });
+
+            $('#sample-viewer a').click(function() {
+                $(this).hide();
+                yepnope({
+                    test: Modernizr.csstransforms,
+                    load: ['samples/basic/js/basic.js', 'samples/basic/css/basic.css'],
+                    nope: 'samples/basic/css/basic.html4.css?' + Math.round(Math.random() * 100)
+                });
+            });
+        </script>
+    </body>
+</html>

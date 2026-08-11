@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Home",
+    "url" : "#home"
+  },
+  {
+    "name": "Our Commitment",
+    "url" : "#our-commitment/policy"
+  },
+  {
+    "name": "Staying In Control",
+    "url" : "#staying-in-control/account-details"
+  },
+  {
+    "name": "Tools",
+    "url" : "#tools/questionnaire"
+  },
+  {
+    "name": "Get Help",
+    "url" : "#getting-help/getting-help"
+  }
+]

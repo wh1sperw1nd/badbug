@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui, shrink-to-fit=no">
+    <meta name = "apple-mobile-web-app-capable" content="yes"/>
+    <meta name = "apple-mobile-web-app-status-bar-style" content = "black"/>
+    <meta name="format-detection" content="telephone=no">
+
+    <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <title>A Letter To Santa</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Domine:400,700|Cedarville+Cursive|Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!--
+    <link href='http://fonts.googleapis.com/css?family=Domine:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    -->
+    <link href="./css/application.css" media="all" rel="stylesheet"/>
+
+    <script src="./js/application.js"></script>
+    <script src='./js/bootstrap.min.js'></script>
+    <script src='./js/handlebars.runtime.min.js'></script>
+    <script src="./js/jquery.simplemodal.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="alettertosanta">
+<div class="wrapper welcome_index">
+    <div class="welcome letters_new">
+        <img alt="Letter to santa" class="img-responsive" src="./images/letter-to-santa.jpg"/>
+        <form accept-charset="UTF-8" action="/letters" class="new_letter" id="new_letter" method="post">
+            <div id="letter-to-santa">
+                <p class="child-info">
+                    <span>Мене звуть </span><input id="letter_child_name" name="letter[child_name]" placeholder="Name" type="text"/><span>, і мені</span>
+                    <span><select id="letter_age" name="letter[age]">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20" selected="selected">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                    </select></span><span> років.</span>
+                <p>Я <select id="letter_gender" name="letter[gender]">
+                    <option value=""></option>
+                    <option value="boy">Хлопчик</option>
+                    <option value="girl">Дівчинка</option>
+                </select> з
+                    <input id="letter_from_city_and_state" name="letter[from_city_and_state]" placeholder="City"
+                           type="text"/>.
+                </p>Я була(в)
+                <select id="letter_nice_level" name="letter[nice_level]">
+                    <option selected="selected" value="very nice">Дуже хороша(ий)</option>
+                    <option value="nice">Хороша(ий)</option>
+                    <option value="naughty">Неслухнаня(ий)</option>
+                    <option value="very naughty">Дуже вредна(ий)</option>
+                </select>
+                цього року.
+                </p>
+                <p>Введи список своїх новорічних бажань</p>
+                <ul class="christmas-list">
+                    <li>
+                        <img alt="Snowflake" src="./images/snowflake.png"/>
+                        <input id="letter_toy_1" name="letter[toy_1]" type="text"/>
+                    </li>
+                    <li>
+                        <img alt="Snowflake" src="./images/snowflake.png"/>
+                        <input id="letter_toy_2" name="letter[toy_2]" type="text"/>
+                    </li>
+                    <li>
+                        <img alt="Snowflake" src="./images/snowflake.png"/>
+                        <input id="letter_toy_3" name="letter[toy_3]" type="text"/>
+                    </li>
+                    <li>
+                        <img alt="Snowflake" src="./images/snowflake.png"/>
+                        <input id="letter_toy_4" name="letter[toy_4]" type="text"/>
+                    </li>
+                    <li>
+                        <img alt="Snowflake" src="./images/snowflake.png"/>
+                        <input id="letter_toy_5" name="letter[toy_5]" type="text"/>
+                    </li>
+                </ul>
+                <textarea id="letter_note_to_santa" name="letter[note_to_santa]" placeholder="Напиши листа Діду Морозу."></textarea>
+                <input class="form-control" id="sendletter_parent_email" name="sendletter_parent_email" placeholder="Enter email" type="email" value=""/>
+                <input class="signature" id="signature" name="signature" placeholder="Sign Here" type="text" value=""/>
+                <button class="letter-button" data-modal="#modal-lettersent" data-mode="send" id="sendletter" name="button" type="button">Надіслати</button>
+            </div>
+        </form>
+        <div id="modal-lettersent" class="simplemodal">
+            <div class="panel panel-default">
+                <div class="panel-heading">Лист надіслано
+                    <a class="simplemodal-close"><i class="fa fa-times"></i></a>
+                </div>
+                <div class="panel-body">
+                    <p>Дякую що написала мені! Я з нетерпінням буду чекати на твого листа і прочитаю його як тільки зможу!</p>
+                    <p>Надіюсь ти була(в) гарною(м) дівчинкою(хлопчиком) цього року.</p>
+                    <p>І пам'ятай, в казкову новорічну ніч, всі мрії здійсьнюються!</p>
+                    <p>
+                        Щасливого Різдва! Я відпишу тобі найближчим часом! Будь хорошою(им)!
+                    </p>
+                    <p>
+                        Любий, <br/>
+                        Дідусь Мороз
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                $($(this).attr('data-modal')).modal();
+            });
+            $("#gobacktoletter").click(function () {
+                $.modal.close();
+            });
+
+            $("#sendletter,#saveletter").click(function () {
+                $('#letter_parent_email').val($('#' + this.id + '_parent_email').val());
+                $('#mode').val($(this).attr('data-mode'));
+                $.post("/letters", $('#new_letter').serialize(), function (data) {
+                    $('.new_letter :input').val('');
+                    $.modal.close();
+                    if (data.letter.mode == 'saveforlater') {
+                        $("#modal-lettersaved").modal();
+                    }
+                    else {
+                        $("#modal-lettersent").modal();
+                    }
+                });
+            });
+        });
+
+    </script>
+</div>
+
+</body>
+</html>

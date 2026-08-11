@@ -1,0 +1,29 @@
+<div>
+    <div class="slider smaller">
+        <div class="slider-inner">
+            <!-- Slides -->
+            <div class="fs-slides">
+                <div class="fs-slide" ng-attr-style="background-image: url({{content.banner.url}});background-position: {{content.banner.backgroundPosition}}">
+                    <div class="banner-text">
+                        <div class="banner-title">{{content.banner.bannerTitle}}</div>
+                        <div class="banner-desc">{{content.banner.bannerDescriptionFirstLine}}</div>
+                        <div class="banner-desc">{{content.banner.bannerDescriptionSecondLine}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <sub-menu></sub-menu>
+</div>
+<div class="container panel-crown panel-crown-white">
+    <div class="row">
+        <div class="col-lg-10">
+            <h2 ng-bind-html="renderHtml(content.policyPageContent.title)"></h2>
+            <p ng-bind-html="renderHtml(content.policyPageContent.listTitle1)"></p>
+            <ul class="crown-ul" ng-bind-html="renderHtml(content.policyPageContent.list1)"></ul>
+            <p ng-bind-html="renderHtml(content.policyPageContent.listTitle3)"></p>
+            <p ng-bind-html="renderHtml(content.policyPageContent.listTitle2)"></p>
+            <ul class="crown-ul" ng-bind-html="renderHtml(content.policyPageContent.list2)"></ul>
+        </div>
+    </div>
+</div>

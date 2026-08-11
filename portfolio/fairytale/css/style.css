@@ -1,0 +1,948 @@
+@import 'https://fonts.googleapis.com/css?family=Gloria+Hallelujah';
+@import url('https://fonts.googleapis.com/css?family=Bad+Script');
+
+html, body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+img {
+    border: none;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#clouds, #sky, #stars, #cl1, #cl2, #cl3, #canvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+}
+
+.night {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#canvas {
+    width: 100%;
+    height: 100%;
+    z-index: 16;
+}
+
+#sky {
+    background: #fff url(../images/sky.png) repeat-x top left;
+    z-index: 1;
+}
+
+#sun_yellow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 152px;
+    transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+    background: #F7EB38 url(../images/sun.png) no-repeat center center;
+    z-index: 2;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    box-shadow: 0 0 60px #F7EB38;
+    -moz-box-shadow: 0 0 60px #F7EB38;
+    -webkit-box-shadow: 0 0 60px #F7EB38;
+}
+
+#sun_red {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 152px;
+    transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+    background: #ff0000 url(../images/sun2.png) no-repeat center center;
+    z-index: 2;
+    opacity: 0;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    box-shadow: 0 0 60px #ff0000;
+    -moz-box-shadow: 0 0 60px #ff0000;
+    -webkit-box-shadow: 0 0 60px #ff0000;
+    /*filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);*/
+}
+
+#clouds {
+    background: transparent url(../images/clouds.png) repeat-x top left;
+    z-index: 4;
+}
+
+#cl1 {
+    background: transparent url(../images/cl1.png) repeat-x top left;
+    z-index: 4;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    opacity: 0;
+}
+
+#cl2 {
+    background: transparent url(../images/cl2.png) repeat-x top left;
+    z-index: 4;
+    position: absolute;
+    left: 5%;
+    top: 4%;
+    opacity: 0;
+}
+
+#cl3 {
+    background: transparent url(../images/cl3.png) repeat-x top left;
+    z-index: 4;
+    position: absolute;
+    left: 5%;
+    top: 2%;
+    opacity: 0;
+}
+
+.ground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 232px;
+    background: transparent url(../images/ground.png) repeat-x bottom center;
+    z-index: 10;
+}
+
+#butterfly_yellow {
+    position: absolute;
+    right: 1%;
+    top: 60%;
+    width: 84px;
+    height: 49px;
+    background: transparent url(../images/fly_yellow.gif) no-repeat center center;
+    z-index: 6;
+}
+
+#butterfly_pink {
+    position: absolute;
+    left: 1%;
+    top: 90%;
+    width: 46px;
+    height: 46px;
+    background: transparent url(../images/fly_pink.gif) no-repeat center center;
+    z-index: 6;
+}
+
+#butterfly_blue {
+    position: absolute;
+    right: 40%;
+    top: 70%;
+    width: 51px;
+    height: 43px;
+    background: transparent url(../images/fly_blue.gif) no-repeat center center;
+    z-index: 6;
+}
+
+#bee {
+    position: absolute;
+    left: 2%;
+    top: 70%;
+    width: 59px;
+    height: 51px;
+    background: transparent url(../images/bee.gif) no-repeat center center;
+    z-index: 6;
+}
+
+#flappy {
+    position: absolute;
+    left: 2%;
+    top: 20%;
+    width: 34px;
+    height: 34px;
+    background: transparent url(../images/flappy.gif) no-repeat center center;
+    z-index: 6;
+}
+
+.night {
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.67) 100%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.67) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.67) 100%);
+    z-index: 12;
+    opacity: 0;
+}
+.night.small {
+    height: 100%;
+}
+
+#stars {
+    bottom: 0;
+    /*
+        background:transparent url(../images/stars.png) repeat bottom center;
+        background:transparent url(../images/bg.gif) repeat bottom center;
+    */
+    background: #000;
+    z-index: 14;
+    opacity: 0;
+}
+
+#sstar {
+    position: absolute;
+    left: 40%;
+    top: 10%;
+    width: 127px;
+    height: 124px;
+    background: transparent url(../images/shooting-star.gif) no-repeat;
+    z-index: 14;
+    opacity: 0;
+}
+
+#moon {
+    position: absolute;
+    right: 20%;
+    top: 65%;
+    width: 175px;
+    height: 175px;
+    background: transparent url(../images/moon.png) no-repeat center center;
+    z-index: 2;
+    opacity: 0;
+}
+
+#lovers {
+    position: absolute;
+    left: 53%;
+    bottom: 0;
+    background: transparent url(../images/lovers.png) no-repeat center center;
+    z-index: 16;
+    width: 239px;
+    height: 300px;
+    opacity: 0;
+}
+
+#loversyes {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+    background: transparent url(../images/loversyes.png) no-repeat center center;
+    z-index: 16;
+    width: 239px;
+    height: 300px;
+    opacity: 0;
+}
+
+#shealone {
+    position: absolute;
+    right: 20%;
+    bottom: 6%;
+    background: transparent url(../images/shealone1.png) no-repeat center center;
+    z-index: 16;
+    width: 108px;
+    height: 259px;
+    opacity: 0;
+}
+
+#healone {
+    position: absolute;
+    left: 57%;
+    bottom: 0;
+    background: transparent url(../images/healone.png) no-repeat center center;
+    z-index: 16;
+    width: 90px;
+    height: 259px;
+    opacity: 0;
+}
+
+#rose_fall {
+    position: absolute;
+    right: 24%;
+    bottom: 1%;
+    background: transparent url(../images/rose_fall.png) no-repeat center center;
+    z-index: 16;
+    width: 100px;
+    height: 87px;
+    opacity: 0;
+}
+
+#dream {
+    position: absolute;
+    right: 42%;
+    bottom: 39%;
+    background: transparent url(../images/dcloud.png) no-repeat center center;
+    z-index: 22;
+    width: 250px;
+    height: 201px;
+    opacity: 0;
+}
+
+#button_green, #button_red {
+    position: absolute;
+    z-index: 11;
+    opacity: 0.7;
+    text-align: center;
+    line-height: 32px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: arial;
+}
+
+#button_green {
+    background: transparent url(../images/hearts.png) no-repeat left center;
+    top: 37%;
+    left: 20%;
+    color: #fff;
+    width: 60px;
+    height: 52px;
+    text-shadow: 2px 2px 2px #000;
+}
+
+#button_red {
+    background: transparent url(../images/broken.png) no-repeat left center;
+    top: 40%;
+    right: 26%;
+    width: 48px;
+    height: 48px;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+}
+
+#button_red:hover, #button_green:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* Стили для демонстрации*/
+
+#title {
+    color: #FFFFFF;
+    display: none;
+    position: absolute;
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    top: 50%;
+    width: 100%;
+    z-index: 25;
+    font-size: 120px;
+    height: 145px;
+    left: 0;
+    line-height: 145px;
+    margin: -73px 0 0 0;
+    /*    background:transparent url(../title.png) no-repeat center center;*/
+}
+
+#back {
+    position: absolute;
+    right: 5%;
+    bottom: 10px;
+    width: 200px;
+    height: 39px;
+    background: transparent url(../images/badbug_copy.png) no-repeat center center;
+    z-index: 22;
+    outline: none;
+    cursor: pointer;
+    display: none;
+}
+
+#back a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.letter {
+    color: #000000;
+    font-family: 'Bad Script', cursive;
+    font-weight: bold;
+    font-size: 23px;
+    left: 7%;
+    line-height: 25px;
+    position: absolute;
+    top: 3%;
+    z-index: 16;
+}
+
+.choise {
+    width: 100%;
+    text-align: center;
+    font-family: arial;
+    font-size: 13px;
+    left: -2px;
+    position: absolute;
+    top: 27%;
+}
+
+.leftcurtain {
+    width: 50%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 20;
+    bottom: 0;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+.rightcurtain {
+    width: 51%;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    position: absolute;
+    z-index: 20;
+    bottom: 0;
+    -webkit-transform-origin: 100% 0;
+    -moz-transform-origin: 100% 0;
+    -o-transform-origin: 100% 0;
+    -ms-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+}
+
+.rightcurtain img, .leftcurtain img {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    margin: 0px auto;
+    margin-top: 150px;
+}
+
+.rope {
+    position: absolute;
+    top: -40px;
+    right: 5%;
+    z-index: 24;
+}
+
+.preloader {
+    /*    background:  url("../images/preloader.gif") no-repeat center center;*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 30;
+}
+
+.loading {
+    position: absolute;
+    font-size: 32px;
+    font-family: 'Gloria Hallelujah', cursive;
+    bottom: 0;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+
+section.preloader {
+    display: block;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px;
+    0 0 -100px;
+}
+
+#gears {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .8);
+    overflow: hidden;
+    margin: 50px auto 0;
+    z-index: 3;
+    background: #333;
+}
+
+.green {
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+    position: relative;
+    width: 100px;
+    left: -35px;
+    top: -40px;
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.yellow {
+    position: absolute;
+    top: 23px;
+    left: 2px;
+    -webkit-animation: spiny 2.4s linear infinite;
+    animation: spiny 2.4s linear infinite;
+    width: 100px;
+}
+
+@-webkit-keyframes spiny {
+    100% {
+        -webkit-transform: rotate(-360deg);
+    }
+}
+
+@keyframes spiny {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+/*-------------------------------------------*/
+.shadow {
+    background: url("../images/shadow.png") repeat scroll 0 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    display: none;
+}
+
+.bad_browser_hide {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    width: 560px;
+    margin: -150px 0px 0px -280px;
+    background: #FFF;
+    line-height: 160%;
+    border-bottom: 1px solid #E4E4E4;
+    font-size: 11px;
+}
+
+#content {
+    border: solid #B8C7D3;
+    border-width: 0px 1px 1px;
+    padding: 20px;
+}
+
+#head {
+    margin: 0px;
+    overflow: hidden;
+    padding: 5px;
+    background: #3E6A93;
+}
+
+#head1 {
+    background: url("../images/badbug_copy.png") no-repeat scroll 0 0 #3E6A93;
+    width: 200px;
+    float: left;
+    height: 45px;
+}
+
+#head2 {
+
+}
+
+#browsers {
+    width: 400px;
+    height: 115px;
+    margin: 10px auto 0px;
+}
+
+#browsers a {
+    float: left;
+    width: 100px;
+    height: 20px;
+    padding: 80px 0px 7px;
+    text-decoration: none;
+    color: #2B587A;
+    opacity: 0.5;
+}
+
+#browsers a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+#browsers a#moz {
+    background: url(../images/firefox.gif) no-repeat 50% 7px;
+}
+
+#browsers a#apple {
+    background: url(../images/safari.gif) no-repeat 50% 0px;
+}
+
+#browsers a#google {
+    background: url(../images/chrome.gif) no-repeat 50% 6px;
+}
+
+#browsers a#opera {
+    background: url(../images/opera.gif) no-repeat 50% 7px;
+}
+
+.page_title {
+    color: #FFFFFF;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 120px;
+    height: 145px;
+    left: 0;
+    line-height: 145px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 21;
+    margin: -73px 0 0 0;
+    text-align: center;
+}
+
+@keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@-webkit-keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@-moz-keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@-ms-keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+@-webkit-keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+@-moz-keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+@-ms-keyframes move-clouds-back {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+.stars, .twinkling, .clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: block;
+}
+
+.clouds {
+    bottom: 200px;
+}
+
+.stars {
+    background: #000 url(../images/stars2.png) repeat top center;
+    z-index: 0;
+    bottom: 170px;
+}
+
+.twinkling {
+    background: transparent url(../images/twinkling.png) repeat top center;
+    z-index: 1;
+
+    -moz-animation: move-twink-back 200s linear infinite;
+    -ms-animation: move-twink-back 200s linear infinite;
+    -o-animation: move-twink-back 200s linear infinite;
+    -webkit-animation: move-twink-back 200s linear infinite;
+    animation: move-twink-back 200s linear infinite;
+    bottom: 170px;
+}
+
+.clouds {
+    background: transparent url(../images/clouds3.png) repeat-x 0 0;
+    z-index: 12;
+
+    -moz-animation: move-clouds-back 200s linear infinite;
+    -ms-animation: move-clouds-back 200s linear infinite;
+    -o-animation: move-clouds-back 200s linear infinite;
+    -webkit-animation: move-clouds-back 200s linear infinite;
+    animation: move-clouds-back 200s linear infinite;
+}
+
+@media screen and (max-width: 1024px) {
+    .ground {
+        background: transparent url(../images/ground.png) repeat-x bottom center;
+        height: 150px;
+    }
+
+    .clouds {
+        background: transparent url(../images/clouds3.png) repeat-x 0 0;
+        background-size: auto 100%;
+        bottom: 150px;
+    }
+
+    .night.small {
+        height: 100%;
+    }
+
+    .letter {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .letter {
+        font-size: 13px;
+        line-height: 17px;
+    }
+
+    .page_title, #title {
+        font-size: 60px;
+    }
+
+    .preloader, .page_title,
+    #bee, #flappy, #butterfly_yellow,
+    #butterfly_pink, #butterfly_blue,
+    #lovers, #sstar,
+    #lovers, #loversyes, #shealone, #rose_fall,
+    #healone, #title  {
+        transform: scale3d(0.7, 0.7, 1);
+        -webkit-transform: scale3d(0.7, 0.7, 1);
+    }
+
+    #dream {
+        transform: scale3d(0.7, 0.7, 1) translate3d(50%,0,0);
+        -webkit-transform: scale3d(0.7, 0.7, 1) translate3d(50%,0,0);
+    }
+    #back {
+        transform: scale3d(0.7, 0.7, 1) translate3d(30%,0,0);
+        -webkit-transform: scale3d(0.7, 0.7, 1) translate3d(30%,0,0);
+    }
+
+    .ground {
+        background: transparent url(../images/ground.png) repeat-x bottom center;
+        background-size: auto 100%;
+        height: 110px;
+    }
+
+    .clouds {
+        background: transparent url(../images/clouds3.png) repeat-x 0 0;
+        background-size: auto 100%;
+        bottom: 110px;
+    }
+
+    .night.small {
+        height: 100%;
+    }
+
+    #rope {
+        transform: scale3d(0.9, 0.9, 1) translate3d(7px,-10px,0);
+        -webkit-transform: scale3d(0.9, 0.9, 1) translate3d(7px,-10px,0);
+        top: -35px;
+        width: 65px;
+        height: 180px;
+        right: 2%;
+    }
+
+    .rope img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #moon {
+        transform: scale3d(0.5, 0.5, 1) translate3d(50%, -50%, 0);
+        -webkit-transform: scale3d(0.5, 0.5, 1) translate3d(50%, -50%, 0);
+    }
+
+    #loversyes, #lovers {
+        bottom: -13%;
+        transform: scale3d(0.7, 0.7, 1);
+        -webkit-transform: scale3d(0.7, 0.7, 1);
+    }
+
+    #shealone {
+        bottom: -7%;
+        right: 18%;
+        transform: scale3d(0.7, 0.7, 1);
+        -webkit-transform: scale3d(0.7, 0.7, 1);
+    }
+
+    #healone {
+        bottom: -15%;
+        right: 27%;
+        transform: scale3d(0.7, 0.7, 1);
+        -webkit-transform: scale3d(0.7, 0.7, 1);
+    }
+
+    #sun_yellow, #sun_red {
+        transform: translate3d(-50%, -50%, 0) scale3d(0.5, 0.5, 1);
+        -webkit-transform: translate3d(-50%, -50%, 0) scale3d(0.5, 0.5, 1);
+    }
+
+    #loversyes {
+        transform: scale3d(0.7, 0.7, 1) translate3d(-80%, 0, 0);
+        -webkit-transform: scale3d(0.7, 0.7, 1) translate3d(-80%, 0, 0);
+    }
+}
+
+@media screen and (max-height: 320px) {
+    .page_title, #title {
+        font-size: 60px;
+    }
+
+    .preloader, .page_title,
+    #bee, #flappy, #butterfly_yellow,
+    #butterfly_pink, #butterfly_blue,
+    #lovers, #sstar,
+    #lovers, #loversyes, #shealone, #rose_fall,
+    #healone, #title  {
+        transform: scale3d(0.5, 0.5, 1);
+        -webkit-transform: scale3d(0.5, 0.5, 1);
+    }
+
+    #dream {
+        right: 37%;
+        bottom: 25%;
+        transform: scale3d(0.5, 0.5, 1) translate3d(50%,0,0);
+        -webkit-transform: scale3d(0.5, 0.5, 1) translate3d(50%,0,0);
+    }
+    #back {
+        transform: scale3d(0.5, 0.5, 1) translate3d(30%,0,0);
+        -webkit-transform: scale3d(0.5, 0.5, 1) translate3d(30%,0,0);
+    }
+
+    .ground {
+        background: transparent url(../images/ground.png) repeat-x bottom center;
+        background-size: auto 100%;
+        height: 90px;
+    }
+
+    .clouds {
+        background: transparent url(../images/clouds3.png) repeat-x 0 0;
+        background-size: auto 100%;
+        bottom: 90px;
+    }
+
+    .night.small {
+        height: 100%;
+    }
+
+    #rope {
+        transform: scale3d(0.9, 0.9, 1) translate3d(7px,-10px,0);
+        -webkit-transform: scale3d(0.9, 0.9, 1) translate3d(7px,-10px,0);
+        top: -35px;
+        width: 65px;
+        height: 180px;
+        right: 2%;
+    }
+
+    .rope img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #moon {
+        transform: scale3d(0.5, 0.5, 1) translate3d(50%, -50%, 0);
+        -webkit-transform: scale3d(0.5, 0.5, 1) translate3d(50%, -50%, 0);
+    }
+
+    #loversyes, #lovers {
+        bottom: -25%;
+        transform: scale3d(0.5, 0.5, 1);
+        -webkit-transform: scale3d(0.5, 0.5, 1);
+    }
+
+    #shealone {
+        bottom: -15%;
+        right: 18%;
+        transform: scale3d(0.5, 0.5, 1);
+        -webkit-transform: scale3d(0.5, 0.5, 1);
+    }
+
+    #healone {
+        bottom: -25%;
+        right: 45%;
+        transform: scale3d(0.5, 0.5, 1);
+        -webkit-transform: scale3d(0.5, 0.5, 1);
+    }
+    #rose_fall {
+        bottom: -5%;
+    }
+    #sun_yellow, #sun_red {
+        transform: translate3d(-50%, -50%, 0) scale3d(0.5, 0.5, 1);
+        -webkit-transform: translate3d(-50%, -50%, 0) scale3d(0.5, 0.5, 1);
+    }
+
+    #loversyes {
+        transform: scale3d(0.5, 0.5, 1) translate3d(-110%, 0, 0);
+        -webkit-transform: scale3d(0.5, 0.5, 1) translate3d(-110%, 0, 0);
+    }
+}

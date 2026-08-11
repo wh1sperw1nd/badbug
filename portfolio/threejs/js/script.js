@@ -1,0 +1,164 @@
+var parent, renderer, scene, camera, controls;
+
+function init() {
+
+	// info
+	info = document.createElement( 'div' );
+	info.style.position = 'absolute';
+	info.style.top = '30px';
+	info.style.width = '100%';
+	info.style.textAlign = 'center';
+	info.style.color = '#fff';
+	info.style.fontWeight = 'bold';
+	info.style.backgroundColor = 'transparent';
+	info.style.zIndex = '1';
+	info.style.fontFamily = 'Monospace';
+	info.innerHTML = 'Drag mouse to rotate;';
+	document.body.appendChild( info );
+
+	// renderer
+	renderer = new THREE.WebGLRenderer();
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	document.body.appendChild( renderer.domElement );
+
+	// scene
+	scene = new THREE.Scene();
+	
+	// camera
+	camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 100 );
+	camera.position.set( 20, 20, 20 );
+
+	// controls
+	controls = new THREE.OrbitControls( camera );
+    controls.minDistance = 10;
+    controls.maxDistance = 50;
+	
+	// axes
+	scene.add( new THREE.AxisHelper( 20 ) );
+	
+	var light = new THREE.AmbientLight(0x444444);
+    scene.add(light);
+
+	// geometry
+	var geometry = new THREE.SphereGeometry( 2, 32, 32 );
+	
+	// material
+	var material = new THREE.MeshBasicMaterial( {
+		color: 0x3399ff, 
+		wireframe: true
+	});
+	
+	var material2 = new THREE.MeshBasicMaterial( {map: new THREE.ImageUtils.loadTexture("./img/land.jpg") });
+	
+	// parent
+	parent = new THREE.Object3D();
+	scene.add( parent );
+	
+	parent2 = new THREE.Object3D();
+	scene.add( parent2 );
+
+	// pivots
+	var pivot1 = new THREE.Object3D();
+	var pivot2 = new THREE.Object3D();
+	var pivot3 = new THREE.Object3D();
+	var pivot4 = new THREE.Object3D();
+	var pivot5 = new THREE.Object3D();
+	var pivot6 = new THREE.Object3D();
+
+	pivot1.rotation.z = 0;
+	pivot2.rotation.z = 2 * Math.PI / 3;
+	pivot3.rotation.z = 3 * Math.PI / 3;
+	pivot4.rotation.z = 4 * Math.PI / 3;
+	pivot5.rotation.z = 5 * Math.PI / 3;
+	pivot6.rotation.z = 1 * Math.PI / 3;
+
+	parent.add( pivot1 );
+	parent.add( pivot2 );
+	parent.add( pivot3 );
+	parent.add( pivot4 );
+	parent.add( pivot5 );
+	parent.add( pivot6 );
+
+	// mesh
+	var mesh1 = new THREE.Mesh( geometry, material );
+	var mesh2 = new THREE.Mesh( geometry, material );
+	var mesh3 = new THREE.Mesh( geometry, material );
+	var mesh4 = new THREE.Mesh( geometry, material );
+	var mesh5 = new THREE.Mesh( geometry, material );
+	var mesh6 = new THREE.Mesh( geometry, material );
+	mesh1.position.y = 7;
+	mesh2.position.y = 7;
+	mesh3.position.y = 7;
+	mesh4.position.y = 7;
+	mesh5.position.y = 7;
+	mesh6.position.y = 7;
+	pivot1.add( mesh1 );
+	pivot2.add( mesh2 );
+	pivot3.add( mesh3 );
+	pivot4.add( mesh4 );
+	pivot5.add( mesh5 );
+	pivot6.add( mesh6 );
+	
+	
+	// pivots
+	var pivot11 = new THREE.Object3D();
+	var pivot22 = new THREE.Object3D();
+	var pivot33 = new THREE.Object3D();
+	var pivot44 = new THREE.Object3D();
+	var pivot55 = new THREE.Object3D();
+	var pivot66 = new THREE.Object3D();
+
+	pivot11.rotation.y = 0;
+	pivot22.rotation.y = 2 * Math.PI / 3;
+	pivot33.rotation.y = 3 * Math.PI / 3;
+	pivot44.rotation.y = 4 * Math.PI / 3;
+	pivot55.rotation.y = 5 * Math.PI / 3;
+	pivot66.rotation.y = 1 * Math.PI / 3;
+
+	parent2.add( pivot11 );
+	parent2.add( pivot22 );
+	parent2.add( pivot33 );
+	parent2.add( pivot44 );
+	parent2.add( pivot55 );
+	parent2.add( pivot66 );
+
+	// mesh
+	var mesh11 = new THREE.Mesh( geometry, material2 );
+	var mesh22 = new THREE.Mesh( geometry, material2 );
+	var mesh33 = new THREE.Mesh( geometry, material2);
+	var mesh44 = new THREE.Mesh( geometry, material2 );
+	var mesh55 = new THREE.Mesh( geometry, material2 );
+	var mesh66 = new THREE.Mesh( geometry, material2 );
+	mesh11.position.z = 7;
+	mesh22.position.z = 7;
+	mesh33.position.z = 7;
+	mesh44.position.z = 7;
+	mesh55.position.z = 7;
+	mesh66.position.z = 7;
+	pivot11.add( mesh11 );
+	pivot22.add( mesh22);
+	pivot33.add( mesh33 );
+	pivot44.add( mesh44 );
+	pivot55.add( mesh55 );
+	pivot66.add( mesh66 );
+	
+}
+
+function animate() {
+
+	requestAnimationFrame( animate );
+
+	//parent.rotation.z += 0.04;
+	//parent2.rotation.y += 0.04;
+    
+	controls.update();
+
+	renderer.render( scene, camera );
+
+}
+
+
+window.onload = function(){
+	init();
+	animate();
+}

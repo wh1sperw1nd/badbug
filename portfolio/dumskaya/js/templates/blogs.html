@@ -1,0 +1,13 @@
+<div class="list-block media-list news-list blogs">
+    <ul>
+        <% var lastIndex = items.length - 1; %>
+             <%if (!items.length){%>
+                 <li class="no-info">Идет загрузка</li>
+             <%} else {print(renderList())}%>
+    </ul>
+</div>
+<%if (items.length){%>
+<div class="infinite-custom-preloader">
+    <div class="preloader infinite"></div>
+</div>
+<%}%>

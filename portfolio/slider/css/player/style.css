@@ -1,0 +1,126 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, caption{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+html {
+    height: 100%;
+}
+body {
+    font:  12px/16px Arial, Helvetica, sans-serif;
+    width: 100%;
+	background: url("images/home-bg.jpg") no-repeat scroll center top;
+}
+a {
+    outline: none;
+	text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+img {
+    border: none;
+}
+.page {
+    margin:0 auto;
+    width: 970px;
+}
+.header {
+	height: 130px;
+    position: relative;
+}
+#logo {
+    margin: 10px 10px 0 0;
+    padding: 0;
+    z-index: -99;
+	float: left;
+}
+.main-inner {
+	background: url("images/home_showcase_bg.jpg") no-repeat scroll left top #FFFFFF;
+    margin-top: 0 !important;
+    position: relative;
+    width: 970px;
+	height: 365px;
+}
+.homepage-content-blocks {
+    background: url("images/homepage-content-blocks-bg.jpg") repeat-x scroll left top transparent;
+}
+.homepage-split-block {
+    background: url("images/home-split-blockbg.jpg") no-repeat scroll left top transparent;
+    height: 286px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    width: 938px;
+}
+.video_btns {
+	float: left;
+	margin: 0px 0px 0 40px;
+	font-size: 14px !important;
+	background: url("images/button.png") no-repeat scroll left top transparent;
+    color: #666666;
+    display: block;
+    font-weight: bold;
+    height: 23px;
+    padding: 7px 0 0 11px;
+    width: 155px;
+}
+.video_btns:hover {
+	background-position: 0 -41px;
+}
+#footer {
+    background: url("images/rc-footer-top.jpg") no-repeat scroll left top #333333;
+    height: 23px;
+    margin: 10px 0;
+    padding: 12px 0 0;
+    width: 970px;
+}
+#footer .footer-bottom {
+    background: url("images/rc-footer-bottom.png") no-repeat scroll left bottom #333333;
+    height: 6px;
+}
+#footer .footer-nav {
+    float: left;
+    width: 500px;
+}
+#footer-inner {
+}
+#footer ul.menu li a {
+    color: #FFFFFF;
+    font-size: 0.9em;
+    padding-right: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#footer ul.menu {
+    margin-left: 0;
+    padding-left: 15px;
+}
+#footer ul.menu li {
+    display: inline;
+}
+#footer ul.menu li.leaf a {
+    color: #999999;
+    display: inline;
+    text-decoration: none;
+}
+#footer .copyright {
+    color: #999999;
+    float: right;
+    font-size: 0.9em;
+    padding: 0px 15px 0;
+    text-transform: uppercase;
+}
+.clear {
+	clear: both;
+}

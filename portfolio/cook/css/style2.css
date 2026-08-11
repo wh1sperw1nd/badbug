@@ -1,0 +1,97 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, caption{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+header, nav, section, article, aside, footer {
+  display: block
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+:focus {
+    outline: 0;
+}
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    line-height: 18px;
+}
+th, td {
+    padding: 0;
+}
+table, td, th {
+    vertical-align: top;
+}
+th, thead td {
+    font-weight: bold;
+}
+html {
+    height: 100%;
+}
+body {
+    font:  12px/1em Arial, Verdana, Tahoma, sans-serif;
+    width: 100%;
+    height: 100%;
+	background: #DEDEDD;
+}
+a {
+    color: #2789D0;
+    outline: none;
+}
+a:hover {
+    text-decoration: none;
+}
+p {
+    margin: 0 0 18px;
+}
+img {
+    border: 0 none;
+}
+input {
+    vertical-align: middle;
+}
+video {cursor: pointer;}
+
+
+#kitchen-content {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.refregerator {
+	background: url("../images/refregerator2.png") no-repeat bottom left;
+	width: 250px;
+	height: 476px;
+	float: left;
+	position: absolute;
+	right: 60px;
+	top: 90px;
+}
+.kitchen {
+	background: url("../images/BlankKitchenLarge.png") no-repeat bottom left;
+	width: 960px;
+	height: 558px;
+	float: left;
+	margin-top: 20px;
+}

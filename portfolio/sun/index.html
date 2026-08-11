@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Sun and Moon</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>     
+		<script type="text/javascript" src="js/jquery-1.6.4.js"></script>
+        <script type="text/javascript" src="js/jquery.color.js"></script>
+		<script type="text/javascript" src="js/jquery.backgroundPosition.js"></script>
+<!--<script>
+		var source,dest,len,now=0,delay=100,letters=1;
+		function show()
+		{
+			source = document.getElementById("text");
+			dest = document.getElementById("place");
+			len = source.innerHTML.length;
+			var d = source.innerHTML.substr(now,letters);
+			if (d=="%") { dest.innerHTML +="<br>" }
+			 else {dest.innerHTML += source.innerHTML.substr(now,letters);}
+			now+=letters;
+			if(now<len)
+			setTimeout("show()",delay);
+		}
+</script>-->
+    </head>
+    <body onLoad="show()">
+        <div id="sky"></div>
+        <div id="sun_yellow"></div>
+        <div id="sun_red"></div>
+        <div id="clouds" style="background-position: 0 0;"></div>
+        <div id="ground"></div>
+        <div id="night"></div>
+        <div id="stars"></div>        
+        <div id="sstar"></div>
+        <div id="moon"></div>
+		<div id="back"></div>
+<!--<div class="letter">
+        <p style="display:none" id="text" align="left">
+            Ты Солнце, и день – твое лучшее время,%
+			Лучи-поцелуи сжигают, лаская.%
+			Я просто лишь Месяц, ночь – мое наважденье.%
+			В мерцании звезд вновь душа воскресает.%%
+
+			Приходишь в рассвет, твой огонь все сильнее,%
+			И я растворяюсь, став призрачной тенью.%
+			Так близко мы, но прикоснуться не смею -%
+			Ты видишь во мне лишь свое отраженье.%%
+
+			Ни встретиться нам никогда, ни расстаться,%
+			Сменяются ночи и дни быстротечно.%
+			Мы кружимся снова в причудливом танце…%
+			Мой свет – только ты. А во мне – твоя вечность.%%
+         </p>
+    <div id="place"></div>
+</div>-->
+        <script type="text/javascript">
+			
+            $(document).ready(function() {
+				if($.browser.mozilla && $.browser.version >= 4) {
+					$('#sun_yellow').css({"border-radius":"100px","box-shadow":"0 0 60px #F7EB38","background":"#F7EB38"});
+					$('#sun_red').css({"border-radius":"100px","box-shadow":"0 0 60px #ff0000","background":"#ff0000"});
+				}else if($.browser.webkit && $.browser.version >= 5) {
+					$('#sun_yellow').css({"border-radius":"100px","box-shadow":"0 0 60px #F7EB38","background":"#F7EB38"});
+					$('#sun_red').css({"border-radius":"100px","box-shadow":"0 0 60px #ff0000","background":"#ff0000"});
+				}else if($.browser.opera && $.browser.version >= 10) {
+					$('#sun_yellow').css({"border-radius":"100px","box-shadow":"0 0 60px #F7EB38","background":"#F7EB38"});
+					$('#sun_red').css({"border-radius":"100px","box-shadow":"0 0 60px #ff0000","background":"#ff0000"});
+				}
+				else if($.browser.msie && $.browser.version >= 9) {
+					$('#sun_yellow').css({"border-radius":"100px","box-shadow":"0 0 60px #F7EB38","background":"#F7EB38"});
+					$('#sun_red').css({"border-radius":"100px","box-shadow":"0 0 60px #ff0000","background":"#ff0000"});
+				}
+                $('#sun_yellow').animate({'top':'96%','opacity':0.4}, 12000,function(){
+                    $('#stars').animate({'opacity':1}, 5000,function(){
+                        $('#moon').animate({'top':'10%','opacity':1}, 5000, function(){
+                            $('#sstar').animate({'opacity':1}, 300);
+                            $('#sstar').animate({'backgroundPosition':'0px 0px','top':'15%', 'opacity':0
+                            }, 4000,function(){
+                                $('#title').animate({'opacity':1}, 1000);
+                                $('#back').animate({'opacity':1}, 3000);
+                            });
+                        });
+                    });
+                });
+                $('#sun_red').animate({'top':'96%','opacity':0.8}, 12000);
+                $('#sky').animate({'backgroundColor':'#4F0030'}, 18000);
+                $('#clouds').animate({'backgroundPosition':'1000px 0px','opacity':0}, 20000);
+                $('#night').animate({'opacity':0.8}, 20000);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>For You!!!</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>     
+        <script type="text/javascript" src="js/jquery-1.6.4.js"></script>
+        <script type="text/javascript" src="js/jquery.color.js"></script>
+        <script type="text/javascript" src="js/jquery.backgroundPosition.js"></script>
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>  
+        <script type="text/javascript" src="js/raphael-min.js"></script>  
+        <script type="text/javascript" src="js/rain.js"></script>
+        <script type="text/javascript" src="js/animation.js"></script>
+    </head>
+    <body>
+        <audio autoplay preload="auto">
+            <source src="media/Takida_-_Give_into_me.mp3" type='audio/ogg; codecs=vorbis'>
+            <source src="media/Takida_-_Give_into_me.ogg" type="audio/mpeg">
+            Тег audio не поддерживается вашим браузером.
+        </audio>
+        <section class="preloader">
+            <div id="gears">
+               <img class="green" src="./images/greengear.svg" alt="Green gear">
+                <img class="yellow" src="./images/yellowgear.svg" alt="Yellow gear">
+            </div>
+            <div class="loading">Loading...</div>
+        </section> 
+        <div class="shadow">
+            <div class="bad_browser_hide">
+                <div id="head">
+                    <div id="head1"></div>
+                    <div id="head2"></div>
+                </div>
+                <div id="content">
+                    Для работы с сайтом необходима поддержка Javascript и Cookies.
+                    <div>
+                        Чтобы использовать все возможности сайта, загрузите и установите один из этих браузеров:<br>		
+                        <div id="browsers">
+                            <a id="moz" href="http://www.mozilla-europe.org/" target="_blank">Mozilla Firefox</a>
+                            <a id="apple" href="http://www.apple.com/safari/" target="_blank">Safari</a>
+                            <a id="google" href="http://www.google.com/chrome/" target="_blank">Google Chrome</a>
+                            <a id="opera" href="http://www.opera.com/" target="_blank">Opera</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap" style="display: none;">
+            <div class="leftcurtain"><img src="images/frontcurtain.jpg"/></div>
+            <div class="rightcurtain"><img src="images/frontcurtain.jpg"/></div>
+            <a id='rope' class="rope" href="javascript:void(0);">
+                <img src="images/rope.png"/>
+            </a>
+            <div id="sky"></div>
+            <div id="sun_yellow"></div>
+            <div id="sun_red"></div>
+            <div id="clouds" style="background-position: 0 0;"></div>
+            <div id="cl1" style="background-position: 0 0;"></div>
+            <div id="cl2" style="background-position: 0 0;"></div>
+            <div id="cl3" style="background-position: 0 0;"></div>
+            <div id="butterfly_yellow"></div>
+            <div id="butterfly_blue"></div>
+            <div id="butterfly_pink"></div>
+            <div id="bee"></div>
+            <div id="flappy"></div>
+            <div class="ground"></div>
+            <div class="night"></div>
+            <div id="stars">
+                <div class="night small"></div>
+                <div class="stars"></div>
+                <div class="twinkling"></div>
+                <div class="clouds"></div>
+                <div id="moon"></div>
+                <div class="ground"></div>
+            </div>
+            <div id="lovers"></div>
+            <div id="loversyes"></div>
+            <div id="shealone"></div>
+            <div id="healone"></div>
+            <div id="rose_fall"></div>
+            <div id="canvas"></div>
+            <div id="dream">
+                <span class="choise">Зроби вибір:</span>
+                <div id="button_green"></div>
+                <div id="button_red"></div>
+            </div>
+            <div id="sstar"></div>
+            
+            <div id="back"><a href="http://badbug.com.ua/" target="_blank"></a></div>
+            <div id="title"></div>
+            <div class="page_title">Fairy tale</div>
+            <div class="letter">
+                <p style="display:none" id="text" align="left">
+                    Девушка должна быть загадкой:%
+                    Маленькой, миленькой, сладкой.%
+                    Кокетничать, строить глазки,%
+                    Верить во всякие сказки.%%
+
+                    Оставаться святой и грешной,%
+                    Быть красивой душой и внешне.%
+                    Обаятельным, хитрым бесенком,%
+                    Нежным, мягким пушистым котенком.%%
+
+                    Шалуньей веселой, игривой,%
+                    Любить и всегда быть любимой.%
+                    Влюбленной безумно и страстно,%
+                    Ласковой, робкой и властной,%
+                    Сквозь слезы уметь смеяться%
+                    И никогда не сдаваться.%
+                </p>
+                <div id="place"></div>
+            </div>
+        </div>
+    </body>
+</html>

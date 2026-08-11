@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title></title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<script src="js/jquery-1.6.4.js"></script>
+	</head>
+<body>
+    <ul class="navigation">
+        <li><a href="index.html"><b>Home</b></a></li>
+        <li><a href="#"><b>About Me</b></a></li>
+        <li class="current"><a href="#"><b>Portfolio</b></a></li>
+        <li><a href="#"><b>Contact</b></a></li>
+    </ul>
+	<div class="wrapper">
+	<div class="image_preview">
+		<img style="display: none" />
+	</div>
+	<div class="logo">Alex Frost Photo Portfolio</div>
+        <div class="left"></div>
+        <div class="container">
+		</div>
+        <div class="right"></div>
+    </div>
+        <div class="content">
+             <a class="back" href="../index.html"><< back to Main</a>
+            <ul class="menu" id="menu">
+                <li>
+                    <a href="#">Brand 1</a>
+                    <div class="sc_menu_wrapper">
+                        <div class="sc_menu">
+                            <a href="#"><img src="images/photos/1.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/2.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/3.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/1.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/2.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/3.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/4.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/5.png" alt=""/></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Brand 2</a>
+                    <div class="sc_menu_wrapper">
+                        <div class="sc_menu">
+                            <a href="#"><img src="images/photos/4.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/5.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/6.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/1.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/2.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/1.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/6.png" alt=""/></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Fashion 1</a>
+                    <div class="sc_menu_wrapper">
+                        <div class="sc_menu">
+                            <a href="#"><img src="images/photos/7.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/8.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/9.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/10.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/7.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/8.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/9.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/10.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/18.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/19.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/20.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/10.png" alt=""/></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Fashion 2</a>
+                    <div class="sc_menu_wrapper">
+                        <div class="sc_menu">
+                            <a href="#"><img src="images/photos/11.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/12.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/13.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/14.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/15.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/16.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/17.png" alt=""/></a>
+                            <a href="#"><img src="images/photos/18.png" alt=""/></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="last">
+                    <a href="#">Fashion 3</a>
+                    <div class="sc_menu_wrapper">
+                        <div class="sc_menu">
+                            <a href="javascript: void(0);"><img src="images/photos/4.png" alt=""/></a>
+                            <a href="javascript: void(0);"><img src="images/photos/5.png" alt=""/></a>
+                            <a href="javascript: void(0);"><img src="images/photos/6.png" alt=""/></a>
+                            <a href="javascript: void(0);"><img src="images/photos/1.png" alt=""/></a>
+                            <a href="javascript: void(0);"><img src="images/photos/2.png" alt=""/></a>
+                            <a href="javascript: void(0);"><img src="images/photos/3.png" alt=""/></a>
+                            <a href="javascript: void(0);"><img src="images/photos/4.png" alt=""/></a>
+                            <a href="javascript: void(0);"><img src="images/photos/5.png" alt=""/></a>
+                            <a href="javascript: void(0);"><img src="images/photos/6.png" alt=""/></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+		<script>
+			$(document).ready(function(){
+				$("#menu li a img").live("click", function(){
+					var src = $(this).attr("src");
+					$(".image_preview img").attr({src: src}).fadeIn("slow");
+				});
+				$(".sc_menu img").one("load",function(){
+					var img = $(".sc_menu img");
+					var img_h = img.height();
+					var img_w = img.width();
+					var new_h=195;   
+					var new_w=130; 
+					var k1=new_h/new_w;
+					var k2 = img_h/img_w;
+
+					if (k1>k2)
+					{
+						img_h=Math.round(img_h*(new_w/img_w));
+						img_w=new_w;
+					} else {
+						img_w=Math.round(img_w*(new_h/img_h));
+						img_h=new_h;
+					}
+					img.width(img_w);
+					img.height(img_h);
+					if (img_h<new_h) 
+					{
+						img.css('margin-top',(new_h-img_h)/2);
+					}
+					$(".sc_menu img").css("display","none");
+					img.show();
+				}).each(function(){
+					if(this.complete) $(this).trigger("load");
+				});
+			});
+		</script>
+        <!-- The JavaScript -->
+        <script type="text/javascript">
+            $(function(){
+                /* function to make the thumbs menu scrollable */
+                function buildThumbs($elem){
+                    var $wrapper    	= $elem.next();
+                    var $menu 		= $wrapper.find('.sc_menu');
+                    var inactiveMargin 	= 150;
+                    /* move the scroll down to the
+                    beggining (move as much as the height of the menu) */
+                    $wrapper.scrollTop($menu.outerHeight());
+                    
+                    /* when moving the mouse up or down, the wrapper moves (scrolls) up or down */
+                    $wrapper.bind('mousemove',function(e){
+                        var wrapperHeight 	= $wrapper.height();
+                        var menuHeight 	= $menu.outerHeight() + 2 * inactiveMargin;
+                        var top 	= (e.pageY - $wrapper.offset().top) * (menuHeight - wrapperHeight) / wrapperHeight - inactiveMargin;
+                        $wrapper.scrollTop(top+10);
+                    });
+                }
+                
+                var stacktime;
+				
+                $('#menu li > a').bind('mouseover',function () {
+                    var $this = $(this);
+					
+                    buildThumbs($this);
+					
+                    var pos	=	$this.next().find('a').size();
+                    var f	=	function(){
+                        if(pos==0) clearTimeout(stacktime);
+                        $this.next().find('a:nth-child('+pos+')').css('visibility','visible');
+                        --pos;
+                    };
+                    /* each thumb will appear with a delay */
+                    stacktime = setInterval(f , 50);
+                });
+                
+                /* on mouseleave of the whole <li> the scrollable area is hidden */
+                $('#menu li').bind('mouseleave',function () {
+                    var $this = $(this);
+                    clearTimeout(stacktime);
+                    $this.find('.sc_menu').css('visibility','hidden').find('a').css('visibility','hidden');
+                    $this.find('.sc_menu_wrapper').css('visibility','hidden');
+                });
+                
+                /* when hovering a thumb, change its opacity */
+                $('.sc_menu a').hover(
+                function () {
+                    var $this = $(this);
+                    $this.find('img')
+                    .stop()
+                    .animate({'opacity':'1.0'},400);
+                },
+                function () {
+                    var $this = $(this);
+                    $this.find('img')
+                    .stop()
+                    .animate({'opacity':'0.3'},400);
+                }
+            );
+            });
+			
+			/*$(function(){
+			var $img = $('#myimg');
+			$img.load(function(){
+				$(this).removeAttr("width")
+					   .removeAttr("height")
+					   .css({ width: "", height: "" });
+			 
+				var width  = $(this).width();
+				var height = $(this).height();
+				alert(height);
+			});
+			var src  = $img.attr('src');
+						  $img.attr('src', '');
+						  $img.attr('src', src);
+			});*/
+
+        </script>
+    </body>
+</html>

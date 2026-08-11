@@ -1,0 +1,75 @@
+define([
+    'f7','views/newsView','views/blogsView','views/tvView','views/sportView'
+],  (f7,NewsView,BlogsView,TVView,SportView) ->
+      tabs= [
+                    {id:'tab1',name:'Новости',updateItems:(pullToRefreshCallback)->
+                      onDownloaded=(data,cacheKey)=>
+                              console.log('RENDER!!!')
+                              model={}
+                              model.items=[]
+                              if data
+                                model.items=data
+                              model.limit=15
+                              @indexes[cacheKey]=0
+                              model.listView=@
+                              model.cacheKey=cacheKey
+                              baseApplication.cache.prepareCachedImgsRecursive(0,model.limit,model.items,()->
+                                new NewsView({model:model,tabIndex:0})
+                              )
+
+                      baseApplication.cache.getList('news',onDownloaded, pullToRefreshCallback)
+                    }
+                    {id:'tab2',name:'Блоги',updateItems:(pullToRefreshCallback)->
+                      onDownloaded=(data,cacheKey)=>
+                            console.log('RENDER!!!')
+                            model={}
+                            model.items=[]
+                            if data
+                              model.items=data
+                            model.limit=15
+                            @indexes[cacheKey]=0
+                            model.listView=@
+                            model.cacheKey=cacheKey
+                            baseApplication.cache.prepareCachedImgsRecursive(0,model.limit,model.items,()->
+                              new BlogsView({model:model,tabIndex:1})
+                            )
+
+                      baseApplication.cache.getList('blogs',onDownloaded, pullToRefreshCallback)
+                    }
+                    {id:'tab3',name:'ТВ',updateItems:(pullToRefreshCallback)->
+                      onDownloaded=(data,cacheKey)=>
+                          console.log('RENDER!!!')
+                          model={}
+                          model.items=[]
+                          if data
+                           model.items=data
+                          model.limit=15
+                          @indexes[cacheKey]=0
+                          model.listView=@
+                          model.cacheKey=cacheKey
+                          baseApplication.cache.prepareCachedImgsRecursive(0,model.limit,model.items,()->
+                            new TVView({model:model,tabIndex:2})
+                          )
+
+                      baseApplication.cache.getList('tv',onDownloaded, pullToRefreshCallback)
+                    }
+                    {id:'tab4',name:'Спорт',updateItems:(pullToRefreshCallback)->
+                      onDownloaded=(data,cacheKey)=>
+                        console.log('RENDER!!!')
+                        model={}
+                        model.items=[]
+                        if data
+                         model.items=data
+                        model.limit=15
+                        @indexes[cacheKey]=0
+                        model.listView=@
+                        model.cacheKey=cacheKey
+                        baseApplication.cache.prepareCachedImgsRecursive(0,model.limit,model.items,()->
+                          new SportView({model:model,tabIndex:3})
+                        )
+
+                      baseApplication.cache.getList('sport',onDownloaded, pullToRefreshCallback)
+                    }
+      ]
+      return tabs
+);

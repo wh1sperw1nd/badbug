@@ -1,0 +1,119 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" /> 
+    <title>The Wilderness Downtown</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.color.js"></script>
+    <script type="text/javascript" src="js/jquery.backgroundPosition.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>  
+    
+    <script type="text/javascript" src="js/jquery.path.js"></script>  
+</head>
+    <body>
+        <div id="birdsCanvas"> 
+            <div class="night" id="night"></div>
+            <div class="stars" id="stars"></div>
+            <div class="sky" id="sky"></div>
+            <div class="sun_yellow" id="sun_yellow"></div>
+            <div class="sun_red" id="sun_red"></div>
+            <div class="moon" id="moon"></div>
+            <div id="bg"></div>
+            <div class="topleft" id="tree"></div>
+            <div class="cloud1"></div>
+            <div class="cloud2"></div>
+            <div class="cloud3"></div>
+            <div class="cloud4"></div>
+            <div class="cloud5"></div>
+            
+        </div>
+        <script type="text/javascript" src="js/main-compressed.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                setTimeout("cloud1()",10);
+                setTimeout("cloud2()",10);
+                setTimeout("cloud3()",10);
+                setTimeout("cloud4()",10);
+                setTimeout("cloud5()",10);
+                $('#sky, #night, #stars').css({"height":windowHeight,"width":windowWidth});
+            });
+            windowWidth = $(window).width();
+            windowHeight = $(window).height();
+            windowWidth500 = windowWidth + 500;
+            function cloud1(){
+		$(".cloud1").animate({left:"+="+windowWidth500+"px",'opacity':0.5},50000).animate({left:"-500px"}, 0)
+		setTimeout("cloud1()",1000);
+            }
+            function cloud2(){
+		$(".cloud2").animate({left:"+="+windowWidth500+"px",'opacity':0.5},70000).animate({left:"-500px"}, 0)
+		setTimeout("cloud2()",1000);
+            }
+            function cloud3(){
+		$(".cloud3").animate({left:"+="+windowWidth500+"px",'opacity':0.5},100000).animate({left:"-500px"}, 0)
+		setTimeout("cloud3()",1000);
+            }
+            function cloud4(){
+		$(".cloud4").animate({left:"+="+windowWidth500+"px",'opacity':0.5},130000).animate({left:"-500px"}, 0)
+		setTimeout("cloud4()",1000);
+            }
+            function cloud5(){
+		$(".cloud5").animate({left:"+="+windowWidth500+"px",'opacity':0.5},150000).animate({left:"-500px"}, 0)
+		setTimeout("cloud5()",1000);
+            }
+            $('#moon').css("top",windowHeight);
+            /*$('#sun_yellow').animate({top:"+="+windowHeight+"px",'opacity':0.2}, 50000);
+            $('#sun_red').animate({top:"+="+windowHeight+"px",'opacity':0.9}, 50000, function(){
+                $('#moon').animate({'top':'-20px','opacity':1}, 50000);
+                
+            });
+            $('#sky').animate({'backgroundColor':'#4F0030'}, 50000, function(){
+                $('#stars').animate({'opacity':1}, 50000);
+            });
+            $('#night').animate({'opacity':1}, 50000);
+            function cloud_opacity(){
+                $(".cloud1").animate({'opacity':0.5}, 50000);
+            }*/
+            windowWidth200 = windowWidth + 10;
+            windowWidth_300 = windowWidth - 300;
+            var sun_params = {
+                start: { 
+                x: -330, 
+                y: 550, 
+                angle: -50
+                },  
+                end: { 
+                x: windowWidth200,
+                y: 100, 
+                angle: 50, 
+                length: 0.3
+                }
+            }
+            
+            var muun_params = {
+                start: { 
+                x: -350, 
+                y: 650, 
+                angle: -50
+                },  
+                end: { 
+                x: windowWidth_300,
+                y: 0, 
+                angle: 50, 
+                length: 0.3
+                }
+            }
+            $("#sun_yellow").animate({path : new $.path.bezier(sun_params),'opacity':0.2}, 50000);
+            $('#sun_red').animate({path : new $.path.bezier(sun_params),'opacity':0.9}, 50000, function(){
+                $('#moon').animate({path : new $.path.bezier(muun_params),'opacity':1}, 50000);
+                $('#stars').animate({'opacity':1}, 50000);
+            });
+            $('#sky').animate({'backgroundColor':'#4F0030'}, 50000, function(){
+                
+            });
+            $('#night').animate({'opacity':1}, 50000);
+            
+        </script>
+    </body>
+</html> 

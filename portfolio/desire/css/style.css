@@ -1,0 +1,452 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+	width: 100%;
+	height: 100%;
+}
+body{
+    overflow:hidden;
+    margin: 0;
+    padding: 0;
+	width: 100%;
+	height: 100%;
+}
+img {
+	border: none;
+}
+.wrap {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+#clouds, #sky, #night, #stars, #cl1, #cl2, #cl3, #canvas {
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    width:100%;
+}
+#canvas { 
+	width: 100%; 
+	height: 100%; 
+	z-index: 16;
+}
+#sky{
+    background:#fff url(../images/sky.png) repeat-x top left;
+    z-index:1;
+}
+#sun_yellow{
+    position:absolute;
+    left:45%;
+    top:50%;
+    width:150px;
+    height:152px;
+    background:#F7EB38 url(../images/sun.png) no-repeat center center;
+    z-index:2;
+    border-radius:100px;
+    -moz-border-radius:100px;
+    -webkit-border-radius:100px;
+    box-shadow: 0 0 60px #F7EB38;
+    -moz-box-shadow: 0 0 60px #F7EB38;
+    -webkit-box-shadow: 0 0 60px #F7EB38;
+}
+#sun_red{
+    position:absolute;
+    left:45%;
+    top:50%;
+    width:150px;
+    height:152px;
+    background:#ff0000 url(../images/sun2.png) no-repeat center center;
+    z-index:2;
+    opacity:0;
+    border-radius:100px;
+    -moz-border-radius:100px;
+    -webkit-border-radius:100px;
+    box-shadow: 0 0 60px #ff0000;
+    -moz-box-shadow: 0 0 60px #ff0000;
+    -webkit-box-shadow: 0 0 60px #ff0000;
+	/*filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);*/
+}
+#clouds{
+    background:transparent url(../images/clouds.png) repeat-x top left;
+    z-index:4;
+}
+#cl1{
+    background:transparent url(../images/cl1.png) repeat-x top left;
+    z-index:4;
+    position:absolute;
+    left:0%;
+    top:0%;
+    opacity:0;
+}
+#cl2{
+    background:transparent url(../images/cl2.png) repeat-x top left;
+    z-index:4;
+    position:absolute;
+    left:5%;
+    top:4%;
+    opacity:0;
+}
+#cl3{
+    background:transparent url(../images/cl3.png) repeat-x top left;
+    z-index:4;
+    position:absolute;
+    left:5%;
+    top:2%;
+    opacity:0;
+}
+
+
+#ground{
+    position:absolute;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    width:100%;
+    height:232px;
+    background:transparent url(../images/ground.png) repeat-x bottom center;
+    z-index:10;
+}
+#butterfly_yellow {
+    position:absolute;
+    right: 1%;
+    top: 60%;
+    width:84px;
+    height:49px;
+    background:transparent url(../images/fly_yellow.gif) no-repeat center center;
+    z-index:6;
+}
+#butterfly_pink {
+    position:absolute;
+    left: 1%;
+    top: 90%;
+    width:46px;
+    height:46px;
+    background:transparent url(../images/fly_pink.gif) no-repeat center center;
+    z-index:6;
+}
+#butterfly_blue {
+    position:absolute;
+    right: 40%;
+    top: 70%;
+    width:51px;
+    height:43px;
+    background:transparent url(../images/fly_blue.gif) no-repeat center center;
+    z-index:6;
+}
+#bee {
+    position:absolute;
+    left: 2%;
+    top: 70%;
+    width:59px;
+    height:51px;
+    background:transparent url(../images/bee.gif) no-repeat center center;
+    z-index:6;
+}
+#night{
+    background-color:#000;
+    z-index:12;
+    opacity:0;
+}
+#stars{
+    bottom:140px;
+    background:transparent url(../images/stars.png) repeat bottom center;
+    background:transparent url(../images/bg.gif) repeat bottom center;
+    z-index:14;
+    opacity:0;
+}
+#sstar{
+    position:absolute;
+    left:40%;
+    top:10%;
+    width:127px;
+    height:124px;
+    background:transparent url(../images/shooting-star.gif) no-repeat;
+    z-index:14;
+    opacity:0;
+}
+#moon{
+    position:absolute;
+    right:20%;
+    top:60%;
+    width:175px;
+    height:175px;
+    background:transparent url(../images/moon.png) no-repeat center center;
+    z-index:8;
+    opacity:0;
+}
+#lovers {
+	position:absolute;
+    left:53%;
+    bottom:0;
+	background:transparent url(../images/lovers.png) no-repeat center center;
+    z-index:16;
+	width: 239px;
+	height: 300px;
+	opacity: 0;
+}
+#loversyes{
+   	position:absolute;
+    left:40%;
+    bottom:0;
+	background:transparent url(../images/loversyes.png) no-repeat center center;
+    z-index:16;
+	width: 239px;
+	height: 300px;
+	opacity: 0;
+}
+#shealone {
+	position:absolute;
+    right:20%;
+    bottom:6%;
+	background:transparent url(../images/shealone1.png) no-repeat center center;
+    z-index:16;
+	width: 108px;
+	height: 259px;
+	opacity: 0;
+}
+#healone {
+	position:absolute;
+    left:57%;
+    bottom:0;
+	background:transparent url(../images/healone.png) no-repeat center center;
+    z-index:16;
+	width: 90px;
+	height: 259px;
+	opacity: 0;
+}
+#rose_fall {
+	position:absolute;
+    right:24%;
+    bottom:1%;
+	background:transparent url(../images/rose_fall.png) no-repeat center center;
+    z-index:16;
+	width: 100px;
+	height: 87px;
+	opacity: 0;
+}
+
+
+
+#dream {
+	position:absolute;
+    right:42%;
+    bottom:39%;
+	background:transparent url(../images/dcloud.png) no-repeat center center;
+    z-index:16;
+	width: 250px;
+	height: 201px;
+	opacity: 0;
+}
+#button_green, #button_red {
+	position:absolute;
+	z-index:11;
+	opacity: 0.7;
+    text-align: center;
+    line-height: 32px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: arial;
+}
+#button_green {
+    background:transparent url(../images/hearts.png) no-repeat left center;
+   	top: 37%;
+	left: 20%;
+    color: #fff;
+	width: 60px;
+	height: 52px;
+    text-shadow: 2px 2px 2px #000;
+}
+#button_red {
+	background:transparent url(../images/broken.png) no-repeat left center;
+	top: 40%;
+	right: 26%;	
+	width: 48px;
+	height: 48px;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;                  
+}
+#button_red:hover, #button_green:hover {
+	opacity: 1;
+    cursor: pointer;
+}
+/* Стили для демонстрации*/
+
+#title{
+    color: #FFFFFF;
+    display: none;
+    font-size: 150px;
+    height: 160px;
+    margin: -90px 0 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    z-index: 25;
+    background:transparent url(../images/title.png) no-repeat center center;
+}
+#back{
+    position:absolute;
+    right:5%;
+    bottom:10px;
+    width:200px;
+    height:39px;
+    background:transparent url(../images/badbug_copy.png) no-repeat center center;
+    z-index:22;
+    outline:none;
+    cursor:pointer;
+    display: none;
+}
+.letter {
+    position: absolute;
+    left: 10%;
+    top: 5%;
+    z-index: 16;
+    color: #000;
+    font-size: 30px;
+    font-family: Monotype Corsiva;
+    line-height:120%;
+}
+.loading {
+	position: absolute; 
+	font-size: 40px; 
+	font-family: Monotype Corsiva; 
+	left: 50%; 
+	bottom: 10%; 
+	margin-left: -280px;"
+}
+.choise {
+    font-family: arial;
+    font-size: 13px;
+    left: 31%;
+    position: absolute;
+    top: 27%; 
+}
+.leftcurtain{
+    width: 50%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 20;
+}
+.rightcurtain{
+    width: 51%;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    position: absolute;
+    z-index: 20;
+}
+.rightcurtain img, .leftcurtain img{
+    width: 100%;
+    height: 100%;
+}
+.logo{
+    margin: 0px auto;
+    margin-top: 150px;
+}
+.rope{
+    position: absolute;
+    top: -40px;
+    right: 5%;
+    z-index: 24;
+}
+.preloader {
+    background:  url("../images/preloader.gif") no-repeat center center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 30;
+}
+/*-------------------------------------------*/
+.shadow{
+    background: url("../images/shadow.png") repeat scroll 0 0;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:1500;
+    display: none;
+}
+.bad_browser_hide {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    width: 560px;
+    margin: -150px 0px 0px -280px;
+    background: #FFF;
+    line-height: 160%;
+    border-bottom: 1px solid #E4E4E4;
+    font-size: 11px;
+}
+#content {
+    border: solid #B8C7D3;
+    border-width: 0px 1px 1px;
+    padding: 20px;
+}
+#head {
+    margin: 0px;
+	overflow: hidden;
+	padding: 5px;
+	background: #3E6A93;
+}
+#head1 {
+    background: url("../images/badbug_copy.png") no-repeat scroll 0 0 #3E6A93;
+    width: 200px;
+	float: left;
+	height: 45px;
+}
+#head2 {
+  
+}
+#browsers {
+    width: 400px;
+    height: 115px;
+    margin: 10px auto 0px;
+}
+#browsers a {
+    float: left;
+    width: 100px;
+    height: 20px;
+    padding: 80px 0px 7px;
+    text-decoration: none;
+    color: #2B587A;
+    opacity: 0.5;
+} 
+#browsers a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+#browsers a#moz {
+     background: url(../images/firefox.gif) no-repeat 50% 7px;
+}
+#browsers a#apple {
+     background: url(../images/safari.gif) no-repeat 50% 0px;
+}
+#browsers a#google {
+     background: url(../images/chrome.gif) no-repeat 50% 6px;
+}
+#browsers a#opera {
+     background: url(../images/opera.gif) no-repeat 50% 7px;
+}
+.page_title {
+    color: #FFFFFF;
+    font-family: Monotype Corsiva;
+    font-size: 120px;
+    height: 145px;
+    left: 50%;
+    line-height: 120%;
+    position: absolute;
+    top: 50%;
+    width: 500px;
+    z-index: 24;
+    margin: -73px 0 0 -250px;
+	text-align: center;
+}

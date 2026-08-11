@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+	padding: 0;    
+}
+body {
+    background: none repeat scroll 0 0 #201612;
+    color: #EDBA8F;
+    font-family: Tahoma;
+    font-size: 11px;
+    margin: 0;
+	padding: 0;
+}
+img {
+    border: none;
+}
+.clear {
+    clear: both;
+}
+.float {
+    float: left;
+}
+.wrapper {    
+    background: url(../images/bg.jpg) repeat-y;
+    margin: 0 auto;
+	padding: 0;
+    width: 910px;
+    overflow: hidden;
+}
+.header {
+    background: url(../images/header_bg.jpg) no-repeat;
+    height: 403px;
+    width: 100%;
+}
+.center {
+    background: url(../images/top.jpg) no-repeat;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.footer {
+    background: url(../images/bg.jpg) repeat-y;
+    margin: 0 auto;
+	padding: 0;
+    width: 910px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.logo_search {
+    width: 100%;
+    overflow: hidden;
+}
+.logo {
+    padding: 28px 0 0 50px;
+    width: 482px;
+    float: left;
+}
+.logo_name {
+    color: #C49B77;
+    font: bold 42px/42px "Bookman Old Style";
+    text-decoration: none;
+}
+.slogan {
+    margin:3px 0px 0px 3px;
+    color: #905D31;
+    font: bold 12px/12px Tahoma;
+}
+.search {
+    float: left;
+    padding: 35px 0 0;
+    width: 351px;
+}
+form input[type=text] {
+    float: left;
+    color: #D49660;
+    width: 233px;
+    padding: 3px 0px 0px 9px;
+    height: 23px;
+    background-color: #2F180D; 
+    border: 1px solid #633813; 
+    font:11px/11px Arial;  
+    line-height: 100%;
+    font-size: 14px;
+}
+form input.search_btn {
+    margin: 0 0 0 5px;
+    border: none;
+    background: url(../images/find.gif) no-repeat;
+    cursor: pointer; 
+    width: 68px;
+    height: 26px;
+    float: left;
+}
+.about_us {
+    color: #C49B77;
+    font-size: 11px;
+    margin: 40px 0 0 53px;
+    overflow: hidden;
+    width: 845px;
+}
+.vertical_menu { 
+    font-size: 12px;
+    line-height: 175%;
+    margin-left: 14px;
+}
+.vertical_menu li a {
+    text-decoration: none;
+    color: #905D31;
+}
+.vertical_menu li a:hover {
+    text-decoration: underline;
+    color: #C49B77;
+}
+.header_bottom {
+    overflow: hidden;
+    width: 100%;
+}
+.fauthor {
+    margin: 34px 0 10px 52px;
+    color: #EDBA8F;
+    font-family: Tahoma;
+    font-size: 11px;
+    font-weight: bold;
+    width: 250px;
+    float: left;
+}
+form.search_by_auth {
+    width: 250px;
+    float: left;
+}
+form select {
+    background-color: #2F180D;
+    border: 1px solid #633813;
+    color: #D49660;
+    font-family: Tahoma;
+    height: 20px;
+    margin: 0 0 0 52px;
+    width: 191px;
+}
+#menu {
+    height: 30px;
+    margin-top: 55px;
+    width: 100%;
+}
+#menu ul.main_manu {
+    float: left;
+    list-style: none outside none;
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+#menu ul.main_manu li {
+    display: block;
+    float: left;
+    height: 36px;
+    line-height: 30px;
+    text-align: center;
+    width: 175px;
+	margin-left: 3px;
+}
+
+#menu ul.main_manu li a {
+    color: #EDBA8F;
+    text-decoration: none;
+    font-size: 18px;
+	display: block;
+}
+#menu ul.main_manu li a:hover {
+    color: #FFA842;
+}
+.txt_right {
+    color: black;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+    margin: -20px 85px 0 0;
+}
+.left_box {
+    float: left;
+    overflow: hidden;
+    width: 265px;
+}
+.right_box {
+    float: left;
+    overflow: hidden;
+    width: 640px;
+}
+.left_box .category {
+    background: url("../images/categor.jpg") no-repeat scroll 0 0 transparent;
+    height: 29px;
+    margin: 4px 0 0 11px;
+    width: 256px;
+}
+.cat_txt {
+    color: #AE6E38;
+    display: inline-block;
+    font: bold 12px/12px Tahoma;
+    margin-left: 43px;
+    margin-top: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+img.categor {
+     margin:0 21px 0 23px;
+     width: 3px; 
+     height: 5px;
+}
+ul#left_list {
+    line-height: 167%;
+    list-style: none outside none;
+    margin: 15px 0 0 12px;
+}
+ul#left_list li {
+    height: 25px;
+    background: url(../images/line.jpg) repeat-x;
+    background-position:left bottom; 
+}
+ul#left_list li a {
+    text-decoration: none;
+    color: #EDBA8F;
+}
+.cat_menu a.categor {
+    color: #EDBA8F;
+    font: 11px/13px Tahoma;
+    text-decoration: none;
+}
+.left_box .specials {
+    background:url(../images/spec.jpg) no-repeat; 
+    height: 29px;
+    margin: 30px 0 0 11px;
+    width: 256px;
+}
+.spec_img {
+    float: left;
+    margin: 20px 15px 0 32px;
+}
+.about_book {
+    display: block;
+    margin: 20px 0 0;
+    width: 100px;
+} 
+.price {
+    float: left;
+    margin-top: 20px;
+    width: 100px;
+    color: #fff;
+    font-weight: bold;
+}
+.price .baks {
+    color: #9E4304;
+    font-size: 18px;
+}
+.banners {
+    border: 1px solid #AE6E38;
+    height: 238px;
+    margin: 7px 0 0 8px;
+    width: 304px; 
+}
+.our_books {
+    float: left;
+    background: #C4A47E;
+    height: 149px;
+    margin: 10px 0 0 8px;
+    width: 305px; 
+}
+.our_books .book_img {
+    margin: 0 15px 0 0;
+}
+.pageHeading {
+    background: url("../images/pageheading.jpg") no-repeat scroll 0 0 transparent;
+    height: 29px;
+    margin: 10px 0 0 4px;
+    padding: 0 0 0 0;
+    width: 620px;
+}
+.our_books .about_book {
+    display: block;
+    margin: 10px 0 0;
+    width: 160px;
+    color: #4D2D15;
+}
+.our_books .about_book a {
+    color: #4D2D15;
+    text-decoration: none;
+}
+.our_books .about_book a:hover {
+    text-decoration: underline;
+}
+.footer .footer_left {
+    float: left;
+    margin: 20px;
+}
+.footer .footer_right{
+	float: right;
+	font-size: 11px;
+	font-family: Verdana, Geneva, sans-serif;
+	width: 580px;
+	text-align: right;
+}		
+.footer .footer_right .footer_right_left {
+	float: left;
+    margin-top: 20px;
+}				
+.footer .footer_right .footer_right_left a{
+	text-decoration: underline;
+    color: #EDBA8F;
+}					
+.footer .footer_right .footer_right_left a:hover{
+	text-decoration: none;
+}							
+.footer .footer_right .footer_right_right {
+	float: right;
+	margin-right: 10px;
+    margin-top: -18px;
+}		
+.footer .footer_right img{
+	margin: 20px 0 10px;
+}
+hr {
+    border: 1px dashed #7D583B;
+    margin: 0 0 10px 11px;
+    width: 98.11%;
+}

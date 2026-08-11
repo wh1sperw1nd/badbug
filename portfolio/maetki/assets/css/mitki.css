@@ -1,0 +1,44 @@
+.mitki .content {
+    flex-direction: column;
+    margin-top: 14vw;
+    position: relative;
+}
+.mitki .bg {
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: -16vw;
+    z-index: 0;
+}
+
+.content .title {
+    position: absolute;
+    top: 0;
+    font-size: 7vw;
+    text-transform: uppercase;
+    color: rgba(44,79,64, 0.4);
+    padding-left: 10vw;
+    width: 100%;
+    z-index: 1;
+    font-family: "BlackCAPS", sans-serif;
+    letter-spacing: 1vw;
+}
+
+.mitki .content img.title_bg {
+    width: 100vw;
+    height: auto;
+    display: block;
+    position: relative;
+    top: -9vw;
+}
+
+.mitki article {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.mitki .wrap {
+    margin-top: -16vw;
+}

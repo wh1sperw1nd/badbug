@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="./js/howler.js"></script>
+    <script src="./js/script.js"></script>
+
+
+ 
+    <!--<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>-->
+    <script type="text/javascript" src="js/all.js"></script>
+    <script type="text/javascript" src="js/hash.js"></script>
+    <script type="text/javascript" src="js/turn.min.js"></script>
+    <script type="text/javascript" src="js/zoom.min.js"></script>
+    <script type="text/javascript" src="js/bookshelf.js"></script>
+    <script type="text/javascript" src="js/jquery.loader3.js"></script>
+
+    <script src="samples/book1/js/book1.js" async="" type="text/javascript"></script>
+    <script src="samples/book2/js/book2.js" async="" type="text/javascript"></script>
+    <script src="samples/book3/js/book3.js" async="" type="text/javascript"></script>
+    <script src="samples/book4/js/book4.js" async="" type="text/javascript"></script>
+    <script src="samples/book5/js/book5.js" async="" type="text/javascript"></script>
+    <script src="samples/book6/js/book6.js" async="" type="text/javascript"></script>    
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content-page page-1 page-current">
+            <div class="title">
+                <span>Just a fairy tale</span>
+            </div>
+            <svg version="1.1" id="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" height="100px" width="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100"
+                xml:space="preserve">
+                <path class="stroke-solid" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+                C97.3,23.7,75.7,2.3,49.9,2.5" />
+                <path class="stroke-dotted" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+                C97.3,23.7,75.7,2.3,49.9,2.5" />
+                <path class="icon" fill="white"
+                    d="M38,69c-1,0.5-1.8,0-1.8-1.1V32.1c0-1.1,0.8-1.6,1.8-1.1l34,18c1,0.5,1,1.4,0,1.9L38,69z" />
+            </svg>
+            <a href="http://badbug.com.ua/" class="copy" target="_blank">with l<span class="lovely"></span>ve from <span
+                    class="bad-logo"></span></a>
+        </div>
+        <div class="content-page page-3">
+            <i class="volume fa fa-volume-up mute"></i>
+            <div class="scene">
+                <div class="santa">
+                    <div class="wall"></div>
+                    <div class="window" data-sound="window">
+                        <div class="snow"></div>
+                        <div class="snow-flakes"></div>
+                    </div>
+                    <div class="shelvs">
+                        <div class="book-hor book-hor-1" data-sound="magasine"></div>
+                        <div class="book-hor book-hor-2" data-sound="magasine"></div>
+                        <div class="book-vert book-vert-1" data-sound="binder"></div>
+                        <div class="book-vert book-vert-2" data-sound="binder"></div>
+                        <div class="book-vert book-vert-3" data-sound="binder"></div>
+                        <div class="book-vert book-vert-4" data-sound="binder"></div>
+                        <div class="book-vert book-vert-5" data-sound="binder"></div>
+                        <div class="candle candle-1">
+                            <div class="wick"></div>
+                            <div class="fire"></div>
+                        </div>
+                        <div class="candle candle-2">
+                            <div class="wick"></div>
+                            <div class="fire"></div>
+                        </div>
+                        <div class="plate"></div>
+
+                        <div id="scene">
+                            <!--CLOCK-->
+                            <div id="clock" data-sound="clock">
+                                <div id="clock-face">
+                                    <div class="clock-marker" id="clock-marker-12-6"></div>
+                                    <div class="clock-marker" id="clock-marker-1-7"></div>
+                                    <div class="clock-marker" id="clock-marker-2-8"></div>
+                                    <div class="clock-marker" id="clock-marker-3-9"></div>
+                                    <div class="clock-marker" id="clock-marker-4-10"></div>
+                                    <div class="clock-marker" id="clock-marker-5-11"></div>
+                                    <div id="clock-inner"></div>
+                                    <div class="hands hour"></div>
+                                    <div class="hands minute"></div>
+                                    <div class="hands second"></div>
+                                    <div id="clock-dot"></div>
+                                </div>
+                            </div>
+                            <!--END OF CLOCK-->
+
+                            <!--SHELF 1-->
+                            <div id="shelf-area">
+                                <div id="shelf-1">
+                                    <div id="shelf-1-book-1" data-sound="binder">
+                                        <div id="shelf-1-book-1-line-1"></div>
+                                        <div id="shelf-1-book-1-line-2"></div>
+                                        <div id="shelf-1-book-1-line-3"></div>
+                                    </div>
+                                    <div id="shelf-1-book-2" data-sound="binder">
+                                        <div id="shelf-1-book-2-line-1"></div>
+                                        <div id="shelf-1-book-2-line-2"></div>
+                                        <div id="shelf-1-book-2-line-3"></div>
+                                    </div>
+                                    <div id="shelf-1-book-3" data-sound="binder"></div>
+                                    <div id="shelf-1-book-4" data-sound="binder"></div>
+                                    <div id="plant" data-sound="cactus">
+                                        <div id="cactus-body">
+                                            <div id="cactus-arm-left">
+                                                <div id="cactus-arm-left-up"></div>
+                                            </div>
+                                            <div id="cactus-arm-right">
+                                                <div id="cactus-arm-right-up"></div>
+                                            </div>
+                                        </div>
+                                        <div id="plant-pot"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END OF SHELF 2-->
+
+                            <!--SHELF 2-->
+                            <div id="shelf-area-2">
+                                <div id="shelf-2">
+                                    <div id="shelf-2-box" data-sound="box">
+                                        <div id="box-heart"></div>
+                                    </div>
+                                    <div id="shelf-2-book-1" data-sound="binder">
+                                        <div id="shelf-2-book-1-line-1"></div>
+                                        <div id="shelf-2-book-1-line-2"></div>
+                                        <div id="shelf-2-book-1-line-3"></div>
+                                    </div>
+                                    <div id="shelf-2-book-2" data-sound="binder"></div>
+                                    <div id="tape-dispenser" data-sound="tape">
+                                        <div id="tape-roll"></div>
+                                        <div id="tape-body">
+                                            <div id="tape-legs"></div>
+                                            <div id="tape-hole"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END OF SHELF 2-->
+
+                            <!--PICTURES-->
+                            <div id="picture">
+                                <div id="picture-1" data-sound="slamming"></div>
+                                <div id="picture-2" data-sound="slamming"></div>
+                                <div id="picture-3" data-sound="slamming"></div>
+                            </div>
+                            <!--END OF PICTURES-->
+
+                            <!--PHOTOS-->
+                            <div class="drag" id="photo-1" data-sound="slamming">
+                                <p class="photo">Милашка</p>
+                            </div>
+                            <!--END OF PHOTOS-->
+
+                        </div>
+                    </div>
+                    <div class="frame" data-sound="slamming">
+                        <div class="line"></div>
+                        <div class="ball ball-1">
+                            <div class="line"></div>
+                        </div>
+                        <div class="ball ball-2">
+                            <div class="line"></div>
+                        </div>
+                        <div class="picture">
+                            <div class="light"></div>
+                        </div>
+                    </div>
+                    <div class="socket" id="outlet" data-sound="electric">
+                        <div class="plug-1"></div>
+                        <div class="plug-2"></div>
+                    </div>
+                    <div class="boots-wrapper">
+                        <div class="boots boots-1"></div>
+                        <div class="boots boots-2"></div>
+                    </div>
+                    <div class="fire-wrapper">
+                        <ul class="wall">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <div class="crown">
+                            <ul class="round">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul class="ball">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="fireplace">
+                            <div class="bottom">
+                                <ul class="ground">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <ul class="top">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul class="bricks">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <div class="chimney"></div>
+                            <div class="chimney-shadow"></div>
+                            <div class="chimney-fire-wrapper">
+                                <ul class="wood">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                                <div class="fire"></div>
+                                <ul class="embers">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class="candle">
+                                <div class="fire"></div>
+                            </div>
+                            <div class="candle" id="candle-2">
+                                <div class="fire"></div>
+                            </div>
+                            <div class="candle" id="candle-3">
+                                <div class="fire"></div>
+                            </div>
+                            <div class="sock" data-sound="clothes">
+                                <div class="second"></div>
+                            </div>
+                            <div class="sock" id="sock-2" data-sound="clothes">
+                                <div class="second"></div>
+                            </div>
+                            <div class="sock" id="sock-3" data-sound="clothes">
+                                <div class="second"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="couch">
+                        <div class="back back-1"></div>
+                        <div class="back back-2"></div>
+                        <div class="base">
+                            <div class="feet feet-1"></div>
+                            <div class="feet feet-2"></div>
+                        </div>
+                        <div class="arm arm-1"></div>
+                        <div class="arm arm-2"></div>
+                        <div class="cushion cushion-1"></div>
+                        <div class="cushion cushion-2"></div>
+                        <div class="book-hor book-hor-3">
+                            <!--PENCIL HOLDER CONTENTS-->
+                            <div id="pencil-holder-contents">
+                                <div id="pencil-cup" data-sound="heartbeat">
+                                    <div id="heart"></div>
+                                </div>
+                                <div id="pencil-holder">
+                                    <div id="ruler">
+                                        <div id="ruler-inner"></div>
+                                    </div>
+                                    <div id="pencil-1">
+                                        <div class="pencil-tip">
+                                            <div class="pencil-tip-top"></div>
+                                        </div>
+                                    </div>
+                                    <div id="pencil-2">
+                                        <div class="pencil-tip">
+                                            <div class="pencil-tip-top"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END OF PENCIL HOLDER CONTENTS-->
+                        </div>
+                        <div class="sock"></div>
+                        <div class="can can-front can-1"></div>
+                        <div class="can can-front can-2"></div>
+                        <div class="can can-side can-3"></div>
+                        <div class="can can-side can-4"></div>
+                        <div class="noel">
+                            <div class="head">
+                                <div class="nose"></div>
+                                <div class="glasses">
+                                    <div class="glass left-glass"></div>
+                                    <div class="glass right-glass"></div>
+                                </div>
+                                <div class="mouth"></div>
+                                <div class="beard"></div>
+                                <div class="hat">
+                                    <div class="hat-base"></div>
+                                    <div class="hat-pompon"></div>
+                                    <div class="hat-body"></div>
+                                </div>
+                            </div>
+                            <div class="beard-front"></div>
+                            <div class="body">
+                                <div class="belt"></div>
+                            </div>
+                            <div class="arms">
+                                <div class="hand"></div>
+                            </div>
+                            <div class="leg left-leg">
+                                <div class="ankle"></div>
+                                <div class="foot"></div>
+                            </div>
+                            <div class="leg right-leg">
+                                <div class="ankle"></div>
+                                <div class="foot"></div>
+                            </div>
+                        </div>
+                        <!--BOOK STACK-->
+                        <div id="stack-book" data-sound="book">
+                            <div id="stack-book-1"></div>
+                            <div class="stack-book-2"></div>
+                            <div class="stack-book-3"></div>
+                            <div class="stack-book-4"></div>
+                            <div id="stack-book-5"></div>
+                            <div class="stack-book-6"></div>
+                            <div class="stack-book-7"></div>
+                            <div id="stack-book-8"></div>
+                            <div class="stack-book-9"></div>
+                            <div id="stack-book-10"></div>
+                            <div id="stack-book-11"></div>
+                            <div id="stack-book-12"></div>
+                        </div>
+                        <!--END OF BOOK STACK-->
+
+                        <!--BIG BOX-->
+                        <div id="big-box" data-sound="paper">
+                            <div id="big-box-body">
+                                <div id="big-box-shadow"></div>
+                                <div id="big-box-hole"></div>
+                            </div>
+                            <div id="box-folder"></div>
+                            <div id="folder-paper">
+                                <p class="paper">Дорогая Милашка,
+                                    <br>
+                                    <br>Пожалуйста купи красного вина!
+                                    <br>
+                                    <br>Люблю,
+                                    <br>Твой Санта</p>
+                            </div>
+                            <div id="folder-paper-2">
+                                <p class="paper">Список подарков
+                                    <br>
+                                    <br>pendant
+                                    <br>toys
+                                    <br>flowers
+                                    <br>chain
+                                </p>
+                            </div>
+                        </div>
+                        <!--END OF BIG BOX-->
+
+                        <!--COFFEE CUP-->
+                        <div id="coffee-cup" data-sound="coffee">
+                            <div id="coffee-cup-top">
+                                <div id="coffee-cup-rim"></div>
+                            </div>
+                            <div id="coffee-cup-bottom">
+
+                                <div id="coffee-cup-holder">
+                                    <div id="coffee-cup-logo"></div>
+                                </div>
+                                <p class="cup">Santa</p>
+                            </div>
+                        </div>
+                        <!--END OF COFFEE CUP-->
+
+                        <!--BOOK STACK-->
+                        <div id="stack-book-small" data-sound="magasine">
+                            <div class="stack-book-2"></div>
+                            <div class="stack-book-4"></div>
+                            <div class="stack-book-3"></div>
+                            <div class="stack-book-7"></div>
+                            <div class="stack-book-6"></div>
+                            <div class="stack-book-9"></div>
+                        </div>
+                        <!--END OF BOOK STACK-->
+
+                        <!--TAKE-OUT-->
+                        <div id="take-out" data-sound="chopsticks">
+                            <div id="take-out-box">
+                                <div id="take-out-box-top"></div>
+                                <div id="take-out-box-bottom">
+                                    <div id="take-out-box-handle">
+                                        <div id="take-out-box-handle-dot"></div>
+                                    </div>
+                                </div>
+                                <div id="take-out-box-bottom-back">
+                                    <p class="box">Chinese
+                                        <br>Food</p>
+                                </div>
+                            </div>
+                            <div id="chopsticks">
+                                <div id="chopsticks-1"></div>
+                                <div id="chopsticks-2"></div>
+                            </div>
+                        </div>
+                        <!--END OF TAKE-OUT-->
+                    </div>
+                    <div class="floor"></div>
+                
+                </div>
+                <div class="splash">
+                    <div class="center">
+                        <div class="bookshelf">
+                            <div class="shelf">
+                                <div class="row-1">
+                                    <div class="loc">
+                                        <div> <div class="sample thumb1" sample="book1" data-sound="magasine"></div> </div>
+                                        <div> <div class="sample thumb2" sample="book2" data-sound="magasine"></div> </div>
+                                        <div> <div class="sample thumb3" sample="book3" data-sound="magasine"></div> </div>
+                                    </div>
+                                </div>
+                                <div class="row-2">
+                                    <div class="loc">
+                                        <div> <div class="sample thumb4" sample="book4" data-sound="magasine"></div> </div>
+                                        <div> <div class="sample thumb5" sample="book5" data-sound="magasine"></div> </div>
+                                        <div> <div class="sample thumb6" sample="book6" data-sound="magasine"></div> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Samples-->
+                        <div class="samples">
+                            <div class="bar">
+                                <div class="share">
+                                    <i class="icon table-contents" title="Table of contents"></i>
+                                    <!-- <i class="icon zoom-in" title="Zoom in"></i> -->
+                                    <!-- <i class="icon share-facebook" title="Share on facebook"></i> -->
+                                    <!-- <i class="icon share-twitter" title="Share on Twitter"></i> -->
+                                    <!-- <i class="icon share-plus" title="Share on G+"></i> -->
+                                    <!-- <i class="icon share-pinterest" title="Share on Pinterest"></i> -->
+                                </div>
+                                <a class="icon quit"></a>
+                            </div>
+                            <div id="book-wrapper">
+                                <div id="book-zoom"></div>
+                            </div>
+                            <div id="slider-bar" class="turnjs-slider">
+                                <div id="slider"></div>
+                            </div>
+        
+                        </div>
+        
+                        <!-- End samples -->
+        
+                    </div>
+                    <div class="gradient"></div>
+                </div>
+                <div class="santa_wrap">
+                    <div class="santa_">
+                        <div class="santa__hat"></div>
+                        <div class="santa__head"></div>
+                        <div class="santa__body">
+                            <div class="small_size">Но данный размер</br>слишком мал</div>
+                        </div>
+                        <div class="santa__hand">
+                            <div class="ops">Упс!</div>
+                            <div class="santa__hand-item santa__hand--left">
+                                <div class="finger"></div>
+                                <div class="finger"></div>
+                                <div class="finger"></div>
+                            </div>
+                            <div class="santa__hand-item santa__hand--right">
+                                <div class="finger"></div>
+                                <div class="finger"></div>
+                                <div class="finger"></div>
+                            </div>
+                        </div>
+                        <div class="santa__leg">
+                            <div class="santa__leg-item santa__leg-item--left"></div>
+                            <div class="santa__leg-item santa__leg-item--right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

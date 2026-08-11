@@ -1,0 +1,12 @@
+<div class="page-menu">
+    <!--<div ng-if="submenus.length > 3" class="left-arrow"></div>-->
+    <ul class="container">
+        <li ng-repeat="menu in submenus" class="{{menu.id==currentSubPageId?'active':''}} {{setSubMenuItemsWidth(submenus)}}">
+            <a class="submenu {{menu.id==currentSubPageId?'active':''}}" id="{{menu.id}}" href="./{{menu.route}}">
+                <span>{{menu.name}}</span>
+            </a>
+            <i class="line"></i>
+        </li>
+    </ul>
+    <!--<div class="right-arrow"></div>-->
+</div>
