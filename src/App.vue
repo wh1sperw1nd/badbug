@@ -24,6 +24,7 @@
   <footer class="footer">
     <div class="line_inner">
       <div class="foot_line">
+        <canvas id="fx-ice" class="fx-ice" width="545" height="235" aria-hidden="true"></canvas>
         <div class="copy">
           <div class="foot_txt">
             © {{ currentYear }} badbug. All rights reserved.

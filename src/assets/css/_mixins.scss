@@ -1,6 +1,3 @@
-// Both bubbles hang off a 14px parent, so `font-size` is 15/14. Every other
-// length here (and in ::after, which inherits it) is against the bubble's own
-// 15px, not the 14px base.
 @mixin speech-bubble($direction: 'up') {
     position: absolute;
     padding: 0.6667em 1.0667em;

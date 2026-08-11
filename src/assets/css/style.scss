@@ -1,9 +1,3 @@
-// Global stylesheet. Order is the cascade — reset first, then base, then the
-// shell, then the shared page content on top of it.
-//
-// Page-specific styles are NOT here: each view keeps its own scoped .scss next
-// to the component (e.g. views/ContactsView/ContactsView.scss).
-
 @use 'reset';
 @use 'base';
 @use 'layout';
