@@ -11,6 +11,7 @@
     "eslint:fix": "eslint --fix ."
   },
   "dependencies": {
+    "pixi.js": "^8.19.0",
     "sass-loader": "^14.0.0",
     "vue": "^3.5.40",
     "vue-router": "^5.2.0"

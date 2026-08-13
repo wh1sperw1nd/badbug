@@ -29,6 +29,8 @@
                 top: 1em;
                 right: 0;
                 display: flex;
+                align-items: center;
+                column-gap: 1em;
                 text-decoration: none;
             }
 
@@ -41,10 +43,9 @@
             .logo_txt {
                 color: white;
                 float: right;
-                font-size: 5.5em;
+                font-size: 5em;
                 font-weight: bold;
                 position: relative;
-                // Against this element's own 5.5em (77px), not the 14px base.
                 text-shadow: 0.065em 0.065em 0.065em #000;
 
                 & > span.red {
@@ -64,14 +65,15 @@
             }
 
             .logo_img {
-                width: 11.4em;
-                height: 11.4em;
+                width: 10em;
+                height: 10em;
                 position: relative;
 
                 .logo_img_face {
                     position: absolute;
                     inset: 0;
                     background: url('../img/bug.png') 0 0 no-repeat;
+                    background-size: cover;
                 }
 
                 .particle {

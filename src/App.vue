@@ -40,7 +40,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import Header from './components/Header.vue';
 import { shatterLogo, celebrateLogo, useLogoShatter } from './composables/useLogoShatter';
-import { startAnimations } from './animations.js';
+import { startAnimations } from './animations';
 import './assets/css/style.scss';
 
 const currentYear = ref(new Date().getFullYear());
